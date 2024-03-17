@@ -17,13 +17,13 @@ export async function getPostsSummarized(): Promise<PostsSummarizedResponse> {
 		return {
 			posts: [],
 			status: 500,
-			message: new Error('Internal Server Error')
+			message: 'Internal Server Error'
 		};
 	} catch (error) {
 		return {
 			posts: [],
 			status: 500,
-			message: new Error('Internal Server Error')
+			message: 'Internal Server Error'
 		};
 	}
 }
@@ -41,13 +41,13 @@ export async function getRelatedPosts(slug: string | undefined): Promise<PostsSu
 		return {
 			posts: [],
 			status: 500,
-			message: new Error('Internal Server error')
+			message: 'Internal Server error'
 		};
 	} catch (error) {
 		return {
 			status: 500,
 			posts: [],
-			message: new Error('Internal Server error')
+			message: 'Internal Server error'
 		};
 	}
 }
@@ -69,14 +69,14 @@ export async function getPost(slug: string | undefined): Promise<PostResponse> {
 			toc: undefined,
 			post: undefined,
 			status: 500,
-			message: new Error('Internal Server error')
+			message: 'Internal Server error'
 		};
 	} catch (error) {
 		return {
 			toc: undefined,
 			post: undefined,
 			status: 500,
-			message: new Error('Internal Server error')
+			message: 'Internal Server error'
 		};
 	}
 }

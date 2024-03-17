@@ -1,11 +1,13 @@
 <script lang="ts">
 	import InfoBanner from '$lib/components/display/infoBanner.svelte';
+	import QuoteComp from '$lib/components/display/quoteComp.svelte';
 import About from '$lib/components/section/about.svelte';
 	import Blog from '$lib/components/section/blog.svelte';
 	import Footer from '$lib/components/section/footer.svelte';
 	import Hero from '$lib/components/section/hero.svelte';
 	import Projects from '$lib/components/section/projects.svelte';
 	export let data;
+	
 </script>
 
 <Hero />
@@ -21,6 +23,11 @@ import About from '$lib/components/section/about.svelte';
 	<Projects />
 </div>
 <div class="mb-24">
+	{#if data.quotes }
+		<div class="mb-24">
+			<QuoteComp info={data.quotes}/>
+	</div>
+	{/if}
 	<InfoBanner/>
 </div>
 <Footer />

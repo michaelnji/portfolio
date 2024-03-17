@@ -35,7 +35,7 @@ export const load: Load = async ({ params }) => {
 
 	return {
 		status: 500,
-		error: new Error(`Could not load url`),
+		error:`Could not load url`,
 		pageMetaTags
 	};
 };
