@@ -1,5 +1,6 @@
 <script lang="ts">
-	import About from '$lib/components/section/about.svelte';
+	import InfoBanner from '$lib/components/display/infoBanner.svelte';
+import About from '$lib/components/section/about.svelte';
 	import Blog from '$lib/components/section/blog.svelte';
 	import Footer from '$lib/components/section/footer.svelte';
 	import Hero from '$lib/components/section/hero.svelte';
@@ -8,9 +9,9 @@
 </script>
 
 <Hero />
-<div>
-	<About />
-</div>
+
+<About />
+
 <div class=" mt-24 mb-12">
 	{#if data?.posts}
 		<Blog posts={data.posts} />
@@ -18,5 +19,8 @@
 </div>
 <div class="mb-24">
 	<Projects />
+</div>
+<div class="mb-24">
+	<InfoBanner/>
 </div>
 <Footer />

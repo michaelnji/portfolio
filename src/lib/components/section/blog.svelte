@@ -32,11 +32,11 @@
 					
 						<BlogCard
 						title={post.title}
-						tags={post.tags}
+						
 						slug={post.slug.current}
 						published={post.publishedAt}
 						excerpt={post.excerpt}
-						image={post.imageUrl}
+						
 					/>
 					
 				{/if}

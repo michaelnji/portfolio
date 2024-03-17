@@ -19,7 +19,7 @@
 			</div>
 			<div>
 				<h2
-					class="font-head font-bold overflow-hidden text-purple-50 text-xl name-text md:text-3xl"
+					class="font-retro font-medium overflow-hidden text-purple-50 text-xl name-text md:text-3xl"
 					style=" transform:translateY(40px); opacity:0; "
 				>
 					Michael Nji

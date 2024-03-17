@@ -1,13 +1,9 @@
 <script lang="ts">
-	// import { urlFor } from '$lib/backend/sanity';
 	import { getReadableDate } from '$lib/utils/timeFunctions';
-
 	export let title: string;
-	export let tags: { title: string; description: string }[];
 	export let slug: string;
 	export let published: Date;
 	export let excerpt: string;
-	export let image: string;
 </script>
 
 <div class="group w-full max-w-xl">

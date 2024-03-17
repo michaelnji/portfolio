@@ -55,11 +55,11 @@
 					<div>
 						<BlogCard
 							title={post.title}
-							tags={post.tags}
+							
 							slug={post.slug.current}
 							published={post.publishedAt}
 							excerpt={post.excerpt}
-							image={post.imageUrl}
+						
 						/>
 					</div>
 				{/each}
@@ -71,11 +71,11 @@
 						<div out:fade>
 							<BlogCard
 								title={post.title}
-								tags={post.tags}
+								
 								slug={post.slug.current}
 								published={post.publishedAt}
 								excerpt={post.excerpt}
-								image={post.imageUrl}
+							
 							/>
 						</div>
 					{/if}

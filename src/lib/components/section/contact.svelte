@@ -38,7 +38,7 @@
 </script>
 
 <div
-	class="p-6 md:p-12 rounded-2xl transform rotate-6 bg-purple-50 dark:bg-gray-900 shadow-2xl max-w-lg mx-auto w-full"
+	class="p-6 md:p-12  transform rotate-6 bg-purple-50 dark:bg-gray-900  max-w-lg mx-auto w-full card-wrapper transition duration-300 border-4 border-black"
 >
 	<h1 class="text-2xl mx-auto md:text-4xl font-extrabold font-head text-center">I'm active @</h1>
 

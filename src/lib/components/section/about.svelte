@@ -30,7 +30,7 @@
 </script>
 
 <!-- svelte-ignore a11y-no-static-element-interactions -->
-<div class="  w-screen flex items-start justify-center" id="about">
+<div bind:this={element} class="  w-screen flex items-start justify-center" id="about">
 	<div class="w-full">
 		<div class="px-3 md:px-6">
 			<IntersectionObserver
@@ -39,17 +39,17 @@
 					animateEntry();
 				}}
 			>
-				<div
+				<div 
 					class=" grid grid-cols-1 gap-4 md:gap-11 lg:grid-cols-2 mx-auto w-full items-center justify-center md:items-start mb-[6rem] lg:mb-[9rem] border-8 border-dashed border-gray-700 dark:border-gray-400 p-4 md:p-12 max-w-7xl bg-gray-200 dark:bg-gray-800 rounded-3xl about-items"
 					style="opacity: 0; transform: translateY(150px)"
 				>
 					<div
-						bind:this={element}
+						
 						class="w-full flex items-center about-items"
 						style="opacity: 0; transform: translateY(50px)"
 					>
 						<div class="prose p-6 bg-white dark:bg-gray-900 rounded-2xl shadow-lg">
-							<h3 class="text-3xl md:text-4xl dark:text-gray-100 font-medium font-head">I Develop Kool Stuff</h3>
+							<h3 class="text-2xl md:text-4xl dark:text-gray-100 font-medium font-head">I Develop Kool Stuff</h3>
 							<p class="text-xl md:text-2xl dark:text-gray-100 opacity-70  mt-2">
 								I’m a self-taught Software Engineer and Technical Writer with over a year of
 								experience working with several technologies to build some <a
@@ -64,7 +64,7 @@
 						style="opacity: 0; transform: translateY(50px)"
 					>
 						<div class="prose p-6 bg-white dark:bg-gray-900 rounded-2xl shadow-lg">
-							<h3 class="text-3xl md:text-4xl dark:text-gray-100 font-medium font-head">Currently working on</h3>
+							<h3 class="text-2xl md:text-4xl dark:text-gray-100 font-medium font-head">Currently working on</h3>
 							<p class="text-xl md:text-2xl dark:text-gray-100 opacity-70 mt-2">
 								I’m currently working on <a
 									href="https://seabridge.vercel.app"
