@@ -1,11 +1,10 @@
 <script>
-	  import { page } from '$app/stores';
-	  import extend from 'just-extend';
-	  import { MetaTags } from 'svelte-meta-tags';
-	  import { fade } from 'svelte/transition';
-// @ts-nocheck
-	import { afterNavigate, beforeNavigate } from '$app/navigation';
-	import Loader from '$lib/components/misc/loader.svelte';
+	import { page } from '$app/stores';
+	import extend from 'just-extend';
+	import { MetaTags } from 'svelte-meta-tags';
+	import { fly, fade } from 'svelte/transition';
+	 import { ProgressBar } from "@prgm/sveltekit-progress-bar";
+	import { afterNavigate, beforeNavigate, onNavigate } from '$app/navigation';
 	import { getOrSetItem } from '$lib/scripts/dbManager';
 	import theme from '$lib/stores/theme';
 	import { inject } from '@vercel/analytics';
@@ -14,28 +13,33 @@
 	import { onMount } from 'svelte';
 	import Navbar from './../lib/components/navigation/navbar.svelte';
 	import './styles.postcss';
-	export let data 
+	export let data;
 	let isLoading = false;
- $: metaTags = extend(true, {}, data.baseMetaTags, $page.data.pageMetaTags);
+	$: metaTags = extend(true, {}, data.baseMetaTags, $page.data.pageMetaTags);
 	beforeNavigate(({ to }) => (isLoading = !!to?.route.id));
-	afterNavigate(() => setTimeout(() => (isLoading = false), 800));
+	afterNavigate(() => setTimeout(() => (isLoading = false), 200));
 	inject();
 	injectSpeedInsights();
+	onNavigate((navigation) => {
+		if (!document?.startViewTransition) return;
 
+		return new Promise((resolve) => {
+			document.startViewTransition(async () => {
+				resolve();
+				await navigation.complete;
+			});
+		});
+	});
 	let ready = false;
 	onMount(() => {
-		ready = true;
+		
 		$theme = getOrSetItem('theme', 'light');
 	});
 </script>
-
+<ProgressBar class="text-primary h-3" />
 <MetaTags {...metaTags} />
-{#if ready}
-	<div class={`${$theme} !overflow-hidden`}>
-		{#if isLoading}
-			<div out:fade={{ duration: 150 }}><Loader /></div>
-		{/if}
-		<div
+	<div class={`${$theme} max-w-screen `} data-barba="wrapper">
+		<div  data-barba="container" data-barba-namespace={$page.url.pathname}
 			class="dark:!bg-gray-950 dark:!text-gray-50 bg-white text-base-400 transition-colors duration-300"
 		>
 			<header>
@@ -48,11 +52,4 @@
 			<footer />
 		</div>
 	</div>
-<!-- {:else}
-	<div
-		class=" dark:bg-gray-950 h-screen !overflow-hidden grid place-items-center"
-		out:fade={{ duration: 150 }}
-	>
-		<Loader />
-	</div> -->
-{/if}
+

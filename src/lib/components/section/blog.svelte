@@ -24,7 +24,7 @@
 	>
 		<div
 			bind:this={el}
-			class=" mt-10 p-3 md:p-6  flex flex-wrap items-center justify-center !gap-8 xl:gap-16 blog w-full  lg:max-w-[100rem] mx-auto lg:grid grid-cols-2 xl:grid-cols-3"
+			class=" mt-10 p-3 md:p-6  flex flex-wrap justify-center !gap-8 xl:gap-16 blog w-full  lg:max-w-[100rem] mx-auto lg:grid grid-cols-2 xl:grid-cols-3"
 			style="opacity: 0; transform:translateY(100px)"
 		>
 			{#each posts as post, i}

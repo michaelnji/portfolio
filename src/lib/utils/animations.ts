@@ -1,19 +1,21 @@
+import anime from "animejs";
+
 // @ts-nocheck
 export function animateCSS(element: string, animation: string, prefix = 'animate__') {
 	return new Promise((resolve, reject) => {
 		const animationName = `${prefix}${animation}`;
 		const node: HTMLElement | null = document.querySelector(element);
 
-		node.classList.add(`${prefix}animated`, animationName);
+		node?.classList.add(`${prefix}animated`, animationName);
 
 		function handleAnimationEnd(event: Event) {
 			event.stopPropagation();
 
-			node.classList.remove(`${prefix}animated`, animationName);
+			node?.classList.remove(`${prefix}animated`, animationName);
 			resolve('Animation ended');
 		}
 
-		node.addEventListener('animationend', handleAnimationEnd, { once: true });
+		node?.addEventListener('animationend', handleAnimationEnd, { once: true });
 	});
 }
 
@@ -29,12 +31,12 @@ export async function exitElement(
 	let element3 = document.querySelector(el3);
 
 	await animateCSS(el, outro);
-	element.classList.remove('z-50');
-	element.classList.add('z-0');
-	element2.classList.remove('z-10');
-	element2.classList.add('z-50');
-	element3.classList.add('z-0');
-	element3.classList.add('z-10');
+	element?.classList.remove('z-50');
+	element?.classList.add('z-0');
+	element2?.classList.remove('z-10');
+	element2?.classList.add('z-50');
+	element3?.classList.add('z-0');
+	element3?.classList.add('z-10');
 	await animateCSS(el, intro);
 	await animateCSS(`${el2} .icon-a`, 'jello');
 }
@@ -52,4 +54,13 @@ const c2 = c1 * 1.525;
 return x < 0.5
   ? (Math.pow(2 * x, 2) * ((c2 + 1) * 2 * x - c2)) / 2
   : (Math.pow(2 * x - 2, 2) * ((c2 + 1) * (x * 2 - 2) + c2) + 2) / 2;
+}
+
+export function animateUp(selector: string, duration: number = 1500, delay = 0) {
+	anime({
+		targets: selector,
+		translateY: '0px',
+		opacity: 1,
+		duration, delay
+	});
 }

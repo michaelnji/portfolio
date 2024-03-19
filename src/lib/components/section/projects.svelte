@@ -74,9 +74,9 @@
 								BytePay
 							</h1>
 							<p class="mt-3 font-medium text-purple-50 text-xl md:text-2xl opacity-90">
-								A website to buy and create virtual credit cards in Cameroon This is the predecessor of SeaBridge.
+								A website to buy and create virtual credit cards in Cameroon This is the predecessor of Decko.
 							</p>
-							<div class="mt-4 p-6 rounded-2xl bg-purple-800 bg-opacity-50">
+							<div class="mt-4 p-6 rounded-2xl bg-purple-800 bg-opacity-20">
 								<p class="font-medium text-purple-50 text-2xl opacity-90">Built using</p>
 								<div class="flex flex-wrap gap-3 mt-3">
 									<p
@@ -110,7 +110,7 @@
 									<a
 										href="https://bytepay.vercel.app"
 										target="_blank"
-										class="btn btn-wrapper border-2 border-black btn-primary !rounded-none !bg-purple-600">Preview website</a
+										class="btn btn-wrapper border-2 border-black btn-primary !rounded-none !bg-purple-600">Preview</a
 									>
 								</div>
 							</div>
@@ -153,7 +153,7 @@
 							<p class="mt-3 font-medium text-green-50 text-xl md:text-2xl opacity-90">
 								A website to grow your whatsapp views by automatically gaining active contacts. 
 							</p>
-							<div class="mt-4 p-6 rounded-2xl bg-green-800 bg-opacity-50">
+							<div class="mt-4 p-6 rounded-2xl bg-green-800 bg-opacity-20">
 								<p class="font-medium text-green-50 text-2xl opacity-90">Built using</p>
 								<div class="flex flex-wrap gap-3 mt-3">
 									<p
@@ -187,7 +187,7 @@
 									<a
 										href="https://wabuzz.vercel.app"
 										target="_blank"
-										class="btn btn-wrapper border-2 border-black btn-primary !rounded-none !bg-green-600">Preview website</a
+										class="btn btn-wrapper border-2 border-black btn-primary !rounded-none !bg-green-600">Preview</a
 									>
 								</div>
 							</div>
@@ -228,9 +228,9 @@
 								Kawaiii
 							</h1>
 							<p class="mt-3 font-medium text-pink-50 text-xl md:text-2xl opacity-90">
-								A website that displays female manga characters. Built while I was learning Typescript for the first time.
+								A website that displays female manga characters. Built this when I started learning Typescript .
 							</p>
-							<div class="mt-4 p-6 rounded-2xl bg-pink-800 bg-opacity-50">
+							<div class="mt-4 p-6 rounded-2xl bg-pink-800 bg-opacity-20">
 								<p class="font-medium text-pink-50 text-2xl opacity-90">Built using</p>
 								<div class="flex flex-wrap gap-3 mt-3">
 									<p
@@ -260,7 +260,7 @@
 									<a
 										href="https://kawaiii.vercel.app"
 										target="_blank"
-										class="btn btn-wrapper border-2 border-black btn-primary !rounded-none !bg-pink-600 text-xs">Preview website</a
+										class="btn btn-wrapper border-2 border-black btn-primary !rounded-none !bg-pink-600 text-xs">Preview</a
 									>
 									<a
 										href="https://github.com/michaelnji/kawaiii"
@@ -308,7 +308,7 @@
 							<p class="mt-3 font-medium text-gray-50 text-xl md:text-2xl opacity-90">
 								A typescript library that generates unique reference IDs and product IDs. Used in Seabridge.
 							</p>
-							<div class="mt-4 p-6 rounded-2xl bg-gray-800 bg-opacity-50">
+							<div class="mt-4 p-6 rounded-2xl bg-gray-800 bg-opacity-20">
 								<p class="font-medium text-gray-50 text-2xl opacity-90">Built using</p>
 								<div class="flex flex-wrap gap-3 mt-3">
 									<p

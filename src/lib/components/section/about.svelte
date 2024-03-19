@@ -40,7 +40,7 @@
 				}}
 			>
 				<div 
-					class=" grid grid-cols-1 gap-4 md:gap-11 lg:grid-cols-2 mx-auto w-full items-center justify-center md:items-start mb-[6rem] lg:mb-[9rem] border-8 border-dashed border-gray-700 dark:border-gray-400 p-4 md:p-12 max-w-7xl bg-gray-200 dark:bg-gray-800 rounded-3xl about-items"
+					class=" grid grid-cols-1 gap-4 md:gap-11 lg:grid-cols-2 mx-auto w-full items-center justify-center  mb-[6rem] lg:mb-[9rem] border-8 border-dashed border-gray-700 dark:border-gray-400 p-4 md:p-12 max-w-7xl bg-gray-200 dark:bg-gray-800 rounded-3xl about-items"
 					style="opacity: 0; transform: translateY(150px)"
 				>
 					<div

@@ -1,7 +1,7 @@
 <div
-	class=" bg-primary border-2 border-opacity-20 border-primary rounded-2xl dark:text-gray-300 !bg-opacity-10 italic text-2xl dark:bg-purple-200 10 relative"
+	class=" bg-primary border-2 border-opacity-20 border-primary dark:text-gray-300 !bg-opacity-10 italic text-2xl dark:bg-purple-200 10 relative"
 >
-	<div class=" rounded-xl absolute p-3 bg-primary -top-3 left-6">
+	<div class="  absolute p-3 bg-primary -top-3 left-6">
 		<svg
 			class=" fill-white h-5 w-5"
 			version="1.1"

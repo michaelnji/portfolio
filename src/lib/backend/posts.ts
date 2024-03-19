@@ -1,5 +1,5 @@
 import type { Heading, Post, PostResponse, PostsSummarizedResponse } from '../types';
-import { findHeadings } from '../utils';
+import { compareTags, findHeadings } from '../utils';
 import { queries } from '../utils/queryManager';
 import { sanityClient } from './sanity';
 
@@ -28,14 +28,19 @@ export async function getPostsSummarized(): Promise<PostsSummarizedResponse> {
 	}
 }
 export async function getRelatedPosts(slug: string | undefined): Promise<PostsSummarizedResponse> {
-	const query = `*[_type == "post" && slug.current != "${slug}"] | order(publishedAt desc, _updatedAt desc) | order( _updatedAt desc)[0..1]{_id, "authorInfo":author-> {slug,name,bio,twitter,"imageUrl":image.asset->url}, "tags":categories[]->{title,description},excerpt, publishedAt, slug, title, _updatedAt,"imageUrl": mainImage.asset->url}`;
+	const query = `*[_type == "post" && slug.current != "${slug}"] | order(publishedAt desc, _updatedAt desc) | order( _updatedAt desc)[0..10]{_id, "authorInfo":author-> {slug,name,bio,twitter,"imageUrl":image.asset->url}, "tags":categories[]->{title,description},excerpt, publishedAt, slug, title, _updatedAt,"imageUrl": mainImage.asset->url}`;
 	try {
 		const data = await sanityClient.fetch(query);
-		if (data) {
+		const post = await getPost(slug)
+		if (data && post) {
+			let filteredPosts: any[] = []
+			data.forEach((element: { tags: any; }, i: number) => {
+				if (compareTags(post.post?.tags, element.tags)) filteredPosts.push(data[i])
+			});
 			return {
 				status: 200,
 				message: 'success',
-				posts: data
+				posts: filteredPosts
 			};
 		}
 		return {

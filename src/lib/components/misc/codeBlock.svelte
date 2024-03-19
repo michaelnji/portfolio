@@ -25,7 +25,7 @@
 	}
 </script>
 
-<div class="card-wrapper rounded-3xl transition duration-300 ease-in-out !font-mono relative bg-gray-500">
+<div class="card-wrapper  transition duration-300 ease-in-out !font-mono relative bg-gray-500">
 	{#if language == 'css'}
 		<Highlight language={css} {code} />
 	{:else if language == 'jsx'}
@@ -53,11 +53,3 @@
 	</button>
 </div>
 
-<style>
-	.card-wrapper {
-		box-shadow: 4px 4px black;
-	}
-	.card-wrapper:hover {
-		box-shadow: -4px -4px black;
-	}
-</style>

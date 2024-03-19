@@ -1,4 +1,4 @@
-import type { ClipboardCopyResult } from '../types';
+import type { ClipboardCopyResult, Tag } from '../types';
 // @ts-ignore
 import speakingurl from 'speakingurl';
 function filter(ast: any[], match: { (node: any): boolean; (arg0: any): any }): any {
@@ -76,4 +76,27 @@ export function copyToClipboard(text: string): Promise<ClipboardCopyResult> {
 			);
 		}
 	});
+}
+
+export function compareTags(arr1: { title: string; description: string; }[] | undefined, arr2: { title: string; description: string; }[] | undefined): boolean {
+    let countMatches = 0;
+
+   if(arr1 && arr2){
+	 for (let obj1 of arr1) {
+        for (let obj2 of arr2) {
+            if (obj1.title === obj2.title && obj1.description === obj2.description) {
+                countMatches++;
+            }
+        }
+    }
+
+    // Handle cases where the length of one or both arrays is less than 4
+    if (countMatches >= 1 && (arr1.length < 4 || arr2.length < 4)) {
+        return true;
+    }
+
+    // At least 3 elements from each array must match
+    return countMatches >= 3;
+   }
+   return false
 }

@@ -10,7 +10,7 @@ import About from '$lib/components/section/about.svelte';
 	
 </script>
 
-<Hero />
+<div class="overflow-x-hidden"><Hero />
 
 <About />
 
@@ -30,4 +30,4 @@ import About from '$lib/components/section/about.svelte';
 	{/if}
 	<InfoBanner/>
 </div>
-<Footer />
+<Footer /></div>

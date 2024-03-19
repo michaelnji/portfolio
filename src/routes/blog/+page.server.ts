@@ -4,7 +4,9 @@ import { getTags } from '../../lib/backend/tags';
 import type { Load } from '@sveltejs/kit';
 
 /** @type {import('@sveltejs/kit').Load} */
-export const load: Load = async () => {
+export const load: Load = async ({ url }) => {
+	const tag = url.search.split('?tag=')[1]
+	console.log(tag)
 	const pageMetaTags = Object.freeze({
 		title: 'Mykenji | Articles',
 		description: 'I write articles from time to time',
@@ -20,7 +22,8 @@ export const load: Load = async () => {
 		return {
 			pageMetaTags,
 			posts: res.posts,
-			tags: tagRes.tags
+			tags: tagRes.tags,
+			activeTag: tag ?? 'all'
 		};
 	}
 
