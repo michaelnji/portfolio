@@ -3,155 +3,116 @@
 	import { setItemValue } from '$lib/scripts/dbManager';
 	import theme from '$lib/stores/theme';
 	import anime from 'animejs';
-	import { onMount } from 'svelte';
-	import Sun from 'svelte-heros-v2/Sun.svelte';
-	import Moon from 'svelte-heros-v2/Moon.svelte';
-	import XMark from 'svelte-heros-v2/XMark.svelte';
 	import Bars3Solid from 'svelte-heros-v2/Bars3.svelte';
-	import { fade, fly, scale } from 'svelte/transition';
-	let closeModal: boolean = false;
+	import Moon from 'svelte-heros-v2/Moon.svelte';
+	import Sun from 'svelte-heros-v2/Sun.svelte';
+	import XMark from 'svelte-heros-v2/XMark.svelte';
+	import { scale } from 'svelte/transition';
+	let closeModal = false;
+
 	function toggleTheme(): void {
 		if ($theme === 'dark') {
 			$theme = setItemValue('theme', 'light');
-			closeModal = !closeModal;
+			setTimeout(() => {
+				toggleModal();
+			}, 200);
 			return;
 		}
 		$theme = setItemValue('theme', 'dark');
-		closeModal = !closeModal;
+		setTimeout(() => {
+			toggleModal();
+		}, 200);
 	}
 	$: currentSection = $page.url.pathname;
-	onMount(()=>{
-		anime({
-			targets:'.navbar-wrapper',
-			scale:1
-		})
-	})
+	
+	function toggleModal() {
+		closeModal = !closeModal;
+		if (!closeModal) {
+			anime({
+				targets: '.nv',
+				translateX: '200%',
+
+				easing: 'easeInSine',
+				duration: 700
+			});
+		} else {
+			anime({
+				targets: '.nv',
+				translateX: 0,
+				easing: 'easeOutSine',
+				duration: 700
+			});
+		}
+	}
 </script>
 
-<div class="navbar-wrapper !z-50" style="transform: scale(0);">
-	{#if closeModal}
-		<div
-			class="navbar-container rounded-3xl card-wrapper dark:!bg-base-200 dark:!text-gray-50"
-			in:fly={{ y: 200 }}
-			out:fade={{ duration: 100 }}
-			on:blur={() => {
-				closeModal = !closeModal;
-			}}
-		>
-			<div class="nav-start justify-between flex items-center w-full">
-				<div>
-					<a
-						href="/"
-						class="logo !duration-300"
-						on:click={() => {
-							closeModal = !closeModal;
-						}}><span class="font-extrabold text-primary">マイケル</span> Nji</a
-					>
-				</div>
-				<button
-					class="btn btn-ghost dark:!text-gray-50 shadow-lg overflow-hidden !rounded-2xl dark:hover:!bg-gray-50 dark:hover:!bg-opacity-5"
-					on:click={toggleTheme}
-				>
-					{#key $theme}
-						{#if $theme == 'light'}
-							<div in:scale={{ duration: 400 }}>
-								<Moon
-									class="focus:!outline-none"
-									width="24"
-									height="24"
-									tabindex="-1"
-								/>
-							</div>
-						{:else}
-							<div in:scale={{ duration: 400 }}>
-								<Sun
-									class="focus:!outline-none"
-									width="24"
-									height="24"
-									tabindex="-1"
-								/>
-							</div>
-						{/if}
-					{/key}
-				</button>
-			</div>
-			<div class="divider dark:!border-gray-700" />
-			<nav class="nav-center">
-				<ul>
-					<li>
-						<a
-							href="/#about"
-							class:dark:text-purple-50={currentSection === '/#about'}
-							class="nav-item"
-							class:!bg-primary={currentSection === '/#about'}
-							class:!bg-opacity-30={currentSection === '/#about'}
-							class:!text-primary={currentSection === '/#about'}
-							on:click={() => {
-								closeModal = !closeModal;
-							}}
-						>
-							ABOUT
-						</a>
-					</li>
-					<li>
-						<a
-							class:dark:text-purple-50={currentSection === '/#projects'}
-							class:bg-primary={currentSection === '/#projects'}
-							class:bg-opacity-30={currentSection === '/#projects'}
-							class:text-primary={currentSection === '/#projects'}
-							href="/#projects"
-							class="nav-item"
-							on:click={() => {
-								closeModal = !closeModal;
-							}}
-						>
-							PROJECTS
-						</a>
-					</li>
-					<li>
-						<a
-							class:bg-primary={currentSection === '/blog'}
-							class:bg-opacity-30={currentSection === '/blog'}
-							class:text-primary={currentSection === '/blog'}
-							class:dark:text-purple-50={currentSection === '/blog'}
-							class:rounded-2xl={currentSection === '/blog'}
-							href="/blog"
-							class="nav-item"
-							on:click={() => {
-								closeModal = !closeModal;
-							}}
-						>
-							BLOG
-						</a>
-					</li>
-					<li>
-						<a href="https://github.com/michaelnji" class="nav-item"> GITHUB </a>
-					</li>
-				</ul>
-			</nav>
-			<div class="divider dark:!border-gray-700" />
-			<div class="nav-end">
-				<p class="text-xs px-3 opacity-70">Designed and developed in CMR with 💻 & 🎧</p>
-			</div>
-		</div>
-	{/if}
-	<button
-		class="btn !z-20 md:btn-lg btn-primary overflow-hidden !rounded-2xl border border-gray-900 card-wrapper active:scale-90 transition"
-		on:click={() => {
-			closeModal = !closeModal;
-		}}
-	>
-		{#key closeModal}
-			{#if !closeModal}
+<div
+	class="min-w-screen min-h-screen !z-50 fixed top-0 bottom-0 left-0 right-0 bg-black translate-x-[200%] nv flex flex-col items-stretch"
+>
+	
+	{#key currentSection}
+		<nav class="mt-12 mb-auto w-full flex flex-col justify-center items-center gap-3 ">
+			<a on:click={toggleModal}
+				href="/"
+				class="hover:text-primary text-gray-50 group transition duration-300 relative overflow-hidden"
+				class:text-primary={currentSection === '/'}
+				class:italic={currentSection === '/'}
+			>
+				<p class="font-medium text-4xl">Home</p>
+				<p
+					class="h-1 w-2/3 bg-primary transition-transform duration-500 -translate-x-24 group-hover:translate-x-0"
+					class:translate-x-0={currentSection === '/'}
+					class:hover:!translate-x-14={currentSection === '/'}
+				/>
+			</a>
+			<a on:click={toggleModal}
+				href="/blog"
+				class="hover:text-primary text-gray-50 group transition duration-300 relative overflow-hidden"
+				class:text-primary={currentSection === '/blog'}
+				class:italic={currentSection === '/blog'}
+			>
+				<p class="font-medium text-4xl">Blog</p>
+				<p
+					class="h-1 w-2/3 bg-primary transition-transform duration-500 -translate-x-24 group-hover:translate-x-0"
+					class:translate-x-0={currentSection === '/blog'}
+					class:hover:!translate-x-14={currentSection === '/blog'}
+				/>
+			</a>
+			<a on:click={toggleModal}
+				href="https://www.github.com/michaelnji"
+				target="_blank"
+				class="hover:text-primary text-gray-50 group transition duration-300 relative overflow-hidden"
+			>
+				<p class="font-medium text-4xl">Github</p>
+				<p
+					class="h-1 w-2/3 bg-primary transition-transform duration-500 -translate-x-24 group-hover:translate-x-0"
+				/>
+			</a>
+			<a on:click={toggleModal}
+				href="https://www.x.com/CodeD3vil"
+				target="_blank"
+				class="hover:text-primary text-gray-50 group transition duration-300 relative overflow-hidden"
+			>
+				<p class="font-medium text-4xl">Twitter</p>
+				<p
+					class="h-1 w-2/3 bg-primary transition-transform duration-500 -translate-x-24 group-hover:translate-x-0"
+				/>
+			</a>
+		</nav>
+	{/key}
+	<div class="p-6 w-full flex items-center justify-between !mt-auto">
+		<h3 class="logo text-2xl md:text-3xl font-head font-medium text-gray-100">Michael Nji</h3>
+		<button on:click={toggleTheme} class="group ">
+			{#if $theme === 'light'}
 				<div in:scale={{ duration: 400 }}>
-					<Bars3Solid
-						class="focus:!outline-none hidden md:block"
+					<Moon
+						class="focus:!outline-none hidden md:block text-gray-50 group-hover:text-primary"
 						width="48"
 						height="48"
 						tabindex="-1"
 					/>
-					<Bars3Solid
-						class="focus:!outline-none md:hidden"
+					<Moon
+						class="focus:!outline-none md:hidden  text-gray-50 group-hover:text-primary"
 						width="36"
 						height="36"
 						tabindex="-1"
@@ -159,60 +120,52 @@
 				</div>
 			{:else}
 				<div in:scale={{ duration: 400 }}>
-					<XMark
-						class="focus:!outline-none hidden md:block"
+					<Sun
+						class="focus:!outline-none hidden md:block  text-yellow-500 group-hover:text-gray-50"
 						width="48"
 						height="48"
 						tabindex="-1"
 					/>
-					<XMark
-						class="focus:!outline-none md:hidden"
+					<Sun
+						class="focus:!outline-none md:hidden  text-gray-50 group-hover:text-primary"
 						width="36"
 						height="36"
 						tabindex="-1"
 					/>
 				</div>
 			{/if}
-		{/key}
+		</button>
+	</div>
+</div>
+
+<div class="navbar-wrapper !z-50">
+	<button
+		class="btn !z-20 md:btn-lg btn-primary overflow-hidden !rounded-2xl border border-gray-900 card-wrapper active:scale-90 transition"
+		on:click={() => {
+			toggleModal();
+		}}
+	>
+		{#if !closeModal}
+			<div in:scale={{ duration: 400 }}>
+				<Bars3Solid
+					class="focus:!outline-none hidden md:block"
+					width="48"
+					height="48"
+					tabindex="-1"
+				/>
+				<Bars3Solid class="focus:!outline-none md:hidden" width="36" height="36" tabindex="-1" />
+			</div>
+		{:else}
+			<div in:scale={{ duration: 400 }}>
+				<XMark class="focus:!outline-none hidden md:block" width="48" height="48" tabindex="-1" />
+				<XMark class="focus:!outline-none md:hidden" width="36" height="36" tabindex="-1" />
+			</div>
+		{/if}
 	</button>
 </div>
 
 <style lang="postcss">
 	.navbar-wrapper {
-		@apply fixed bottom-4 flex flex-col   items-end gap-y-4  right-4;
-	}
-	.navbar-container {
-		@apply bg-white border-2 border-gray-900  py-6 px-3  w-full flex flex-col items-start gap-y-2 transition ease-in-out duration-300;
-	}
-	.logo {
-		@apply font-head text-xl;
-	}
-	.nav-center ul {
-		@apply flex flex-col gap-1 w-full;
-	}
-	.nav-center ul li a {
-		@apply flex items-center gap-x-3 p-3 w-full;
-	}
-	.nav-center ul li {
-		@apply rounded-2xl p-1 cursor-pointer;
-	}
-
-	.nav-center ul li:hover {
-		@apply bg-base-300 text-base-300 bg-opacity-10;
-	}
-	.dark .nav-center ul li:hover {
-		@apply bg-gray-50 text-gray-50 bg-opacity-10;
-	}
-	.nav-center {
-		@apply mt-4 w-full;
-	}
-	.nav-end {
-		@apply mt-4 w-full;
-	}
-	.card-wrapper {
-		box-shadow: 4px 4px black;
-	}
-	.card-wrapper:hover {
-		box-shadow: -4px -4px black;
+		@apply fixed top-4 flex flex-col   items-end gap-y-4  right-4;
 	}
 </style>
