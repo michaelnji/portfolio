@@ -49,9 +49,44 @@
 <div
 	class="min-w-screen min-h-screen !z-50 fixed top-0 bottom-0 left-0 right-0 bg-black translate-x-[200%] nv flex flex-col items-stretch"
 >
-	
+	<div class="p-6 w-full flex items-center justify-between ">
+		<h3 class="logo text-2xl md:text-3xl font-head font-medium text-gray-100">Michael Nji</h3>
+		<button on:click={toggleTheme} class="group ">
+			{#if $theme === 'light'}
+				<div in:scale={{ duration: 400 }}>
+					<Moon
+						class="focus:!outline-none hidden md:block text-gray-50 group-hover:text-primary"
+						width="48"
+						height="48"
+						tabindex="-1"
+					/>
+					<Moon
+						class="focus:!outline-none md:hidden  text-gray-50 group-hover:text-primary"
+						width="36"
+						height="36"
+						tabindex="-1"
+					/>
+				</div>
+			{:else}
+				<div in:scale={{ duration: 400 }}>
+					<Sun
+						class="focus:!outline-none hidden md:block  text-yellow-500 group-hover:text-gray-50"
+						width="48"
+						height="48"
+						tabindex="-1"
+					/>
+					<Sun
+						class="focus:!outline-none md:hidden  text-gray-50 group-hover:text-primary"
+						width="36"
+						height="36"
+						tabindex="-1"
+					/>
+				</div>
+			{/if}
+		</button>
+	</div>
 	{#key currentSection}
-		<nav class="mt-12 mb-auto w-full flex flex-col justify-center items-center gap-3 ">
+		<nav class=" mt-12 w-full flex flex-col justify-center items-center gap-3 ">
 			<a on:click={toggleModal}
 				href="/"
 				class="hover:text-primary text-gray-50 group transition duration-300 relative overflow-hidden"
@@ -100,42 +135,7 @@
 			</a>
 		</nav>
 	{/key}
-	<div class="p-6 w-full flex items-center justify-between !mt-auto">
-		<h3 class="logo text-2xl md:text-3xl font-head font-medium text-gray-100">Michael Nji</h3>
-		<button on:click={toggleTheme} class="group ">
-			{#if $theme === 'light'}
-				<div in:scale={{ duration: 400 }}>
-					<Moon
-						class="focus:!outline-none hidden md:block text-gray-50 group-hover:text-primary"
-						width="48"
-						height="48"
-						tabindex="-1"
-					/>
-					<Moon
-						class="focus:!outline-none md:hidden  text-gray-50 group-hover:text-primary"
-						width="36"
-						height="36"
-						tabindex="-1"
-					/>
-				</div>
-			{:else}
-				<div in:scale={{ duration: 400 }}>
-					<Sun
-						class="focus:!outline-none hidden md:block  text-yellow-500 group-hover:text-gray-50"
-						width="48"
-						height="48"
-						tabindex="-1"
-					/>
-					<Sun
-						class="focus:!outline-none md:hidden  text-gray-50 group-hover:text-primary"
-						width="36"
-						height="36"
-						tabindex="-1"
-					/>
-				</div>
-			{/if}
-		</button>
-	</div>
+	
 </div>
 
 <div class="navbar-wrapper !z-50">
@@ -166,6 +166,6 @@
 
 <style lang="postcss">
 	.navbar-wrapper {
-		@apply fixed top-4 flex flex-col   items-end gap-y-4  right-4;
+		@apply fixed bottom-4 flex flex-col   items-end gap-y-4  right-4;
 	}
 </style>
