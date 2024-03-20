@@ -1,7 +1,5 @@
 <script lang="ts">
 	import { page } from '$app/stores';
-	import extend from 'just-extend';
-	import { MetaTags } from 'svelte-meta-tags';
 	import { urlFor } from '$lib/backend/sanity.js';
 	import BlogAuthorInfo from '$lib/components/misc/blogAuthorInfo.svelte';
 	import BlogImg from '$lib/components/misc/blogImg.svelte';
@@ -19,9 +17,11 @@
 	import { easeInOutBack } from '$lib/utils/animations.js';
 	import { getReadableDate } from '$lib/utils/timeFunctions.js';
 	import { PortableText } from '@portabletext/svelte';
+	import extend from 'just-extend';
 	import { onMount } from 'svelte';
 	import Calendar from 'svelte-heros-v2/CalendarDays.svelte';
 	import 'svelte-highlight/styles/material-palenight.css';
+	import { MetaTags } from 'svelte-meta-tags';
 	import { fly } from "svelte/transition";
 
 	let ready = false;
@@ -35,7 +35,7 @@ $: metaTags = extend(true, {}, data.pageMetaTags, $page.data.pageMetaTags);
 <MetaTags {...metaTags} />
 	{#if ready && data.post}
 	<main class="w-full pt-12 mb-24 md:mb-48 px-4 md:px-6 lg:px-12 flex justify-center xl:gap-x-36">
-		<section in:fly={{y:100, easing: easeInOutBack, duration: 1000}} class=" w-full max-w-3xl mx-auto xl:mx-0 blogsection" >
+		<section in:fly={{y:100, easing: easeInOutBack, duration: 1000}} class=" w-full max-w-3xl  mx-auto xl:mx-0 blogsection" >
 			<div class="w-full">
 				<img 
 					src={urlFor(data?.post.imageUrl).format('webp').size(1400, 700).url()}
@@ -73,7 +73,7 @@ $: metaTags = extend(true, {}, data.pageMetaTags, $page.data.pageMetaTags);
 
 			<div class="divider" />
 			<section
-				class="!min-w-full prose-p:!min-w-full mt-10 prose prose-xl md:prose-2xl dark:prose-invert prose-headings:font-bold prose-pre:!p-0 prose-pre:whitespace-pre-wrap prose-pre:!bg-inherit prose-pre:!text-md prose-purple border-b-2 dark:bolder-gray-700 pb-10"
+				class="!min-w-full prose-p:!min-w-full mt-10 prose prose-xl md:prose-2xl dark:prose-invert prose-headings:font-bold prose-pre:!p-0 prose-pre:whitespace-pre-wrap prose-pre:!bg-inherit prose-pre:!text-md prose-purple border-b-2 dark:border-gray-700 pb-10"
 			>
 				<PortableText
 					value={[...data.post.body]}

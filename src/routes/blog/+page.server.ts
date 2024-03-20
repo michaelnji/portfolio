@@ -12,7 +12,16 @@ export const load: Load = async ({ url }) => {
 		description: 'I write articles from time to time',
 		openGraph: {
 			title: 'Mykenji | Articles',
-			description: 'I write articles from time to time'
+			description: 'I write articles from time to time',
+			images: [
+				{
+					url: `${new URL(url.pathname, url.origin).href}/images/myke.webp`,
+					alt: 'A picture of Michael Nji',
+					width: 800,
+					height: 600,
+					type: 'image/webp'
+				}
+			]
 		}
 	}) satisfies MetaTagsProps;
 	

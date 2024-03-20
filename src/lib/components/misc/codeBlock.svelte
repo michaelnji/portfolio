@@ -25,7 +25,7 @@
 	}
 </script>
 
-<div class="card-wrapper  transition duration-300 ease-in-out !font-mono relative bg-gray-500">
+<div class="card-wrapper  transition duration-300 ease-in-out !font-mono relative bg-gray-800">
 	{#if language == 'css'}
 		<Highlight language={css} {code} />
 	{:else if language == 'jsx'}
