@@ -9,12 +9,12 @@
 			<img
 				src={author.imageUrl}
 				alt={author.name}
-				class="w-14 h-14 rounded-full border-2 border-gray-700"
+				class="w-14 h-14 rounded-full border-2 border-gray-500"
 			/>
 			<div>
-				<p class="font-bold font-head flex gap-x-2 text-xl">{author.name}</p>
+				<p class="font-bold  flex gap-x-2 text-xl">{author.name}</p>
 				<a href={author.twitter} target="_blank"
-					><p class="font-medium text-md flex gap-2 opacity-70 group">
+					><p class="font-medium font-head text-md flex gap-2 opacity-70 group">
 						<Twitter
 							width="20"
 							height="20"

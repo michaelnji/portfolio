@@ -1,4 +1,7 @@
 <script lang="ts">
+	import { page } from '$app/stores';
+	import extend from 'just-extend';
+	import { MetaTags } from 'svelte-meta-tags';
 	import { urlFor } from '$lib/backend/sanity.js';
 	import BlogAuthorInfo from '$lib/components/misc/blogAuthorInfo.svelte';
 	import BlogImg from '$lib/components/misc/blogImg.svelte';
@@ -23,21 +26,21 @@
 
 	let ready = false;
 	export let data;
-
+$: metaTags = extend(true, {}, data.pageMetaTags, $page.data.pageMetaTags);
 	onMount(() => {
 			ready = true;
 	});
 </script>
 
-
+<MetaTags {...metaTags} />
 	{#if ready && data.post}
 	<main class="w-full pt-12 mb-24 md:mb-48 px-4 md:px-6 lg:px-12 flex justify-center xl:gap-x-36">
 		<section in:fly={{y:100, easing: easeInOutBack, duration: 1000}} class=" w-full max-w-3xl mx-auto xl:mx-0 blogsection" >
 			<div class="w-full">
 				<img 
-					src={urlFor(data?.post.imageUrl).format('webp').size(2000, 1200).url()}
-					width="2000"
-					height="1200"
+					src={urlFor(data?.post.imageUrl).format('webp').size(1400, 700).url()}
+					width="1400"
+					height="700"
 					alt=""
 					
 					class=" mb-3 border-2 border-gray-900 custom-img w-full"
@@ -48,7 +51,7 @@
 				<p class="font-medium my-6 font-sans opacity-80 flex gap-x-2 items-center">
 					<Calendar />
 					<span class="text-gray-700 dark:text-gray-200 font-medium text-xl"
-						>{data.post._updatedAt
+						>{data.post._updatedAt && getReadableDate(data.post._updatedAt) !== getReadableDate(data.post.publishedAt)
 							? `Last updated ${getReadableDate(data.post._updatedAt)}`
 							: `Published ${getReadableDate(data.post.publishedAt)}`}</span
 					>

@@ -1,3 +1,3 @@
-<span class="p-0.5 rounded bg-gray-200 dark:bg-gray-700 font-mono font-bold text-sm">
+<span class="p-0.5 rounded bg-gray-100 border border-gray-300 dark:bg-gray-700 font-mono text-base">
 	<slot />
 </span>
