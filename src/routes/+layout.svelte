@@ -13,6 +13,9 @@
 	import { onMount } from 'svelte';
 	import Navbar from './../lib/components/navigation/navbar.svelte';
 	import './styles.postcss';
+	import '@fontsource/short-stack';
+	// import '@fontsource/gochi-hand';
+	import '@fontsource/ubuntu-mono';
 	export let data;
 	let isLoading = false;
 	$: metaTags = extend(true, {}, data.baseMetaTags, $page.data.pageMetaTags);

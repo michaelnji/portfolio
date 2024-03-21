@@ -9,7 +9,6 @@ export const load: Load = async ({ params, url }) => {
 	const res = await getPost(params.slug);
 	const relatedPostsRes = await getRelatedPosts(params.slug);
 	const tags = await getTags()
-	console.log(`${new URL(url.origin).href}`)
 	const pageMetaTags = Object.freeze({
 		title: res.post?.title,
 		description: res.post?.excerpt,
@@ -21,12 +20,6 @@ export const load: Load = async ({ params, url }) => {
 			article: {
 				publishedTime: new Date(res.post?.publishedAt ?? Date.now()).toISOString(),
 				modifiedTime: new Date(res.post?.publishedAt ?? Date.now()).toISOString(),
-				// expirationTime: '2022-12-21T22:04:11Z',
-				// section: 'Section II',
-				// authors: [
-				// 	`${new URL(url.origin).href}`
-				// ],
-				// tags: ['Tag A', 'Tag B', 'Tag C']
 			},
 			images: [
 				{

@@ -8,7 +8,7 @@
 	<div class=" absolute  p-3 bg-green-400 text-white -top-3 left-6">
 		<Star width="24" height="24" />
 	</div>
-	<div class=" text-lg tracking-tight leading-normal !font-normal pt-10 p-3 font-mono">
+	<div class=" tracking-tight leading-normal !font-normal pt-10 p-3  transform scale-95  text-green-800 dark:text-green-100">
 		<slot />
 	</div>
 </div>

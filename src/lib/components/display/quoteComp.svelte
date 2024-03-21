@@ -2,7 +2,6 @@
     import anime from 'animejs';
 	import IntersectionObserver from 'svelte-intersection-observer';
     export let info: {quote:string,author:string} 
-    // import Bulb from 'svelte-heros-v2/LightBulb.svelte' 
     import Sparkles from 'svelte-heros-v2/Sparkles.svelte'
     let el: HTMLParagraphElement 
 </script>
@@ -25,7 +24,7 @@
     <div class="mb-9">
 <Sparkles size='50'/>
     </div>
-    <p bind:this={el} class=" text-xl md:text-3xl prose dark:prose-invert">
+    <p bind:this={el} class=" text-xl md:text-2xl font-slant  prose dark:prose-invert">
         {info.quote}
     </p>
     <div class="ml-auto mt-12 max-w-max text-2xl md:text-4xl font-head font-semibold">~ {info.author}</div>

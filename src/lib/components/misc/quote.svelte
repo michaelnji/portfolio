@@ -1,5 +1,5 @@
 <div
-	class=" bg-primary border-2 border-opacity-20 border-primary dark:text-gray-300 !bg-opacity-10 italic text-2xl dark:bg-purple-200 10 relative"
+	class=" bg-primary border-2 border-opacity-20 border-primary dark:text-gray-300 !bg-opacity-10  dark:bg-purple-200 10 relative"
 >
 	<div class="  absolute p-3 bg-primary -top-3 left-6">
 		<svg
@@ -27,7 +27,7 @@
 		>
 	</div>
 
-	<div class="p-6 pt-12 !opacity-80 font-mono text-lg tracking-tight leading-normal">
+	<div class="p-6 pt-12 !opacity-80 font-slant   text-purple-800 dark:text-purple-100 text-2xl tracking-tight leading-normal">
 		<slot />
 	</div>
 </div>

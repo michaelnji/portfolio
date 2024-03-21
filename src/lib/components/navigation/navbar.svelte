@@ -140,7 +140,7 @@
 
 <div class="navbar-wrapper !z-50">
 	<button
-		class="btn !z-20 md:btn-lg btn-primary overflow-hidden !rounded-2xl border border-gray-900 card-wrapper active:scale-90 transition"
+		class="btn !z-20 md:btn-lg btn-primary overflow-hidden !rounded-none border border-gray-900 card-wrapper active:scale-90 transition"
 		on:click={() => {
 			toggleModal();
 		}}

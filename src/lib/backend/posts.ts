@@ -28,7 +28,7 @@ export async function getPostsSummarized(): Promise<PostsSummarizedResponse> {
 	}
 }
 export async function getRelatedPosts(slug: string | undefined): Promise<PostsSummarizedResponse> {
-	const query = `*[_type == "post" && slug.current != "${slug}"] | order(publishedAt desc, _updatedAt desc) | order( _updatedAt desc)[0..10]{_id, "authorInfo":author-> {slug,name,bio,twitter,"imageUrl":image.asset->url}, "tags":categories[]->{title,description},excerpt, publishedAt, slug, title, _updatedAt,"imageUrl": mainImage.asset->url}`;
+	const query = `*[_type == "post" && slug.current != "${slug}"] | order(publishedAt desc) [0..10]{_id, "authorInfo":author-> {slug,name,bio,twitter,"imageUrl":image.asset->url}, "tags":categories[]->{title,description},excerpt, publishedAt, slug, title, _updatedAt,"imageUrl": mainImage.asset->url}`;
 	try {
 		const data = await sanityClient.fetch(query);
 		const post = await getPost(slug)

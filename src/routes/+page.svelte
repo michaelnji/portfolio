@@ -6,9 +6,13 @@ import About from '$lib/components/section/about.svelte';
 	import Footer from '$lib/components/section/footer.svelte';
 	import Hero from '$lib/components/section/hero.svelte';
 	import Projects from '$lib/components/section/projects.svelte';
+	import { page } from '$app/stores';
+	import extend from 'just-extend';
+	import { MetaTags } from 'svelte-meta-tags';
 	export let data;
-	
+	$: metaTags = extend(true, {}, data.pageMetaTags, $page.data.pageMetaTags);
 </script>
+<MetaTags {...metaTags} />
 
 <div class="overflow-x-hidden"><Hero />
 

@@ -8,7 +8,7 @@
 	<div class="  absolute p-3 bg-orange-500 text-white -top-3 left-6">
 		<Exclamation width="26" height="26" />
 	</div>
-	<div class="  !font-normal text-xl pt-10 p-3">
+	<div class="  !font-normal transform scale-90 text-orange-800 dark:text-orange-100 pt-10 p-3">
 		<slot />
 	</div>
 </div>

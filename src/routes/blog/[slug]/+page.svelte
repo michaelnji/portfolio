@@ -1,5 +1,4 @@
 <script lang="ts">
-	import { page } from '$app/stores';
 	import { urlFor } from '$lib/backend/sanity.js';
 	import BlogAuthorInfo from '$lib/components/misc/blogAuthorInfo.svelte';
 	import BlogImg from '$lib/components/misc/blogImg.svelte';
@@ -17,11 +16,12 @@
 	import { easeInOutBack } from '$lib/utils/animations.js';
 	import { getReadableDate } from '$lib/utils/timeFunctions.js';
 	import { PortableText } from '@portabletext/svelte';
+	import { page } from '$app/stores';
 	import extend from 'just-extend';
+	import { MetaTags } from 'svelte-meta-tags';
 	import { onMount } from 'svelte';
 	import Calendar from 'svelte-heros-v2/CalendarDays.svelte';
 	import 'svelte-highlight/styles/material-palenight.css';
-	import { MetaTags } from 'svelte-meta-tags';
 	import { fly } from "svelte/transition";
 
 	let ready = false;
@@ -73,7 +73,7 @@ $: metaTags = extend(true, {}, data.pageMetaTags, $page.data.pageMetaTags);
 
 			<div class="divider" />
 			<section
-				class="!min-w-full prose-p:!min-w-full mt-10 prose prose-xl md:prose-2xl dark:prose-invert prose-headings:font-bold prose-pre:!p-0 prose-pre:whitespace-pre-wrap prose-pre:!bg-inherit prose-pre:!text-md prose-purple border-b-2 dark:border-gray-700 pb-10"
+				class="!min-w-full prose-p:!min-w-full mt-10 prose prose-xl md:prose-2xl dark:prose-invert prose-headings:font-bold prose-pre:!p-0 prose-pre:whitespace-pre-wrap prose-pre:!bg-inherit prose-pre:!text-2xl prose-purple border-b-2 dark:border-gray-700 pb-10"
 			>
 				<PortableText
 					value={[...data.post.body]}
@@ -111,7 +111,7 @@ $: metaTags = extend(true, {}, data.pageMetaTags, $page.data.pageMetaTags);
 			<div class=" w-full as">
 				<Toc outline={data.toc} />
 				<div class="mt-16 px-6 md:px-0">
-					<Tags tags={data.post.tags} />
+					<Tags tags={data.tags.tags} />
 				</div>
 				<div class="mt-16 px-6 md:px-0">
 					<RelatedPosts posts={data.relatedPosts} />
@@ -121,10 +121,12 @@ $: metaTags = extend(true, {}, data.pageMetaTags, $page.data.pageMetaTags);
 	</main>
 	<div class="my-24 px-6 md:px-0 max-w-xl xl:hidden mx-auto">
 		<RelatedPosts posts={data.relatedPosts} />
+		<div class="mt-16">
+					<Tags tags={data.tags.tags} />
+				</div>
 	</div>
 	<Footer />
 {/if}
-}
 
 <style>
 	.custom-img {

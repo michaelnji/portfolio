@@ -8,7 +8,9 @@ export default {
 				sans: ['Satoshi', 'sans-serif'],
 				head: ['Clash Display', 'sans-serif'],
 				retro: ['Array', 'Space Mono'],
-				mono: ['Azeret Mono']
+				mono: ['Ubuntu Mono'],
+				slant: ['Short Stack', 'sans-serif'],
+				quote: ['Gochi Hand', 'sans-serif']
 			},
 			colors: {
 				'base-100': '#1f2937',

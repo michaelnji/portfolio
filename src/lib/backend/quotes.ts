@@ -4,7 +4,7 @@ export async function getQuote(){
       const resp = await fetch(url)
      if(resp.ok){
 		 const data = await resp.json()
-    console.log(data)
+    
          return {
 				 data,
 				status: 200,

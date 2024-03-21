@@ -7,6 +7,7 @@
 	import { fly } from 'svelte/transition';
 </script>
 
+{#if outline && outline.length >= 2 }
 <div
 	class="p-6 border-2  transition duration-300 w-full border-gray-900 max-h-[20rem] overflow-y-auto  dark:bg-gray-900"
 	
@@ -30,3 +31,5 @@
 		{/key}
 	</ul>
 </div>
+	
+{/if}
