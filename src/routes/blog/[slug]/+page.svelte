@@ -115,13 +115,13 @@ $: metaTags = extend(true, {}, data.pageMetaTags, $page.data.pageMetaTags);
 			<div class=" w-full as">
 				<Toc outline={data.toc} />
 				
-				<div class="mt-16 px-6 md:px-0">
+				<div class="mt-10 px-6 md:px-0">
 					<Tags tags={data.tags.tags} />
 				</div>
-				<div class="mt-16 px-6 md:px-0">
+				<div class="mt-10 px-6 md:px-0">
 					<RelatedPosts posts={data.relatedPosts} />
 				</div>
-				<div class="mt-16 px-6 md:px-0">
+				<div class="mt-10 px-6 md:px-0">
 					<MetaData  />
 				</div>
 			</div>
