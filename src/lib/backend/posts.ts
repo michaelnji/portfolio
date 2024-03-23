@@ -6,6 +6,7 @@ import { sanityClient } from './sanity';
 export async function getPostsSummarized(): Promise<PostsSummarizedResponse> {
 	const query = queries.postsSummary;
 	try {
+
 		const data: Post[] = await sanityClient.fetch(query);
 		if (data) {
 			return {

@@ -23,11 +23,14 @@
 	import Calendar from 'svelte-heros-v2/CalendarDays.svelte';
 	import 'svelte-highlight/styles/material-palenight.css';
 	import { fly } from "svelte/transition";
+	import MetaData from '$lib/components/misc/metaData.svelte';
+	import metadata from '$lib/stores/metadata.js';
 
 	let ready = false;
 	export let data;
 $: metaTags = extend(true, {}, data.pageMetaTags, $page.data.pageMetaTags);
 	onMount(() => {
+		$metadata = data.meta_data
 			ready = true;
 	});
 </script>
@@ -98,7 +101,7 @@ $: metaTags = extend(true, {}, data.pageMetaTags, $page.data.pageMetaTags);
 							h6: CustomHeading,
 							blockquote: Quote,
 							hint: Hint,
-							gotcha: Gotcha
+							gotcha: Gotcha,
 						}
 					}}
 				/>
@@ -107,9 +110,12 @@ $: metaTags = extend(true, {}, data.pageMetaTags, $page.data.pageMetaTags);
 				<BlogAuthorInfo author={data.post.authorInfo} />
 			</aside>
 		</section>
-		<aside class="!max-w-2xl hidden xl:block">
+		<aside  in:fly={{y:-100, easing: easeInOutBack, duration: 1000}} class="!max-w-2xl hidden xl:block">
 			<div class=" w-full as">
 				<Toc outline={data.toc} />
+				<div class="mt-16 px-6 md:px-0">
+					<MetaData  />
+				</div>
 				<div class="mt-16 px-6 md:px-0">
 					<Tags tags={data.tags.tags} />
 				</div>

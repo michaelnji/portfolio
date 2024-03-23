@@ -1,7 +1,7 @@
 <script>
-	import { page } from '$app/stores';
-	import extend from 'just-extend';
-	import { MetaTags } from 'svelte-meta-tags';
+	// import { page } from '$app/stores';
+	// import extend from 'just-extend';
+	// import { MetaTags } from 'svelte-meta-tags';
 	import { fly, fade } from 'svelte/transition';
 	 import { ProgressBar } from "@prgm/sveltekit-progress-bar";
 	import { afterNavigate, beforeNavigate, onNavigate } from '$app/navigation';
@@ -16,9 +16,9 @@
 	import '@fontsource/short-stack';
 	// import '@fontsource/gochi-hand';
 	import '@fontsource/ubuntu-mono';
-	export let data;
+	// export let data;
 	let isLoading = false;
-	$: metaTags = extend(true, {}, data.baseMetaTags, $page.data.pageMetaTags);
+	
 	beforeNavigate(({ to }) => (isLoading = !!to?.route.id));
 	afterNavigate(() => setTimeout(() => (isLoading = false), 200));
 	inject();
@@ -39,10 +39,10 @@
 		$theme = getOrSetItem('theme', 'light');
 	});
 </script>
-<ProgressBar class="text-primary h-3" />
-<MetaTags {...metaTags} />
+<ProgressBar class="text-primary p-1 rounded-full" />
+<!-- <MetaTags {...metaTags} /> -->
 	<div class={`${$theme} max-w-screen `} data-barba="wrapper">
-		<div  data-barba="container" data-barba-namespace={$page.url.pathname}
+		<div 
 			class="dark:!bg-gray-950 dark:!text-gray-50 bg-white text-base-400 transition-colors duration-300"
 		>
 			<header>

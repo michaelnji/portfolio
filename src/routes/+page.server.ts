@@ -1,7 +1,7 @@
-import type { Load } from '@sveltejs/kit';
-import { getPostsSummarized } from '../lib/backend/posts';
-import type { MetaTagsProps } from 'svelte-meta-tags';
 import { getQuote } from '$lib/backend/quotes';
+import type { Load } from '@sveltejs/kit';
+import type { MetaTagsProps } from 'svelte-meta-tags';
+import { getPostsSummarized } from '../lib/backend/posts';
 
 /** @type {import('@sveltejs/kit').Load} */
 export const load: Load = async ({ url }) => {

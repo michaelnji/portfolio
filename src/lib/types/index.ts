@@ -55,3 +55,13 @@ export interface TagResponse {
 	status: number;
 	message: string | Error;
 }
+
+export type PostMetaData = {
+	views: number,
+	id: string | number
+	reactions: {
+		hearts: number,
+		claps: number,
+		shit: number,
+	}
+}

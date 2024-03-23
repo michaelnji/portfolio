@@ -1,8 +1,10 @@
+import { urlFor } from '$lib/backend/sanity';
+import { getTags } from '$lib/backend/tags';
+import { getOrCreatePostMetaData, updatePostMetadata } from '$lib/server/upstash/handlers';
+import type { Load } from '@sveltejs/kit';
+import { isArray } from 'mathjs';
 import type { MetaTagsProps } from 'svelte-meta-tags';
 import { getPost, getRelatedPosts } from '../../../lib/backend/posts';
-import type { Load } from '@sveltejs/kit';
-import { getTags } from '$lib/backend/tags';
-import { urlFor } from '$lib/backend/sanity';
 
 /** @type {import('@sveltejs/kit').Load} */
 export const load: Load = async ({ params, url }) => {
@@ -45,12 +47,38 @@ export const load: Load = async ({ params, url }) => {
 	if (res.status === 200 && relatedPostsRes.status === 200 && tags.status === 200) {
 
 		let post = res.post;
+		const postMetaData = await getOrCreatePostMetaData(`${post?._id}`, {
+			id: `${post?._id}`, views: 0, reactions: {
+				hearts: 0,
+				shit: 0,
+				claps: 0
+			}
+		})
+		console.log(postMetaData)
+		if (!isArray(postMetaData.data) && postMetaData.data !== null) {
+			let newData = {
+				reactions: postMetaData.data?.reactions ?? { hearts: 0, shit: 0, claps: 0 },
+				id: postMetaData.data?.id ?? `${post?._id}`,
+				views: postMetaData.data?.views ? postMetaData.data?.views + 1 : 1
+			}
+			const finalMetaInfo = await updatePostMetadata(newData, `${post?._id}`)
+			console.log(finalMetaInfo)
+			return {
+				post,
+				toc: res.toc,
+				relatedPosts: relatedPostsRes.posts,
+				pageMetaTags,
+				tags,
+				meta_data: finalMetaInfo.data
+			};
+		}
 		return {
 			post,
 			toc: res.toc,
 			relatedPosts: relatedPostsRes.posts,
 			pageMetaTags,
-			tags
+			tags,
+			meta_data: null
 		};
 	}
 
