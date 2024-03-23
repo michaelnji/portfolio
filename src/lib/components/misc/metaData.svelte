@@ -1,4 +1,6 @@
 <script lang="ts">
+	import { numToSummary } from '$lib/scripts/numberFunctions';
+
 	// import type { PostMetaData } from "$lib/types";
 	import metadata from '$lib/stores/metadata';
 	import { confetti } from '@neoconfetti/svelte';
@@ -58,18 +60,18 @@
 	}
 	
 </script>
-
+<h1 class="mb-4 m-0 text-xl w-full font-semibold  max-w-max">Love this post? Show some grrr!</h1>
 <div
-	class="w-full  grid grid-cols-4 border-2 border-black dark:border-gray-700 card-wrapper justify-center dark:bg-gray-900 transition duration-300 overflow-hidden"
+	class="w-full max-w-sm md:max-w-xl  grid grid-cols-2 md:grid-cols-4 gap-3  "
 >
 	<div
-		class="border-r-2  border-black dark:border-gray-700 flex items-center space-x-2 p-4 justify-center"
+		class="shadow-xl border border-gray-300 dark:border-gray-800 hover:shadow-lg rounded-2xl bg-white dark:bg-gray-900 flex items-center space-x-2 p-4 justify-center"
 	>
-		<Eye /> <span class="text-2xl font-mono font-bold">{$metadata.views}</span>
+		<Eye /> <span class="text-xl  font-mono font-bold">{numToSummary($metadata.views)}</span>
 	</div>
 
 	<div
-		class="border-r-2  border-black dark:border-gray-700  p-4 flex justify-center hover:bg-black hover:text-white transition duration-300 cursor-pointer relative overflow-hidden"
+		class="shadow-xl border border-gray-300 dark:border-gray-800 hover:shadow-lg rounded-2xl bg-white dark:bg-gray-900  p-4 flex justify-center hover:!bg-black hover:text-white transition duration-300 cursor-pointer relative overflow-hidden"
 		role="button"
 		tabindex="0"
 		on:keydown
@@ -82,17 +84,17 @@
 	<span  class="absolute   bg-black top-0 bottom-0 right-0 flex items-center justify-center overflow-hidden left-0"><div class="loader"></div></span>
 {/if}
 		<div class="flex items-center space-x-2">
-			<span class="text-3xl"> 💜</span>
-		<span class="text-2xl font-mono font-bold">
-			{$metadata.reactions.hearts}
+			<span class="text-2xl md:text-3xl"> 💜</span>
+		<span class="text-xl  font-mono font-bold">
+			{numToSummary($metadata.reactions.hearts)}
 			{#if showHeartConfetti && showHeartConfetti !== 'loading'}
-				<div use:confetti={{ particleCount: 30, force: 0.3, stageWidth: 500 }} />
+				<div use:confetti={{ particleCount: 100, force: 0.5, stageWidth: 500 }} />
 			{/if}
 		</span>
 		</div>
 	</div>
 	<div
-		class="border-r-2  border-black dark:border-gray-700 flex items-center space-x-2 p-4 justify-center hover:bg-black hover:text-white transition duration-300 cursor-pointer relative overflow-hidden"
+		class="shadow-xl border border-gray-300 dark:border-gray-800 hover:shadow-lg rounded-2xl bg-white dark:bg-gray-900 flex items-center space-x-2 p-4 justify-center hover:!bg-black hover:text-white transition duration-300 cursor-pointer relative overflow-hidden"
 		role="button"
 		tabindex="0"
 		on:keydown
@@ -105,16 +107,16 @@
 	<span  class="absolute  bg-black top-0 bottom-0 right-0 flex items-center justify-center overflow-hidden left-0"><div class="loader"></div></span>
 {/if}
 		<div class="flex items-center space-x-2">
-		<span class="text-3xl"> 💩</span>
-		<span class="text-2xl font-mono font-bold">
-			{$metadata.reactions.shit}
+		<span class="text-2xl md:text-3xl"> 💩</span>
+		<span class="text-xl  font-mono font-bold">
+			{numToSummary($metadata.reactions.shit)}
 			{#if showShitConfetti && showShitConfetti !== 'loading'}
-				<div use:confetti={{ particleCount: 30, force: 0.3, stageWidth: 500 }} />
+				<div use:confetti={{ particleCount: 100, force: 0.5, stageWidth: 500 }} />
 			{/if}
 		</span> </div>
 	</div>
 	<div
-		class=" border-black dark:border-gray-700 flex items-center space-x-2 p-4 justify-center hover:bg-black hover:text-white transition duration-300 cursor-pointer relative overflow-hidden"
+		class=" shadow-xl border border-gray-300 dark:border-gray-800 hover:shadow-lg rounded-2xl bg-white dark:bg-gray-900  p-4 flex justify-center hover:!bg-black hover:text-white transition duration-300 cursor-pointer relative overflow-hidden"
 		role="button"
 		tabindex="0"
 		on:keydown
@@ -127,11 +129,11 @@
 	<span  class="absolute   bg-black top-0 bottom-0 right-0 flex items-center justify-center overflow-hidden left-0"><div class="loader"></div></span>
 {/if}
 		<div class="flex items-center space-x-2">
-		<span class="text-3xl"> 👏</span>
-		<span class="text-2xl font-mono font-bold">
-			{$metadata.reactions.claps}
+		<span class="text-2xl md:text-3xl"> 👏</span>
+		<span class="text-xl  font-mono font-bold">
+			{numToSummary($metadata.reactions.claps)}
 			{#if showClapsConfetti && showClapsConfetti !== 'loading'}
-				<div use:confetti={{ particleCount: 30, force: 0.3, stageWidth: 500 }} />
+				<div use:confetti={{ particleCount: 100, force: 0.5, stageWidth: 500 }} />
 			{/if}
 		</span></div>
 	</div>

@@ -8,24 +8,24 @@ import { getPost, getRelatedPosts } from '../../../lib/backend/posts';
 
 /** @type {import('@sveltejs/kit').Load} */
 export const load: Load = async ({ params, url }) => {
-	const res = await getPost(params.slug);
+	const response = await getPost(params.slug);
 	const relatedPostsRes = await getRelatedPosts(params.slug);
 	const tags = await getTags()
 	const pageMetaTags = Object.freeze({
-		title: res.post?.title,
-		description: res.post?.excerpt,
+		title: response.post?.title,
+		description: response.post?.excerpt,
 		openGraph: {
-			title: res.post?.title,
-			description: res.post?.excerpt,
+			title: response.post?.title,
+			description: response.post?.excerpt,
 			url: `${new URL(url.pathname, url.origin).href}`,
 			type: 'article',
 			article: {
-				publishedTime: new Date(res.post?.publishedAt ?? Date.now()).toISOString(),
-				modifiedTime: new Date(res.post?.publishedAt ?? Date.now()).toISOString(),
+				publishedTime: new Date(response.post?.publishedAt ?? Date.now()).toISOString(),
+				modifiedTime: new Date(response.post?.publishedAt ?? Date.now()).toISOString(),
 			},
 			images: [
 				{
-					url: urlFor(res.post?.imageUrl).format('webp').size(1400, 700).url(),
+					url: urlFor(response.post?.imageUrl).format('webp').size(1400, 700).url(),
 					width: 1400,
 					height: 700,
 					// alt: 'Photo of text'
@@ -36,36 +36,36 @@ export const load: Load = async ({ params, url }) => {
 			handle: '@CodeD3vil',
 			site: '@site',
 		// cardType: 'summary_large_image',
-			title: res.post?.title,
-			description: res.post?.excerpt,
-			image: urlFor(res.post?.imageUrl).format('webp').size(1400, 700).url(),
+			title: response.post?.title,
+			description: response.post?.excerpt,
+			image: urlFor(response.post?.imageUrl).format('webp').size(1400, 700).url(),
 			// imageAlt: 'picture of Michael Nji'
 
 		}
 	}) satisfies MetaTagsProps;
 
-	if (res.status === 200 && relatedPostsRes.status === 200 && tags.status === 200) {
+	if (response.status === 200 && relatedPostsRes.status === 200 && tags.status === 200) {
 
-		let post = res.post;
-		const postMetaData = await getOrCreatePostMetaData(`${post?._id}`, {
+		let post = response.post;
+		const viewsAndReactions = await getOrCreatePostMetaData(`${post?._id}`, {
 			id: `${post?._id}`, views: 0, reactions: {
 				hearts: 0,
 				shit: 0,
 				claps: 0
 			}
 		})
-		console.log(postMetaData)
-		if (!isArray(postMetaData.data) && postMetaData.data !== null) {
+
+		if (!isArray(viewsAndReactions.data) && viewsAndReactions.data !== null) {
 			let newData = {
-				reactions: postMetaData.data?.reactions ?? { hearts: 0, shit: 0, claps: 0 },
-				id: postMetaData.data?.id ?? `${post?._id}`,
-				views: postMetaData.data?.views ? postMetaData.data?.views + 1 : 1
+				reactions: viewsAndReactions.data?.reactions ?? { hearts: 0, shit: 0, claps: 0 },
+				id: viewsAndReactions.data?.id ?? `${post?._id}`,
+				views: viewsAndReactions.data?.views ? viewsAndReactions.data?.views + 1 : 1
 			}
 			const finalMetaInfo = await updatePostMetadata(newData, `${post?._id}`)
-			console.log(finalMetaInfo)
+
 			return {
 				post,
-				toc: res.toc,
+				toc: response.toc,
 				relatedPosts: relatedPostsRes.posts,
 				pageMetaTags,
 				tags,
@@ -74,7 +74,7 @@ export const load: Load = async ({ params, url }) => {
 		}
 		return {
 			post,
-			toc: res.toc,
+			toc: response.toc,
 			relatedPosts: relatedPostsRes.posts,
 			pageMetaTags,
 			tags,

@@ -37,8 +37,9 @@ $: metaTags = extend(true, {}, data.pageMetaTags, $page.data.pageMetaTags);
 
 <MetaTags {...metaTags} />
 	{#if ready && data.post}
-	<main class="w-full pt-12 mb-24 md:mb-48 px-4 md:px-6 lg:px-12 flex justify-center xl:gap-x-36">
-		<section in:fly={{y:100, easing: easeInOutBack, duration: 1000}} class=" w-full max-w-3xl  mx-auto xl:mx-0 blogsection" >
+<div class="px-4 md:px-6 lg:px-12">
+	<main class="w-full pt-12 mb-12   flex justify-center xl:gap-x-36">
+		<section in:fly={{y:100, easing: easeInOutBack, duration: 1000}} class=" w-full max-w-4xl  mx-auto xl:mx-0 blogsection" >
 			<div class="w-full">
 				<img 
 					src={urlFor(data?.post.imageUrl).format('webp').size(1400, 700).url()}
@@ -113,24 +114,29 @@ $: metaTags = extend(true, {}, data.pageMetaTags, $page.data.pageMetaTags);
 		<aside  in:fly={{y:-100, easing: easeInOutBack, duration: 1000}} class="!max-w-2xl hidden xl:block">
 			<div class=" w-full as">
 				<Toc outline={data.toc} />
-				<div class="mt-16 px-6 md:px-0">
-					<MetaData  />
-				</div>
+				
 				<div class="mt-16 px-6 md:px-0">
 					<Tags tags={data.tags.tags} />
 				</div>
 				<div class="mt-16 px-6 md:px-0">
 					<RelatedPosts posts={data.relatedPosts} />
 				</div>
+				<div class="mt-16 px-6 md:px-0">
+					<MetaData  />
+				</div>
 			</div>
 		</aside>
 	</main>
-	<div class="my-24 px-6 md:px-0 max-w-xl xl:hidden mx-auto">
+	<div class="mb-24 mt-0  max-w-4xl md:mx-auto  xl:hidden ">
+		<div class="mb-16">
+					<MetaData  />
+				</div>
 		<RelatedPosts posts={data.relatedPosts} />
 		<div class="mt-16">
 					<Tags tags={data.tags.tags} />
 				</div>
 	</div>
+</div>
 	<Footer />
 {/if}
 

@@ -9,7 +9,7 @@
 
 {#if outline && outline.length >= 2 }
 <div
-	class="p-6 border-2  transition duration-300 w-full border-gray-900 max-h-[20rem] overflow-y-auto  dark:bg-gray-900"
+	class="p-6 border-2  transition duration-300 w-full border-gray-900 max-h-[17rem] overflow-y-auto  dark:bg-gray-900"
 	
 >
 	<h3 class="mb-4 font-semibold uppercase text-xl">On this page</h3>
