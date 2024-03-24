@@ -12,7 +12,7 @@
 		on:intersect={() => {
 			anime({
 				targets: `.quote`,
-				rotate: '6deg',
+				rotate: '3deg',
 				duration: 20,
 				easing: 'easeOutElastic(1, .6)',
 				delay: 800
