@@ -89,7 +89,7 @@
 		<nav class=" mt-12 w-full flex flex-col justify-center items-center gap-3 ">
 			<a on:click={toggleModal}
 				href="/"
-				class="hover:text-primary text-gray-50 group transition duration-300 relative overflow-hidden"
+				class="hover:text-primary text-gray-50 font-semibold group transition duration-300 relative overflow-hidden"
 				class:text-primary={currentSection === '/'}
 				class:italic={currentSection === '/'}
 			>
@@ -102,7 +102,7 @@
 			</a>
 			<a on:click={toggleModal}
 				href="/blog"
-				class="hover:text-primary text-gray-50 group transition duration-300 relative overflow-hidden"
+				class="hover:text-primary text-gray-50 font-semibold group transition duration-300 relative overflow-hidden"
 				class:text-primary={currentSection === '/blog'}
 				class:italic={currentSection === '/blog'}
 			>
@@ -116,7 +116,7 @@
 			<a on:click={toggleModal}
 				href="https://www.github.com/michaelnji"
 				target="_blank"
-				class="hover:text-primary text-gray-50 group transition duration-300 relative overflow-hidden"
+				class="hover:text-primary text-gray-50 font-semibold group transition duration-300 relative overflow-hidden"
 			>
 				<p class="font-medium text-4xl">Github</p>
 				<p
@@ -126,7 +126,7 @@
 			<a on:click={toggleModal}
 				href="https://www.x.com/CodeD3vil"
 				target="_blank"
-				class="hover:text-primary text-gray-50 group transition duration-300 relative overflow-hidden"
+				class="hover:text-primary text-gray-50 font-semibold group transition duration-300 relative overflow-hidden"
 			>
 				<p class="font-medium text-4xl">Twitter</p>
 				<p

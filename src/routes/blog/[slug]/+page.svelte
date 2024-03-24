@@ -1,4 +1,5 @@
 <script lang="ts">
+	import { page } from '$app/stores';
 	import { urlFor } from '$lib/backend/sanity.js';
 	import BlogAuthorInfo from '$lib/components/misc/blogAuthorInfo.svelte';
 	import BlogImg from '$lib/components/misc/blogImg.svelte';
@@ -8,23 +9,23 @@
 	import Gotcha from '$lib/components/misc/gotcha.svelte';
 	import Hint from '$lib/components/misc/hint.svelte';
 	import InlineCodeBlock from '$lib/components/misc/inlineCodeBlock.svelte';
+	import MetaData from '$lib/components/misc/metaData.svelte';
 	import Quote from '$lib/components/misc/quote.svelte';
 	import RelatedPosts from '$lib/components/misc/relatedPosts.svelte';
 	import Tags from '$lib/components/misc/tags.svelte';
 	import Toc from '$lib/components/misc/toc.svelte';
+	import LinkBlog from '$lib/components/navigation/linkBlog.svelte';
 	import Footer from '$lib/components/section/footer.svelte';
+	import metadata from '$lib/stores/metadata.js';
 	import { easeInOutBack } from '$lib/utils/animations.js';
 	import { getReadableDate } from '$lib/utils/timeFunctions.js';
 	import { PortableText } from '@portabletext/svelte';
-	import { page } from '$app/stores';
 	import extend from 'just-extend';
-	import { MetaTags } from 'svelte-meta-tags';
 	import { onMount } from 'svelte';
 	import Calendar from 'svelte-heros-v2/CalendarDays.svelte';
 	import 'svelte-highlight/styles/material-palenight.css';
+	import { MetaTags } from 'svelte-meta-tags';
 	import { fly } from "svelte/transition";
-	import MetaData from '$lib/components/misc/metaData.svelte';
-	import metadata from '$lib/stores/metadata.js';
 
 	let ready = false;
 	export let data;
@@ -32,6 +33,7 @@ $: metaTags = extend(true, {}, data.pageMetaTags, $page.data.pageMetaTags);
 	onMount(() => {
 		$metadata = data.meta_data
 			ready = true;
+			// console.log(data.post?.body)
 	});
 </script>
 
@@ -89,7 +91,8 @@ $: metaTags = extend(true, {}, data.pageMetaTags, $page.data.pageMetaTags);
 						},
 						marks: {
 							color: ColorBlock,
-							code: InlineCodeBlock
+							code: InlineCodeBlock,
+							link: LinkBlog
 						},
 
 						block: {

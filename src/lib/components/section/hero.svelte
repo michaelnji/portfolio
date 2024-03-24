@@ -63,7 +63,7 @@
 			<h1
 				class="font-head text-5xl md:text-center xl:text-left md:text-6xl lg:text-8xl font-medium hero-text" style="opacity: 0; transform: translateX(-100px)"
 			>
-				I'm Michael, a <span class="text-primary">Frontend</span>
+				I'm Michael, a <span class="bg-gradient-to-r from-purple-600 via-blue-500 to-pink-500 text-transparent bg-clip-text fr">Frontend</span>
 				<span class="font-semibold">Web Dev</span>
 				and <i>オタク</i> <small class="italic">(Otaku)</small>
 			</h1>
@@ -83,3 +83,4 @@
 		</div>
 	</div>
 </section>
+
