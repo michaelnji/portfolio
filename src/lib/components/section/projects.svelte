@@ -110,7 +110,7 @@
 									<a
 										href="https://bytepay.vercel.app"
 										target="_blank"
-										class="btn btn-wrapper border-2 border-black btn-primary !rounded-none !bg-purple-600">Preview</a
+										class="btn btn-wrapper border-2 border-black  !rounded-none !bg-purple-600">Preview</a
 									>
 								</div>
 							</div>
@@ -187,7 +187,7 @@
 									<a
 										href="https://wabuzz.vercel.app"
 										target="_blank"
-										class="btn btn-wrapper border-2 border-black btn-primary !rounded-none !bg-green-600">Preview</a
+										class="btn btn-wrapper border-2 border-black  !rounded-none !bg-green-600">Preview</a
 									>
 								</div>
 							</div>
@@ -260,12 +260,12 @@
 									<a
 										href="https://kawaiii.vercel.app"
 										target="_blank"
-										class="btn btn-wrapper border-2 border-black btn-primary !rounded-none !bg-pink-600 text-xs">Preview</a
+										class="btn btn-wrapper border-2 border-black  !rounded-none !bg-pink-600 text-xs">Preview</a
 									>
 									<a
 										href="https://github.com/michaelnji/kawaiii"
 										target="_blank"
-										class="btn btn-wrapper border-2 border-black btn-primary !rounded-none !bg-black text-xs">Github </a
+										class="btn btn-wrapper border-2 border-black  !rounded-none !bg-black text-xs">Github </a
 									>
 								</div>
 							</div>
@@ -330,12 +330,12 @@
 									<a
 										href="/projects/unoid"
 										target="_blank"
-										class="btn btn-wrapper border-2 border-black btn-primary !rounded-none !bg-gray-600 text-xs">Docs</a
+										class="btn btn-wrapper border-2 border-black  !rounded-none !bg-gray-600 text-xs">Docs</a
 									>
 									<a
 										href="https://github.com/michaelnji/unoid"
 										target="_blank"
-										class="btn btn-wrapper border-2 border-black btn-primary !rounded-none !bg-black text-xs">Github </a
+										class="btn btn-wrapper border-2 border-black  !rounded-none !bg-black text-xs">Github </a
 									>
 								</div>
 							</div>
