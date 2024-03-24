@@ -27,7 +27,7 @@
 		>
 	</div>
 
-	<div class="p-6 pt-12 !opacity-80 font-slant   text-purple-800 dark:text-purple-100 text-2xl tracking-tight leading-normal">
+	<div class="p-6 pt-12 !opacity-80    text-purple-800 dark:text-purple-100 text-2xl tracking-tight leading-normal">
 		<slot />
 	</div>
 </div>
