@@ -67,7 +67,7 @@ $: metaTags = extend(true, {}, data.pageMetaTags, $page.data.pageMetaTags);
 					class="mb-4 mt-4 p-2 pr-4 rounded-full bg-gray-100 max-w-max dark:bg-gray-800 flex flex-wrap gap-3 items-center"
 				>
 					<img
-						src={data.post.authorInfo.imageUrl}
+						src={urlFor(data?.post.authorInfo.imageUrl).format('webp').size(500, 500).url()}
 						alt=""
 						class="w-8 h-8 rounded-full border border-gray-200 dark:border-gray-700"
 					/>

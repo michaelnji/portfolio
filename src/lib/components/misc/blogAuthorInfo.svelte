@@ -1,4 +1,5 @@
 <script lang="ts">
+	import { urlFor } from '$lib/backend/sanity';
 	import Twitter from 'svelte-simples/Twitter.svelte';
 	export let author: any;
 </script>
@@ -7,7 +8,7 @@
 	<div class=" flex flex-col gap-3">
 		<div class="flex flex-row gap-3 items-center">
 			<img
-				src={author.imageUrl}
+				src={urlFor(author.imageUrl).format('webp').size(500, 500).url()}
 				alt={author.name}
 				class="w-14 h-14 rounded-full border-2 border-gray-500"
 			/>

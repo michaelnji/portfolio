@@ -12,7 +12,7 @@
 
 
 {#if value.href}
-  <a href={value.href} target={'_blank'}  class={`bg-gradient-to-r from-purple-600 via-orange-600 to-pink-600 dark:from-purple-500 dark:via-orange-500 dark:to-pink-500  inline-block text-transparent bg-clip-text font-semibold border-b-2   hover:from-pink-600 hover:via-purple-600 hover:to-orange-600 hover:dark:from-pink-600 hover:dark:via-purple-600 hover:dark:to-orange-600  max-w-max hover:border-black dark:border-purple-500 group leading-tight !p-0`} >
+  <a href={value.href} target={'_blank'}  class={`bg-gradient-to-r from-purple-600 via-blue-600 to-pink-600 dark:from-purple-500 dark:via-blue-500 dark:to-pink-500  inline-block text-transparent bg-clip-text font-semibold border-b-2   hover:from-pink-600 hover:via-purple-600 hover:to-blue-600 hover:dark:from-pink-600 hover:dark:via-purple-600 hover:dark:to-blue-600  max-w-max hover:border-black dark:border-purple-500 group leading-tight !p-0`} >
 <slot/>  <small class="rotate-3"> » </small>
 </a>
 {:else}

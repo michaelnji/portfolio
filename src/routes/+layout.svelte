@@ -39,7 +39,7 @@
 		$theme = getOrSetItem('theme', 'light');
 	});
 </script>
-<ProgressBar class="text-secondary p-1 rounded-full" />
+<ProgressBar class="text-pink-400 p-0.5  rounded-full" />
 <!-- <MetaTags {...metaTags} /> -->
 	<div class={`${$theme} max-w-screen `} data-barba="wrapper">
 		<div 

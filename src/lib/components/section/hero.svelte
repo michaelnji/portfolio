@@ -1,7 +1,7 @@
 <script lang="ts">
-	import { onMount } from 'svelte';
-	import i from '$lib/images/myke.webp';
+	import { urlFor } from '$lib/backend/sanity';
 	import anime from 'animejs';
+	import { onMount } from 'svelte';
 	onMount(async () => {
 		anime({
 			targets: '.hero-text',
@@ -72,13 +72,14 @@
 			<div
 				class=" w-full scale-105 z-50 absolute h-full border-4 rounded-3xl overflow-hidden border-black"
 			>
-				<img src={i} alt="An AI portrait of me" />
+			
+				<img src={urlFor('https://cdn.sanity.io/images/5xp71fus/production/462f8ea980a41f137d6521cda52094f5e26c6b5b-864x1152.jpg').format('webp').size(500, 500).url()} alt="An AI portrait of me" />
 			</div>
 			<div
-				class=" w-full hero-1 bg-yellow-200 z-10 h-full absolute border-4 rounded-3xl overflow-hidden border-black"
+				class=" w-full hero-1 bg-blue-200 z-10 h-full absolute border-4 rounded-3xl overflow-hidden border-black"
 			/>
 			<div
-				class="hero-2 w-full  bg-purple-200  h-full absolute border-4 rounded-3xl overflow-hidden border-black"
+				class="hero-2 w-full  bg-pink-200  h-full absolute border-4 rounded-3xl overflow-hidden border-black"
 			/>
 		</div>
 	</div>
