@@ -1,8 +1,7 @@
 <script lang="ts">
 	import anime from 'animejs';
 	import IntersectionObserver from 'svelte-intersection-observer';
-	import Nodedotjs  from "svelte-simples/Nodedotjs.svelte";
-	import Javascript from 'svelte-simples/Javascript.svelte';
+	import Nodedotjs from "svelte-simples/Nodedotjs.svelte";
 	import Supabase from "svelte-simples/Supabase.svelte";
 	import Svelte from "svelte-simples/Svelte.svelte";
 	import Tailwindcss from "svelte-simples/Tailwindcss.svelte";
@@ -79,11 +78,11 @@
 							<div class="mt-4 p-6 rounded-2xl bg-purple-800 bg-opacity-20">
 								<p class="font-medium text-purple-50 text-2xl opacity-90">Built using</p>
 								<div class="flex flex-wrap gap-3 mt-3">
-									<p
+									<!-- <p
 										class="p-2 font-bold text-purple-50 rounded-lg bg-purple-950 text-xs font-mono transition duration-1000"
 									>
 										<Javascript width={'30'} height="30" />
-									</p>
+									</p> -->
 									<p
 										class="p-2 font-bold text-purple-50 rounded-lg bg-purple-950 text-xs font-mono transition duration-1000"
 									>
@@ -156,11 +155,11 @@
 							<div class="mt-4 p-6 rounded-2xl bg-green-800 bg-opacity-20">
 								<p class="font-medium text-green-50 text-2xl opacity-90">Built using</p>
 								<div class="flex flex-wrap gap-3 mt-3">
-									<p
+									<!-- <p
 										class="p-2 font-bold text-green-50 rounded-lg bg-green-950 text-xs font-mono transition duration-1000"
 									>
 										<Javascript width={'30'} height="30" />
-									</p>
+									</p> -->
 									<p
 										class="p-2 font-bold text-green-50 rounded-lg bg-green-950 text-xs font-mono transition duration-1000"
 									>
@@ -233,11 +232,11 @@
 							<div class="mt-4 p-6 rounded-2xl bg-pink-800 bg-opacity-20">
 								<p class="font-medium text-pink-50 text-2xl opacity-90">Built using</p>
 								<div class="flex flex-wrap gap-3 mt-3">
-									<p
+									<!-- <p
 										class="p-2 font-bold text-pink-50 rounded-lg bg-pink-950 text-xs font-mono transition duration-1000"
 									>
 										<Javascript width={'30'} height="30" />
-									</p>
+									</p> -->
 									<p
 										class="p-2 font-bold text-pink-50 rounded-lg bg-pink-950 text-xs font-mono transition duration-1000"
 									>

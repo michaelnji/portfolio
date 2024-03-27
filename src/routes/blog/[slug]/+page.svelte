@@ -23,7 +23,7 @@
 	import extend from 'just-extend';
 	import { onMount } from 'svelte';
 	import Calendar from 'svelte-heros-v2/CalendarDays.svelte';
-	import 'svelte-highlight/styles/material-palenight.css';
+	import 'svelte-highlight/styles/onedark.css';
 	import { MetaTags } from 'svelte-meta-tags';
 	import { fly } from "svelte/transition";
 
@@ -79,7 +79,7 @@ $: metaTags = extend(true, {}, data.pageMetaTags, $page.data.pageMetaTags);
 
 			<div class="divider" />
 			<section
-				class="!min-w-full prose-p:!min-w-full mt-10 prose prose-xl md:prose-2xl dark:prose-invert prose-headings:font-bold prose-pre:!p-0 prose-pre:whitespace-pre-wrap prose-pre:!bg-inherit prose-pre:!text-2xl prose-purple border-b-2 dark:border-gray-700 pb-10"
+				class="!min-w-full prose-p:!min-w-full mt-10 prose prose-xl md:prose-2xl dark:prose-invert prose-headings:font-bold prose-pre:!p-0 prose-pre:whitespace-pre-wrap prose-pre:!bg-inherit prose-pre:!text-lg md:prose-pre:!text-xl lg:prose-pre:!text-2xl prose-purple border-b-2 dark:border-gray-700 pb-10"
 			>
 				<PortableText
 					value={[...data.post.body]}

@@ -18,7 +18,7 @@
 			{#each outline as heading}
 				<a href={'#' + heading.slug} class=" no-underline !text-opacity-50 scroll-smooth">
 					<li
-						class="bg-gray-800  py-1 px-2 bg-opacity-0 hover:bg-opacity-10 dark:hover:bg-opacity-60 text-xl"
+						class="bg-gray-800  py-1 px-2 bg-opacity-0 hover:bg-opacity-10 dark:hover:bg-opacity-60 text-base"
 						class:!bg-opacity-100={$currentItem === heading.slug}
 						class:!bg-primary={$currentItem === heading.slug}
 						class:!text-white={$currentItem === heading.slug}

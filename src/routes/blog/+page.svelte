@@ -60,7 +60,7 @@
 		
 			<div class="mt-4 md:mt-12 flex flex-wrap gap-3 max-w-4xl mx-auto justify-center items-center">
 				<button
-					class="px-3 border border-primary py-1  hover:bg-primary hover:text-purple-50 text-primary bg-primary font-bold bg-opacity-10 dark:text-purple-300 text-sm md:text-base font-mono transition duration-300 uppercase"
+					class="px-3 border-2 border-primary py-1  hover:bg-primary hover:text-purple-50 text-primary bg-primary font-bold bg-opacity-10 dark:text-purple-300 text-sm md:text-base font-mono transition duration-300 uppercase"
 					class:!bg-primary={activeTag === 'all'}
 					class:!text-white={activeTag === 'all'}
 					on:click={() => {
@@ -71,7 +71,7 @@
 				</button>
 				{#each data.tags as tag}
 					<button
-						class="px-3 border border-primary py-1 font-bold hover:bg-primary hover:text-purple-50 text-primary bg-primary bg-opacity-10 dark:text-purple-300 text-sm md:text-base font-mono transition duration-300 uppercase"
+						class="px-3 border-2 border-primary py-1 font-bold hover:bg-primary hover:text-purple-50 text-primary bg-primary bg-opacity-10 dark:text-purple-300 text-sm md:text-base font-mono transition duration-300 uppercase"
 						class:!bg-primary={activeTag === tag.title}
 						class:!text-white={activeTag === tag.title}
 						on:click={() => {
