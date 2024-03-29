@@ -1,5 +1,6 @@
 
-<div class=" border-l-8 border-spacing-9  border-dashed border-teal-600 font-medium relative  bg-gray-300 dark:bg-gray-600 !bg-opacity-10 p-8   dark:text-teal-300 text-pretty">
+<div class="px-3">
+	<div class=" border-l-8 border-spacing-9  border-dashed border-teal-600 font-medium relative  bg-gray-300 dark:bg-gray-600 !bg-opacity-10 p-8   dark:text-teal-300 text-pretty">
 	<div class=" border-8  border-gray-50 dark:border-gray-950  rounded-full absolute p-3 bg-teal-600 -top-4 -left-9">
 		<svg
 			class=" fill-white h-5 w-5"
@@ -26,4 +27,5 @@
 		>
 	</div>
 	<slot/>
+</div>
 </div>
