@@ -14,11 +14,11 @@ import About from '$lib/components/section/about.svelte';
 </script>
 <MetaTags {...metaTags} />
 
-<div class="overflow-x-hidden"><Hero />
+<div class="overflow-x-hidden md:pt-12"><Hero />
 
 <About />
 
-<div class=" mt-24 mb-12">
+<div class=" mt-24  mb-12">
 	{#if data?.posts}
 		<Blog posts={data.posts} />
 	{/if}

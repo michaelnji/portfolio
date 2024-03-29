@@ -8,7 +8,7 @@
 
 <div class="group w-full max-w-xl">
 	
-	<div class="prose  card-wrapper  z-20 p-6 bg-white dark:bg-gray-900 border-black   border-2 transform  duration-150 transition">
+	<div class="prose  card-wrapper  z-20 p-6 bg-white dark:bg-gray-900 border-black dark:border-gray-700   border-2 transform  duration-150 transition">
 		<span class="mt-1 text-md font-mono  dark:text-gray-400">{getReadableDate(published)}</span>
 		<h3 class="text-3xl  font-medium text-pretty font-head m-0  dark:text-gray-100">{title}</h3>
 		<p class="text-xl dark:text-gray-100 opacity-90 mt-2 line-clamp-3">

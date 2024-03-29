@@ -2,13 +2,11 @@
 	import Exclamation from 'svelte-heros-v2/ExclamationTriangle.svelte';
 </script>
 
-<div
-	class="p-3  border-2 border-orange-400 border-opacity-20 !bg-orange-600 !bg-opacity-10 relative"
->
-	<div class="  absolute p-3 bg-orange-500 text-white -top-3 left-6">
-		<Exclamation width="26" height="26" />
+
+<div class=" border-l-8 border-spacing-9  border-dashed border-orange-600 font-medium relative  bg-gray-500 dark:bg-gray-600 !bg-opacity-10 p-8  text-orange-600 dark:text-orange-300 text-pretty">
+	<div class=" border-8  border-gray-50 dark:border-gray-950  rounded-full absolute p-3 bg-orange-600 -top-4 -left-9">
+		<Exclamation width="26" height="26" class='text-orange-100'/>
+			
 	</div>
-	<div class="  !font-normal transform scale-90 text-orange-800 dark:text-orange-100 pt-10 p-3">
-		<slot />
-	</div>
+	<slot/>
 </div>

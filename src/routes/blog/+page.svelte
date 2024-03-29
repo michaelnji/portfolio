@@ -49,7 +49,7 @@
 <MetaTags {...metaTags} />
 
 {#if data}
-	<section class="py-12 md:min-h-screen px-3">
+	<section class="py-12 md:pt-36 md:min-h-screen px-3">
 		<h1 class="text-3xl w-full max-w-6xl mx-auto md:text-5xl font-medium font-head text-center">
 			{#if activeTag === 'all' }
 			All Posts

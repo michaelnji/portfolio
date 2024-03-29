@@ -1,7 +1,5 @@
 <script>
-	// import { page } from '$app/stores';
-	// import extend from 'just-extend';
-	// import { MetaTags } from 'svelte-meta-tags';
+	
 	import { fly, fade } from 'svelte/transition';
 	 import { ProgressBar } from "@prgm/sveltekit-progress-bar";
 	import { afterNavigate, beforeNavigate, onNavigate } from '$app/navigation';
@@ -13,10 +11,8 @@
 	import { onMount } from 'svelte';
 	import Navbar from './../lib/components/navigation/navbar.svelte';
 	import './styles.postcss';
-	import '@fontsource/short-stack';
-	// import '@fontsource/gochi-hand';
+	import '@fontsource/short-stack';	
 	import '@fontsource/ubuntu-mono';
-	// export let data;
 	let isLoading = false;
 	
 	beforeNavigate(({ to }) => (isLoading = !!to?.route.id));
@@ -39,11 +35,10 @@
 		$theme = getOrSetItem('theme', 'light');
 	});
 </script>
-<ProgressBar class="text-pink-400 p-0.5  rounded-full" />
-<!-- <MetaTags {...metaTags} /> -->
+<ProgressBar class="text-pink-400 p-0.5 !z-50 rounded-full" />
 	<div class={`${$theme} max-w-screen `} data-barba="wrapper">
 		<div 
-			class="dark:!bg-gray-950 dark:!text-gray-50 bg-white text-base-400 transition-colors duration-300"
+			class="dark:!bg-gray-950 dark:!text-gray-50 bg-gray-50 text-base-200 transition-colors duration-300"
 		>
 			<header>
 				<Navbar />

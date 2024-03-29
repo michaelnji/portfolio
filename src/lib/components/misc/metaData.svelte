@@ -3,7 +3,7 @@
 	import metadata from '$lib/stores/metadata';
 	import { confetti } from '@neoconfetti/svelte';
 	let heartConfettiStatus: string | boolean = false;
-	let shitConfettiStatus: string | boolean = false;
+	// let shitConfettiStatus: string | boolean = false;
 	let clapsConfettiStatus: string | boolean = false;
 	async function UpdateReactions(reaction: string) {
 		let data = {
@@ -13,10 +13,10 @@
 			heartConfettiStatus = 'loading';
 			data.reactions.hearts = data.reactions.hearts + 1;
 		}
-		if (reaction === 'shit') {
-			shitConfettiStatus = 'loading';
-			data.reactions.shit = data.reactions.shit + 1;
-		}
+		// if (reaction === 'shit') {
+		// 	shitConfettiStatus = 'loading';
+		// 	data.reactions.shit = data.reactions.shit + 1;
+		// }
 		if (reaction === 'claps') {
 			clapsConfettiStatus = 'loading';
 
@@ -39,12 +39,12 @@
 				}, 3500);
 			}
 
-			if (reaction === 'shit') {
-				shitConfettiStatus = true;
-				setTimeout(() => {
-					shitConfettiStatus = !shitConfettiStatus;
-				}, 3500);
-			}
+			// if (reaction === 'shit') {
+			// 	shitConfettiStatus = true;
+			// 	setTimeout(() => {
+			// 		shitConfettiStatus = !shitConfettiStatus;
+			// 	}, 3500);
+			// }
 
 			if (reaction === 'claps') {
 				clapsConfettiStatus = true;
@@ -58,16 +58,16 @@
 	}
 </script>
 
-<h1 class="mb-4 m-0 text-xl w-full font-semibold max-w-max">Love this post? Show some grrr!</h1>
-<div class="w-full max-w-sm md:max-w-xl grid grid-cols-2 md:grid-cols-4 gap-3">
+<h1 class="mb-5 m-0 text-xl w-full font-semibold max-w-max">Some stats on this post</h1>
+<div class="w-full max-w-sm md:max-w-xl grid grid-cols-2 md:grid-cols-3 gap-3">
 	<div
-		class="shadow-xl border border-gray-300 dark:border-gray-800 hover:shadow-lg rounded-2xl bg-primary dark:bg-gray-900 dark:text-purple-400 text-primary bg-opacity-10 flex items-center space-x-2 p-4 justify-center text-lg font-mono font-bold"
+		class="flex items-center justify-center  card-wrapper dark:bg-gray-900 boder-gray dark:border-gray-700 border-2 border-black gap-x-1 font-semibold text-lg transition duration-300"
 	>
-		<span class="">{numToSummary($metadata.views)}</span><span>views</span>
+		<span class="font-head text-xl">{numToSummary($metadata.views)}</span><b class="opacity-70">views</b>
 	</div>
 
 	<div
-		class="shadow-xl border border-gray-300 dark:border-gray-800 hover:shadow-lg rounded-2xl bg-white dark:bg-gray-900 p-4 flex justify-center hover:!bg-black hover:text-white transition duration-300 cursor-pointer relative overflow-hidden"
+		class=" hover:!bg-primary hover:text-white  cursor-pointer relative overflow-hidden flex items-center justify-center  card-wrapper dark:bg-gray-900 boder-gray dark:border-gray-700 border-2 border-black gap-x-1 font-semibold text-lg transition duration-300"
 		role="button"
 		tabindex="0"
 		on:keydown
@@ -77,47 +77,24 @@
 	>
 		{#if heartConfettiStatus === 'loading'}
 			<span
-				class="absolute bg-black top-0 bottom-0 right-0 flex items-center justify-center overflow-hidden left-0"
+				class="absolute bg-black top-0 bottom-0 right-0 flex items-center justify-center overflow-hidden z-50 left-0"
 				><div class="loader" /></span
 			>
 		{/if}
 		<div class="flex items-center space-x-2">
-			<span class="text-2xl md:text-3xl"> 💜</span>
-			<span class="text-xl font-mono font-bold">
+			
+			<span class="text-xl font-semibold font-head">
 				{numToSummary($metadata.reactions.hearts)}
 				{#if heartConfettiStatus && heartConfettiStatus !== 'loading'}
 					<div use:confetti={{ particleCount: 100, force: 0.5, stageWidth: 500 }} />
 				{/if}
 			</span>
+			<small class="text-2xl font-head"> 💜</small>
 		</div>
 	</div>
+
 	<div
-		class="shadow-xl border border-gray-300 dark:border-gray-800 hover:shadow-lg rounded-2xl bg-white dark:bg-gray-900 flex items-center space-x-2 p-4 justify-center hover:!bg-black hover:text-white transition duration-300 cursor-pointer relative overflow-hidden"
-		role="button"
-		tabindex="0"
-		on:keydown
-		on:click|trusted|once={async () => {
-			await UpdateReactions('shit');
-		}}
-	>
-		{#if shitConfettiStatus === 'loading'}
-			<span
-				class="absolute bg-black top-0 bottom-0 right-0 flex items-center justify-center overflow-hidden left-0"
-				><div class="loader" /></span
-			>
-		{/if}
-		<div class="flex items-center space-x-2">
-			<span class="text-2xl md:text-3xl"> 💩</span>
-			<span class="text-xl font-mono font-bold">
-				{numToSummary($metadata.reactions.shit)}
-				{#if shitConfettiStatus && shitConfettiStatus !== 'loading'}
-					<div use:confetti={{ particleCount: 100, force: 0.5, stageWidth: 500 }} />
-				{/if}
-			</span>
-		</div>
-	</div>
-	<div
-		class=" shadow-xl border border-gray-300 dark:border-gray-800 hover:shadow-lg rounded-2xl bg-white dark:bg-gray-900 p-4 flex justify-center hover:!bg-black hover:text-white transition duration-300 cursor-pointer relative overflow-hidden"
+		class=" hover:!bg-primary hover:text-white  cursor-pointer relative overflow-hidden flex items-center justify-center  card-wrapper dark:bg-gray-900 boder-gray dark:border-gray-700 border-2 border-black gap-x-1 font-semibold text-lg transition duration-300 p-4"
 		role="button"
 		tabindex="0"
 		on:keydown
@@ -127,20 +104,22 @@
 	>
 		{#if clapsConfettiStatus === 'loading'}
 			<span
-				class="absolute bg-black top-0 bottom-0 right-0 flex items-center justify-center overflow-hidden left-0"
+				class="absolute bg-black top-0 bottom-0 right-0 flex items-center justify-center overflow-hidden z-50 left-0"
 				><div class="loader" /></span
 			>
 		{/if}
 		<div class="flex items-center space-x-2">
-			<span class="text-2xl md:text-3xl"> 👏</span>
-			<span class="text-xl font-mono font-bold">
+			
+			<span class="text-xl font-semibold font-head">
 				{numToSummary($metadata.reactions.claps)}
 				{#if clapsConfettiStatus && clapsConfettiStatus !== 'loading'}
 					<div use:confetti={{ particleCount: 100, force: 0.5, stageWidth: 500 }} />
 				{/if}
 			</span>
+			<small class="text-2xl font-head "> 👏</small>
 		</div>
 	</div>
+	
 </div>
 
 <style>

@@ -1,7 +1,6 @@
-<div
-	class=" bg-primary border-2 border-opacity-20 border-primary dark:text-gray-300 !bg-opacity-10  dark:bg-purple-200 10 relative"
->
-	<div class="  absolute p-3 bg-primary -top-3 left-6">
+
+<div class=" border-l-8 border-spacing-9  border-dashed border-teal-600 font-medium relative  bg-gray-500 dark:bg-gray-600 !bg-opacity-10 p-8  text-teal-600 dark:text-teal-300 text-pretty">
+	<div class=" border-8  border-gray-50 dark:border-gray-950  rounded-full absolute p-3 bg-teal-600 -top-4 -left-9">
 		<svg
 			class=" fill-white h-5 w-5"
 			version="1.1"
@@ -26,8 +25,5 @@
 			</g></svg
 		>
 	</div>
-
-	<div class="p-6 pt-12 !opacity-80    text-purple-800 dark:text-purple-100 text-2xl tracking-tight leading-normal">
-		<slot />
-	</div>
+	<slot/>
 </div>

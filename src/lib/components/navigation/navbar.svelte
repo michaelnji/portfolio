@@ -1,15 +1,15 @@
 <script lang="ts">
+	// import { Bars3Solid } from "svelte-heros-v2/Bars3.svelte";
 	import { page } from '$app/stores';
 	import { setItemValue } from '$lib/scripts/dbManager';
 	import theme from '$lib/stores/theme';
 	import anime from 'animejs';
-	import Bars3Solid from 'svelte-heros-v2/Bars3.svelte';
+	import  XMark  from 'svelte-heros-v2/XMark.svelte';
+	import  Bars3Solid  from 'svelte-heros-v2/Bars3.svelte';
 	import Moon from 'svelte-heros-v2/Moon.svelte';
 	import Sun from 'svelte-heros-v2/Sun.svelte';
-	import XMark from 'svelte-heros-v2/XMark.svelte';
 	import { scale } from 'svelte/transition';
 	let closeModal = false;
-
 	function toggleTheme(): void {
 		if ($theme === 'dark') {
 			$theme = setItemValue('theme', 'light');
@@ -22,6 +22,14 @@
 		setTimeout(() => {
 			toggleModal();
 		}, 200);
+	}
+	function toggleThemeMd(): void {
+		if ($theme === 'dark') {
+			$theme = setItemValue('theme', 'light');
+			
+			return;
+		}
+		$theme = setItemValue('theme', 'dark');
 	}
 	$: currentSection = $page.url.pathname;
 	
@@ -46,7 +54,95 @@
 	}
 </script>
 
-<div
+<div class="hidden md:block w-full">
+	<div
+	class="min-w-screen p-6 !z-10 fixed top-0  left-0 right-0 glass   flex flex-col items-stretch"
+>
+	<div class=" w-full flex items-center justify-between ">
+		
+	
+	{#key currentSection}
+	<h3 class="logo text-2xl font-head font-medium ">Michael Nji</h3>
+	
+		<nav class="    flex justify-center items-center gap-x-6 ">
+			<a on:click={toggleModal}
+				href="/"
+				class="  font-semibold group relative font-head overflow-hidden"
+				
+				class:italic={currentSection === '/'}
+			>
+				<p class="font-medium text-xl">Home</p>
+				<p
+					class="h-1 w-2/3 bg-gradient-to-r from-pink-600  to-purple-600   transition-transform duration-500 -translate-x-24 group-hover:translate-x-0"
+					class:translate-x-0={currentSection === '/'}
+					class:hover:!translate-x-14={currentSection === '/'}
+				/>
+			</a>
+			<a on:click={toggleModal}
+				href="/blog"
+				class="  font-semibold group relative font-head overflow-hidden"
+				
+				class:italic={currentSection === '/blog'}
+			>
+				<p class="font-medium text-xl">Blog</p>
+				<p
+					class="h-1 w-2/3 bg-gradient-to-r from-pink-600  to-purple-600   transition-transform duration-500 -translate-x-24 group-hover:translate-x-0"
+					class:translate-x-0={currentSection === '/blog'}
+					class:hover:!translate-x-14={currentSection === '/blog'}
+				/>
+			</a>
+			<a on:click={toggleModal}
+				href="https://www.github.com/michaelnji"
+				target="_blank"
+				class="  font-semibold group relative font-head overflow-hidden"
+			>
+				<p class="font-medium text-xl">Github</p>
+				<p
+					class="h-1 w-2/3 bg-gradient-to-r from-pink-600  to-purple-600   transition-transform duration-500 -translate-x-24 group-hover:translate-x-0"
+				/>
+			</a>
+			<a on:click={toggleModal}
+				href="https://www.x.com/CodeD3vil"
+				target="_blank"
+				class="  font-semibold group relative font-head overflow-hidden"
+			>
+				<p class="font-medium text-xl">Twitter</p>
+				<p
+					class="h-1 w-2/3 bg-gradient-to-r from-pink-600  to-purple-600   transition-transform duration-500 -translate-x-24 group-hover:translate-x-0"
+				/>
+			</a>
+		</nav>
+		<button on:click={toggleThemeMd}  class="group ">
+		{#if $theme === 'light'}
+			<div in:scale={{ duration: 400 }}>
+				<Moon
+					class="focus:!outline-none hidden md:block  "
+					width="32"
+					height="32"
+					tabindex="-1"
+				/>
+				
+			</div>
+		{:else}
+			<div in:scale={{ duration: 400 }}>
+				<Sun
+					class="focus:!outline-none hidden md:block   group-hover:"
+					width="32"
+					height="32"
+					tabindex="-1"
+				/>
+				
+			</div>
+		{/if}
+	</button>
+	{/key}
+	</div>
+</div>
+
+</div>
+
+<div class="md:hidden">
+	<div
 	class="min-w-screen min-h-screen !z-50 fixed top-0 bottom-0 left-0 right-0 bg-black translate-x-[200%] nv flex flex-col items-stretch"
 >
 	<div class="p-6 w-full flex items-center justify-between ">
@@ -55,13 +151,13 @@
 			{#if $theme === 'light'}
 				<div in:scale={{ duration: 400 }}>
 					<Moon
-						class="focus:!outline-none hidden md:block text-gray-50 group-hover:text-primary"
+						class="focus:!outline-none hidden md:block text-gray-50 group-"
 						width="48"
 						height="48"
 						tabindex="-1"
 					/>
 					<Moon
-						class="focus:!outline-none md:hidden  text-gray-50 group-hover:text-primary"
+						class="focus:!outline-none md:hidden  text-gray-50 group-"
 						width="36"
 						height="36"
 						tabindex="-1"
@@ -76,7 +172,7 @@
 						tabindex="-1"
 					/>
 					<Sun
-						class="focus:!outline-none md:hidden  text-gray-50 group-hover:text-primary"
+						class="focus:!outline-none md:hidden  text-gray-50 group-"
 						width="36"
 						height="36"
 						tabindex="-1"
@@ -89,26 +185,26 @@
 		<nav class=" mt-12 w-full flex flex-col justify-center items-center gap-3 ">
 			<a on:click={toggleModal}
 				href="/"
-				class="hover:text-primary text-gray-50 font-semibold group transition duration-300 relative overflow-hidden"
-				class:text-primary={currentSection === '/'}
+				class=" text-gray-50 font-semibold group relative font-head overflow-hidden"
+				
 				class:italic={currentSection === '/'}
 			>
 				<p class="font-medium text-4xl">Home</p>
 				<p
-					class="h-1 w-2/3 bg-primary transition-transform duration-500 -translate-x-24 group-hover:translate-x-0"
+					class="h-1 w-2/3 bg-gradient-to-r from-pink-600  to-purple-600 transition-transform  duration-500 -translate-x-24 group-hover:translate-x-0"
 					class:translate-x-0={currentSection === '/'}
 					class:hover:!translate-x-14={currentSection === '/'}
 				/>
 			</a>
 			<a on:click={toggleModal}
 				href="/blog"
-				class="hover:text-primary text-gray-50 font-semibold group transition duration-300 relative overflow-hidden"
-				class:text-primary={currentSection === '/blog'}
+				class=" text-gray-50 font-semibold group relative font-head overflow-hidden"
+				
 				class:italic={currentSection === '/blog'}
 			>
 				<p class="font-medium text-4xl">Blog</p>
 				<p
-					class="h-1 w-2/3 bg-primary transition-transform duration-500 -translate-x-24 group-hover:translate-x-0"
+					class="h-1 w-2/3 bg-gradient-to-r from-pink-600  to-purple-600 transition-transform  duration-500 -translate-x-24 group-hover:translate-x-0"
 					class:translate-x-0={currentSection === '/blog'}
 					class:hover:!translate-x-14={currentSection === '/blog'}
 				/>
@@ -116,21 +212,21 @@
 			<a on:click={toggleModal}
 				href="https://www.github.com/michaelnji"
 				target="_blank"
-				class="hover:text-primary text-gray-50 font-semibold group transition duration-300 relative overflow-hidden"
+				class=" text-gray-50 font-semibold group relative font-head overflow-hidden"
 			>
 				<p class="font-medium text-4xl">Github</p>
 				<p
-					class="h-1 w-2/3 bg-primary transition-transform duration-500 -translate-x-24 group-hover:translate-x-0"
+					class="h-1 w-2/3 bg-gradient-to-r from-pink-600  to-purple-600 transition-transform  duration-500 -translate-x-24 group-hover:translate-x-0"
 				/>
 			</a>
 			<a on:click={toggleModal}
 				href="https://www.x.com/CodeD3vil"
 				target="_blank"
-				class="hover:text-primary text-gray-50 font-semibold group transition duration-300 relative overflow-hidden"
+				class=" text-gray-50 font-semibold group relative font-head overflow-hidden"
 			>
 				<p class="font-medium text-4xl">Twitter</p>
 				<p
-					class="h-1 w-2/3 bg-primary transition-transform duration-500 -translate-x-24 group-hover:translate-x-0"
+					class="h-1 w-2/3 bg-gradient-to-r from-pink-600  to-purple-600 transition-transform  duration-500 -translate-x-24 group-hover:translate-x-0"
 				/>
 			</a>
 		</nav>
@@ -163,6 +259,10 @@
 		{/if}
 	</button>
 </div>
+</div>
+
+
+
 
 <style lang="postcss">
 	.navbar-wrapper {

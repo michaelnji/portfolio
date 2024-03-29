@@ -2,13 +2,12 @@
 	import Star from 'svelte-heros-v2/Star.svelte';
 </script>
 
-<div
-	class="p-3  border-2 border-opacity-20 border-green-500 bg-green-400 dark:bg-green-200 !bg-opacity-10 relative"
->
-	<div class=" absolute  p-3 bg-green-400 text-white -top-3 left-6">
-		<Star width="24" height="24" />
+
+
+
+<div class=" border-l-8 border-spacing-9  border-dashed border-green-600 font-medium relative  bg-gray-500 dark:bg-gray-600 !bg-opacity-10 p-8  text-green-600 dark:text-green-300 text-pretty">
+	<div class=" border-8  border-gray-50 dark:border-gray-950  rounded-full absolute p-3 bg-green-600 -top-4 -left-9">
+			<Star width="24" height="24" class='text-green-100'/>
 	</div>
-	<div class=" tracking-tight leading-normal !font-normal pt-10 p-3  transform scale-95  text-green-800 dark:text-green-100">
-		<slot />
-	</div>
+	<slot/>
 </div>

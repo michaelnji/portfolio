@@ -13,7 +13,7 @@
 	import Quote from '$lib/components/misc/quote.svelte';
 	import RelatedPosts from '$lib/components/misc/relatedPosts.svelte';
 	import Tags from '$lib/components/misc/tags.svelte';
-	import Toc from '$lib/components/misc/toc.svelte';
+// import Toc from '$lib/components/misc/toc.svelte';
 	import LinkBlog from '$lib/components/navigation/linkBlog.svelte';
 	import Footer from '$lib/components/section/footer.svelte';
 	import metadata from '$lib/stores/metadata.js';
@@ -23,7 +23,8 @@
 	import extend from 'just-extend';
 	import { onMount } from 'svelte';
 	import Calendar from 'svelte-heros-v2/CalendarDays.svelte';
-	import 'svelte-highlight/styles/onedark.css';
+	import CheckBadge from 'svelte-heros-v2/CheckBadge.svelte';
+	import 'svelte-highlight/styles/dracula.css';
 	import { MetaTags } from 'svelte-meta-tags';
 	import { fly } from "svelte/transition";
 
@@ -39,9 +40,9 @@ $: metaTags = extend(true, {}, data.pageMetaTags, $page.data.pageMetaTags);
 
 <MetaTags {...metaTags} />
 	{#if ready && data.post}
-<div class="px-4 md:px-6 lg:px-12">
+<div class="px-4 md:pt-20 md:px-6 lg:px-12 w-full">
 	<main class="w-full pt-12 mb-12   flex justify-center xl:gap-x-36">
-		<section in:fly={{y:100, easing: easeInOutBack, duration: 1000}} class=" w-full max-w-4xl  mx-auto xl:mx-0 blogsection" >
+		<section in:fly={{y:100, easing: easeInOutBack, duration: 1000}} class=" w-full max-w-2xl  mx-auto xl:mx-0 blogsection" >
 			<div class="w-full">
 				<img 
 					src={urlFor(data?.post.imageUrl).format('webp').size(1400, 700).url()}
@@ -51,7 +52,7 @@ $: metaTags = extend(true, {}, data.pageMetaTags, $page.data.pageMetaTags);
 					
 					class=" mb-3 border-2 border-gray-900 custom-img w-full"
 				/>
-				<h1 class="mt-6 m-0 text-4xl w-full img md:text-5xl font-bold">
+				<h1 class="mt-6 m-0 text-4xl w-full img md:text-5xl font-semibold text-pretty font-head">
 					{data.post.title}
 				</h1>
 				<p class="font-medium my-6 font-sans opacity-80 flex gap-x-2 items-center">
@@ -64,22 +65,24 @@ $: metaTags = extend(true, {}, data.pageMetaTags, $page.data.pageMetaTags);
 				</p>
 
 				<div
-					class="mb-4 mt-4 p-2 pr-4 rounded-full bg-gray-100 max-w-max dark:bg-gray-800 flex flex-wrap gap-3 items-center"
+					class="mb-8 mt-4  flex flex-wrap gap-3 items-center"
 				>
 					<img
 						src={urlFor(data?.post.authorInfo.imageUrl).format('webp').size(500, 500).url()}
 						alt=""
 						class="w-8 h-8 rounded-full border border-gray-200 dark:border-gray-700"
 					/>
-					<p class="font-medium opacity-80 text-lg flex items-center gap-2">
-						{data.post.authorInfo.name}
+					<p class="font-medium opacity-80 text-lg flex !items-center gap-2 ">
+					 <span class='font-semibold font-head'>
+							{data.post.authorInfo.name}
+						</span> <CheckBadge class='text-primary font-bold'/>
 					</p>
 				</div>
 			</div>
 
 			<div class="divider" />
 			<section
-				class="!min-w-full prose-p:!min-w-full mt-10 prose prose-xl md:prose-2xl dark:prose-invert prose-headings:font-bold prose-pre:!p-0 prose-pre:whitespace-pre-wrap prose-pre:!bg-inherit prose-pre:!text-lg md:prose-pre:!text-xl lg:prose-pre:!text-2xl prose-purple border-b-2 dark:border-gray-700 pb-10"
+				class="!min-w-full  prose-p:!min-w-full mt-10 prose prose-xl md:prose-2xl  dark:prose-invert prose-headings:font-semibold prose-headings:font-head prose-pre:!p-0 prose-pre:whitespace-pre-wrap prose-p:text-pretty prose-pre:!bg-inherit prose-pre:!text-lg md:prose-pre:!text-xl lg:prose-pre:!text-2xl prose-purple border-b-2 dark:border-gray-700 pb-10"
 			>
 				<PortableText
 					value={[...data.post.body]}
@@ -114,11 +117,11 @@ $: metaTags = extend(true, {}, data.pageMetaTags, $page.data.pageMetaTags);
 				<BlogAuthorInfo author={data.post.authorInfo} />
 			</aside>
 		</section>
-		<aside  in:fly={{y:-100, easing: easeInOutBack, duration: 1000}} class="!max-w-2xl hidden xl:block">
+		<aside  in:fly={{y:-100, easing: easeInOutBack, duration: 1000}} class="!max-w-lg hidden xl:block">
 			<div class=" w-full as">
-				<Toc outline={data.toc} />
+				<!-- <Toc outline={data.toc} /> -->
 				
-				<div class="mt-10 px-6 md:px-0">
+				<div class=" px-6 md:px-0">
 					<Tags tags={data.tags.tags} />
 				</div>
 				<div class="mt-10 px-6 md:px-0">
@@ -130,7 +133,7 @@ $: metaTags = extend(true, {}, data.pageMetaTags, $page.data.pageMetaTags);
 			</div>
 		</aside>
 	</main>
-	<div class="mb-24 mt-0  max-w-4xl md:mx-auto  xl:hidden ">
+	<div class="mb-24 mt-0 w-full max-w-2xl md:!mx-auto  xl:hidden ">
 		<div class="mb-16">
 					<MetaData  />
 				</div>
@@ -149,6 +152,6 @@ $: metaTags = extend(true, {}, data.pageMetaTags, $page.data.pageMetaTags);
 	}
 	.as {
 		position: sticky;
-		top: 2rem;
+		top: 5rem;
 	}
 </style>
