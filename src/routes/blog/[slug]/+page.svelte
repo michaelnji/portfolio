@@ -152,6 +152,6 @@ $: metaTags = extend(true, {}, data.pageMetaTags, $page.data.pageMetaTags);
 	}
 	.as {
 		position: sticky;
-		top: 5rem;
+		top: 9rem;
 	}
 </style>

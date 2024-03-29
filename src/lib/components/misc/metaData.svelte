@@ -67,7 +67,7 @@
 	</div>
 
 	<div
-		class=" hover:!bg-primary hover:text-white  cursor-pointer relative overflow-hidden flex items-center justify-center  card-wrapper dark:bg-gray-900 boder-gray dark:border-gray-700 border-2 border-black gap-x-1 font-semibold text-lg transition duration-300"
+		class=" p-4 xl:hover:!bg-primary hover:text-white  cursor-pointer relative overflow-hidden flex items-center justify-center  card-wrapper dark:bg-gray-900 boder-gray dark:border-gray-700 border-2 border-black gap-x-1 font-semibold text-lg transition duration-300"
 		role="button"
 		tabindex="0"
 		on:keydown
@@ -94,7 +94,7 @@
 	</div>
 
 	<div
-		class=" hover:!bg-primary hover:text-white  cursor-pointer relative overflow-hidden flex items-center justify-center  card-wrapper dark:bg-gray-900 boder-gray dark:border-gray-700 border-2 border-black gap-x-1 font-semibold text-lg transition duration-300 p-4"
+		class=" p-4 xl:hover:!bg-primary hover:text-white  cursor-pointer relative overflow-hidden flex items-center justify-center  card-wrapper dark:bg-gray-900 boder-gray dark:border-gray-700 border-2 border-black gap-x-1 font-semibold text-lg transition duration-300 "
 		role="button"
 		tabindex="0"
 		on:keydown
