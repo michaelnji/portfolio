@@ -65,7 +65,7 @@
 	<h3 class="logo text-2xl font-head font-medium ">Michael Nji</h3>
 	
 		<nav class="    flex justify-center items-center gap-x-6 ">
-			<a on:click={toggleModal}
+			<a 
 				href="/"
 				class="  font-semibold group relative font-head overflow-hidden"
 				
@@ -78,7 +78,7 @@
 					class:hover:!translate-x-14={currentSection === '/'}
 				/>
 			</a>
-			<a on:click={toggleModal}
+			<a 
 				href="/blog"
 				class="  font-semibold group relative font-head overflow-hidden"
 				
@@ -91,7 +91,7 @@
 					class:hover:!translate-x-14={currentSection === '/blog'}
 				/>
 			</a>
-			<a on:click={toggleModal}
+			<a 
 				href="https://www.github.com/michaelnji"
 				target="_blank"
 				class="  font-semibold group relative font-head overflow-hidden"
@@ -101,7 +101,7 @@
 					class="h-1 w-2/3 bg-gradient-to-r from-pink-600  to-purple-600   transition-transform duration-500 -translate-x-24 group-hover:translate-x-0"
 				/>
 			</a>
-			<a on:click={toggleModal}
+			<a 
 				href="https://www.x.com/CodeD3vil"
 				target="_blank"
 				class="  font-semibold group relative font-head overflow-hidden"

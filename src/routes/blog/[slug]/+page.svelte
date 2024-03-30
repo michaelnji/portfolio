@@ -34,7 +34,7 @@ $: metaTags = extend(true, {}, data.pageMetaTags, $page.data.pageMetaTags);
 	onMount(() => {
 		$metadata = data.meta_data
 			ready = true;
-			// console.log(data.post?.body)
+			
 	});
 </script>
 

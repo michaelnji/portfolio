@@ -37,11 +37,11 @@
 
 		<section class="pt-12 md:pt-24 px-3 md:px-6">
 			<div
-				class="w-full md:max-w-7xl  mx-auto grid grid-cols-1 items-start  lg:grid-cols-2 p gap-6 md:gap-12"
+				class="w-full md:max-w-xl lg:max-w-7xl  mx-auto grid grid-cols-1 place-items-center  lg:grid-cols-2 p gap-6 md:gap-12"
 				bind:this={el}
 			>
 				<div
-					class=" group project w-full !rounded-2xl"
+					class=" group project max-w-xl w-full !rounded-2xl"
 					style="opacity: 0; transform:translateY(100px)"
 				>
 				<div class="w-full h-full relative">
@@ -118,7 +118,7 @@
 				</div>
 				</div>
 				<div
-					class=" group project w-full !rounded-2xl"
+					class=" group project max-w-xl w-full !rounded-2xl"
 					style="opacity: 0; transform:translateY(100px)"
 				>
 				<div class="w-full h-full relative">
@@ -195,7 +195,7 @@
 				</div>
 				</div>
 				<div
-					class=" group project w-full !rounded-2xl"
+					class=" group project max-w-xl w-full !rounded-2xl"
 					style="opacity: 0; transform:translateY(100px)"
 				>
 				<div class="w-full h-full relative">
@@ -273,7 +273,7 @@
 				</div>
 				</div>
 				<div
-					class=" group project w-full !rounded-2xl"
+					class=" group project max-w-xl w-full !rounded-2xl"
 					style="opacity: 0; transform:translateY(100px)"
 				>
 				<div class="w-full h-full relative">

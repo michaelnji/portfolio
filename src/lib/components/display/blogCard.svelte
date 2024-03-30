@@ -15,7 +15,7 @@
 			{excerpt}
 		</p>
 		<a href={`/blog/${slug}`} class=" hover:bg-black hover:text-white transition duration-300 text-md border-2 border-black no-underline p-1 px-3 dark:text-gray-100 dark:border-gray-800 ">
-			read article
+			Read article
 		</a>
 		</div>
 </div>

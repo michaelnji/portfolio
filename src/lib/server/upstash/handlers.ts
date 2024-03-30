@@ -5,7 +5,7 @@ import { PostMetaDataCLient } from "./initialize";
 export async function getDataById(id: string) {
     try {
         const info = await PostMetaDataCLient.get(id);
-        console.log(info)
+       
         return {
             status: 200,
             error: null,
@@ -48,7 +48,6 @@ export async function getOrCreatePostMetaData(id: string, info: PostMetaData) {
     let newData;
     if (!exists?.data) {
         newData = await createPostMetadata(info, id)
-        console.log(newData)
         return newData
     }
     return exists
