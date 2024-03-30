@@ -40,6 +40,6 @@ export function numToSummary(num: number): string | number {
 	if (num < 1000 || !num) return num;
 	const units = ['K', 'M', 'B', 'T'];
 	const unit = Math.floor((num.toString().split('.')[0].length - 1) / 3);
-	const value = (num / Math.pow(1000, unit)).toFixed(2);
+	const value = (num / Math.pow(1000, unit)).toFixed(1);
 	return `${value}${units[unit - 1]}`;
 }

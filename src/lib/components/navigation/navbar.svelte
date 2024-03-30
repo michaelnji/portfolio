@@ -71,7 +71,7 @@
 				
 				class:italic={currentSection === '/'}
 			>
-				<p class="font-medium text-xl">Home</p>
+				<p class="font-bold text-xl">Home</p>
 				<p
 					class="h-1 w-2/3 bg-gradient-to-r from-pink-600  to-purple-600   transition-transform duration-500 -translate-x-24 group-hover:translate-x-0"
 					class:translate-x-0={currentSection === '/'}
@@ -84,7 +84,7 @@
 				
 				class:italic={currentSection === '/blog'}
 			>
-				<p class="font-medium text-xl">Blog</p>
+				<p class="font-bold text-xl">Blog</p>
 				<p
 					class="h-1 w-2/3 bg-gradient-to-r from-pink-600  to-purple-600   transition-transform duration-500 -translate-x-24 group-hover:translate-x-0"
 					class:translate-x-0={currentSection === '/blog'}
@@ -96,7 +96,7 @@
 				target="_blank"
 				class="  font-semibold group relative font-head overflow-hidden"
 			>
-				<p class="font-medium text-xl">Github</p>
+				<p class="font-bold text-xl">Github</p>
 				<p
 					class="h-1 w-2/3 bg-gradient-to-r from-pink-600  to-purple-600   transition-transform duration-500 -translate-x-24 group-hover:translate-x-0"
 				/>
@@ -106,7 +106,7 @@
 				target="_blank"
 				class="  font-semibold group relative font-head overflow-hidden"
 			>
-				<p class="font-medium text-xl">Twitter</p>
+				<p class="font-bold text-xl">Twitter</p>
 				<p
 					class="h-1 w-2/3 bg-gradient-to-r from-pink-600  to-purple-600   transition-transform duration-500 -translate-x-24 group-hover:translate-x-0"
 				/>

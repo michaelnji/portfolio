@@ -58,8 +58,8 @@
 	}
 </script>
 
-<h1 class="mb-5 m-0 text-xl w-full font-semibold max-w-max">Some stats on this post</h1>
-<div class="w-full max-w-sm md:max-w-xl grid grid-cols-2 md:grid-cols-3 gap-3">
+<h1 class="mb-5 m-0 text-xl w-full font-semibold max-w-max ">Some stats on this post</h1>
+<div class="w-full max-w-sm md:max-w-xl grid grid-cols-2 md:grid-cols-3 gap-6">
 	<div
 		class="flex items-center justify-center  card-wrapper dark:bg-gray-900 boder-gray dark:border-gray-700 border-2 border-black gap-x-1 font-semibold text-lg transition duration-300"
 	>

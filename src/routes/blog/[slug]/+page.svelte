@@ -50,7 +50,7 @@ $: metaTags = extend(true, {}, data.pageMetaTags, $page.data.pageMetaTags);
 					height="700"
 					alt=""
 					
-					class=" mb-3 border-2 border-gray-900 custom-img w-full"
+					class=" mb-3 border-4 border-gray-900 custom-img w-full"
 				/>
 				<h1 class="mt-6 m-0 text-4xl w-full img md:text-5xl font-semibold text-pretty font-head">
 					{data.post.title}
@@ -80,9 +80,9 @@ $: metaTags = extend(true, {}, data.pageMetaTags, $page.data.pageMetaTags);
 				</div>
 			</div>
 
-			<div class="divider" />
+			<!-- <div class="divider" /> -->
 			<section
-				class="!min-w-full  prose-p:!min-w-full mt-10 prose prose-xl md:prose-2xl  dark:prose-invert prose-headings:font-semibold prose-headings:font-head prose-pre:!p-0 prose-pre:whitespace-pre-wrap prose-p:text-pretty prose-pre:!bg-inherit prose-pre:!text-lg md:prose-pre:!text-xl lg:prose-pre:!text-2xl prose-purple border-b-2 dark:border-gray-700 pb-10"
+				class="!min-w-full  prose-p:!min-w-full  prose prose-xl md:prose-2xl  dark:prose-invert prose-headings:font-semibold prose-headings:font-head prose-pre:!p-0 prose-pre:whitespace-pre-wrap prose-p:text-pretty prose-pre:!bg-inherit prose-pre:!text-lg md:prose-pre:!text-xl lg:prose-pre:!text-2xl prose-purple border-b-2 dark:border-gray-700 pb-10"
 			>
 				<PortableText
 					value={[...data.post.body]}
