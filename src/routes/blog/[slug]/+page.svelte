@@ -23,7 +23,6 @@
 	import extend from 'just-extend';
 	import { onMount } from 'svelte';
 	import Calendar from 'svelte-heros-v2/CalendarDays.svelte';
-	import CheckBadge from 'svelte-heros-v2/CheckBadge.svelte';
 	import 'svelte-highlight/styles/dracula.css';
 	import { MetaTags } from 'svelte-meta-tags';
 	import { fly } from "svelte/transition";
@@ -44,27 +43,28 @@ $: metaTags = extend(true, {}, data.pageMetaTags, $page.data.pageMetaTags);
 	<main class="w-full pt-12 mb-12   flex justify-center xl:gap-x-36">
 		<section in:fly={{y:100, easing: easeInOutBack, duration: 1000}} class=" w-full max-w-2xl  mx-auto xl:mx-0 blogsection" >
 			<div class="w-full">
-				<img 
+					<img 
 					src={urlFor(data?.post.imageUrl).format('webp').size(1400, 700).url()}
 					width="1400"
 					height="700"
 					alt=""
 					
-					class=" mb-3 border-4 border-gray-900 custom-img w-full"
+					class=" mb-8 border-4 border-gray-900 custom-img w-full "
 				/>
-				<h1 class="mt-6 m-0 text-4xl w-full img md:text-5xl font-semibold text-pretty font-head">
-					{data.post.title}
-				</h1>
-				<p class="font-medium my-6 font-sans opacity-80 flex gap-x-2 items-center">
+					<p class=" font-sans opacity-80 flex gap-x-2 items-center">
 					<Calendar />
-					<span class="text-gray-700 dark:text-gray-200 font-medium text-xl"
+					<span class="text-gray-700 dark:text-gray-200 text-lg md:text-xl"
 						>{data.post._updatedAt && getReadableDate(data.post._updatedAt) !== getReadableDate(data.post.publishedAt)
 							? `Last updated ${getReadableDate(data.post._updatedAt)}`
 							: `Published ${getReadableDate(data.post.publishedAt)}`}</span
 					>
 				</p>
+				<h1 class="mb-8  text-4xl w-full img md:text-5xl font-extrabold text-pretty">
+					{data.post.title}
+				</h1>
+			
 
-				<div
+				<!-- <div
 					class="mb-8 mt-4  flex flex-wrap gap-3 items-center"
 				>
 					<img
@@ -77,12 +77,16 @@ $: metaTags = extend(true, {}, data.pageMetaTags, $page.data.pageMetaTags);
 							{data.post.authorInfo.name}
 						</span> <CheckBadge class='text-primary font-bold'/>
 					</p>
-				</div>
+				</div> -->
+			
 			</div>
 
-			<!-- <div class="divider" /> -->
+			<!-- <div class="my-6 font-semibold p-6 border-l-8 bg-gray-100 border-gray-900 prose text-2xl  text-pretty">
+				{data.post.excerpt}
+			</div> -->
+
 			<section
-				class="!min-w-full  prose-p:!min-w-full  prose prose-xl md:prose-2xl  dark:prose-invert prose-headings:font-semibold prose-headings:font-head prose-pre:!p-0 prose-pre:whitespace-pre-wrap prose-p:text-pretty prose-pre:!bg-inherit prose-pre:!text-lg md:prose-pre:!text-xl lg:prose-pre:!text-2xl prose-purple border-b-2 dark:border-gray-700 pb-10"
+				class="!min-w-full   prose-p:!min-w-full  prose prose-xl md:prose-2xl  dark:prose-invert prose-sky prose-headings:font-extrabold prose-headings prose-pre:!p-0 prose-pre:whitespace-pre-wrap prose-p:text-pretty prose-pre:!bg-inherit prose-pre:!text-lg md:prose-pre:!text-xl lg:prose-pre:!text-2xl  border-b-2 dark:border-gray-700 pb-10"
 			>
 				<PortableText
 					value={[...data.post.body]}

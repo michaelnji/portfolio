@@ -32,7 +32,6 @@
 					
 						<BlogCard
 						title={post.title}
-						
 						slug={post.slug.current}
 						published={post.publishedAt}
 						excerpt={post.excerpt}

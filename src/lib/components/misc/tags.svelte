@@ -5,7 +5,7 @@
 </script>
 
 <div>
-	<h1 class="mb-4 m-0 font-head text-xl w-full font-semibold  max-w-max uppercase">MORE CATEGORIES</h1>
+	<h1 class="mb-4 m-0  text-xl w-full font-semibold  max-w-max uppercase">MORE CATEGORIES</h1>
 <div class="flex flex-wrap w-full gap-2">
 	{#each tags as tag}
 	<a href={`/blog?tag=${tag.title}`}
