@@ -1,6 +1,6 @@
 <script lang="ts">
 	import { page } from '$app/stores';
-	import { urlFor } from '$lib/backend/sanity.js';
+	import { urlFor } from '$lib/backend/sanity';
 	import BlogAuthorInfo from '$lib/components/misc/blogAuthorInfo.svelte';
 	import BlogImg from '$lib/components/misc/blogImg.svelte';
 	import CodeBlock from '$lib/components/misc/codeBlock.svelte';
@@ -23,6 +23,7 @@
 	import extend from 'just-extend';
 	import { onMount } from 'svelte';
 	import Calendar from 'svelte-heros-v2/CalendarDays.svelte';
+	import PencilSquare from 'svelte-heros-v2/PencilSquare.svelte';
 	import 'svelte-highlight/styles/dracula.css';
 	import { MetaTags } from 'svelte-meta-tags';
 	import { fly } from "svelte/transition";
@@ -51,11 +52,15 @@ $: metaTags = extend(true, {}, data.pageMetaTags, $page.data.pageMetaTags);
 					
 					class=" mb-8 border-4 border-gray-900 custom-img w-full "
 				/>
-					<p class=" font-sans opacity-80 flex gap-x-2 items-center">
+					<p class=" font-sans mb-1 py-1 px-3 rounded-full bg-gray-200 dark:bg-gray-900 max-w-max opacity-80 flex gap-x-2 items-center font-medium">
+					{#if data.post._updatedAt && getReadableDate(data.post._updatedAt) !== getReadableDate(data.post.publishedAt) }
+					<PencilSquare />
+					{:else}
 					<Calendar />
-					<span class="text-gray-700 dark:text-gray-200 text-lg md:text-xl"
+					{/if}
+					<span class="text-gray-700 dark:text-gray-200 text-lg "
 						>{data.post._updatedAt && getReadableDate(data.post._updatedAt) !== getReadableDate(data.post.publishedAt)
-							? `Last updated ${getReadableDate(data.post._updatedAt)}`
+							? ` Updated ${getReadableDate(data.post._updatedAt)}`
 							: `Published ${getReadableDate(data.post.publishedAt)}`}</span
 					>
 				</p>
