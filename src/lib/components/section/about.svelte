@@ -71,10 +71,10 @@
 							</h3>
 							<p class="text-xl md:text-2xl dark:text-gray-100 opacity-70 mt-2">
 								I’m currently working on <Link
-									href="https://seabridge.vercel.app"
+									href="https://gruvvy.vercel.app"
 									target="_blank"
-									classes="font-head font-medium ">Seabridge</Link
-								> , a business management system for mini importation businesses and
+									classes="font-head font-medium ">Gruvvy</Link
+								> , a mobile hybrid app to track daily spending &
 								<Link
 									href="https://decko.vercel.app"
 									target="_blank"

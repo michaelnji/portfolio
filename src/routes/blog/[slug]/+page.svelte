@@ -91,7 +91,7 @@ $: metaTags = extend(true, {}, data.pageMetaTags, $page.data.pageMetaTags);
 			</div> -->
 
 			<section
-				class="!min-w-full   prose-p:!min-w-full  prose prose-xl md:prose-2xl  dark:prose-invert prose-sky prose-headings:font-extrabold prose-headings prose-pre:!p-0 prose-pre:whitespace-pre-wrap prose-p:text-pretty prose-pre:!bg-inherit prose-pre:!text-lg md:prose-pre:!text-xl lg:prose-pre:!text-2xl  border-b-2 dark:border-gray-700 pb-10"
+				class="!min-w-full   prose-p:!min-w-full  prose prose-lg md:!prose-xl   dark:prose-invert prose-sky prose-headings:font-extrabold prose-headings prose-pre:!p-0 prose-pre:whitespace-pre-wrap prose-p:text-pretty prose-pre:!bg-inherit prose-pre:!text-sm md:prose-pre:!text-base lg:prose-pre:!text-2xl  border-b-2 dark:border-gray-700 pb-10"
 			>
 				<PortableText
 					value={[...data.post.body]}

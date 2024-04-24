@@ -6,6 +6,8 @@
 	import Svelte from "svelte-simples/Svelte.svelte";
 	import Tailwindcss from "svelte-simples/Tailwindcss.svelte";
 	import Typescript from "svelte-simples/Typescript.svelte";
+	import Javascript from "svelte-simples/Javascript.svelte";
+	import Vue from "svelte-simples/Vuedotjs.svelte";
 	let el: HTMLElement;
 </script>
 
@@ -122,71 +124,61 @@
 					style="opacity: 0; transform:translateY(100px)"
 				>
 				<div class="w-full h-full relative">
-					<div class=" w-full h-full -z-10 absolute bg-black border-4 border-green-950 rounded-2xl ">
+					<div class=" w-full h-full -z-10 absolute bg-black border-4 border-orange-950 rounded-2xl ">
 					
 				</div>
-					<div class="  translate-x-1 -translate-y-2 lg:!shadow-0 lg:translate-x-3 lg:-translate-y-3 lg:group-hover:translate-x-4 lg:group-hover:-translate-y-4 transition duration-150  bg-green-500 border-4 border-gray-950 p-6 !rounded-2xl  z-50">
+					<div class="  translate-x-1 -translate-y-2 lg:!shadow-0 lg:translate-x-3 lg:-translate-y-3 lg:group-hover:translate-x-4 lg:group-hover:-translate-y-4 transition duration-150  bg-orange-600 border-4 border-gray-950 p-6 !rounded-2xl  z-50">
 						<div class="w-full flex-col !justify-between gap-12 items-start">
 							<div class="flex flex-wrap z-20 gap-3">
 								<p
-									class="px-3 py-1 font-bold bg-green-950 rounded-lg text-green-300 text-sm  transition duration-1000"
+									class="px-3 py-1 font-bold bg-orange-950 rounded-lg text-orange-300 text-sm  transition duration-1000"
 								>
-									Completed
+									In Progress
 								</p>
 								<p
-									class="px-3 py-1 font-bold bg-green-950 rounded-lg text-green-300 text-sm  transition duration-1000"
+									class="px-3 py-1 font-bold bg-orange-950 rounded-lg text-orange-300 text-sm  transition duration-1000"
 								>
 									Side Project
 								</p>
 								<p
-									class="px-3 py-1 font-bold bg-green-950 rounded-lg text-green-300 text-sm  transition duration-1000"
+									class="px-3 py-1 font-bold bg-orange-950 rounded-lg text-orange-300 text-sm  transition duration-1000"
 								>
-									Website
+									PWA
 								</p>
 							</div>
 						</div>
 						<div class="mt-4">
-							<h1 class="md:text-8xl text-5xl capitalize text-green-50 font-medium font-retro">
-								WABUZZ
+							<h1 class="md:text-8xl text-5xl capitalize text-orange-50 font-medium font-retro">
+								Gruvvy
 							</h1>
-							<p class="mt-3 font-medium text-green-50 text-xl md:text-2xl opacity-90">
-								A website to grow your whatsapp views by automatically gaining active contacts. 
+							<p class="mt-3 font-medium text-orange-50 text-xl md:text-2xl opacity-90">
+								A simple mobile PWA used to track daily spending habits. Shows basic weekly statistics and works totally offline.
 							</p>
-							<div class="mt-4 p-6 rounded-2xl bg-green-800 bg-opacity-20">
-								<p class="font-medium text-green-50 text-2xl opacity-90">Built using</p>
+							<div class="mt-4 p-6 rounded-2xl bg-orange-800 bg-opacity-20">
+								<p class="font-medium text-orange-50 text-2xl opacity-90">Built using</p>
 								<div class="flex flex-wrap gap-3 mt-3">
-									<!-- <p
-										class="p-2 font-bold text-green-50 rounded-lg bg-green-950 text-xs font-mono transition duration-1000"
+									<p
+										class="p-2 font-bold text-orange-50 rounded-lg bg-orange-950 text-xs font-mono transition duration-1000"
 									>
 										<Javascript width={'30'} height="30" />
-									</p> -->
+									</p>
 									<p
-										class="p-2 font-bold text-green-50 rounded-lg bg-green-950 text-xs font-mono transition duration-1000"
+										class="p-2 font-bold text-orange-50 rounded-lg bg-orange-950 text-xs font-mono transition duration-1000"
 									>
 										<Tailwindcss width={'30'} height="30" />
 									</p>
 									<p
-										class="p-2 font-bold text-green-50 rounded-lg bg-green-950 text-xs font-mono transition duration-1000"
+										class="p-2 font-bold text-orange-50 rounded-lg bg-orange-950 text-xs font-mono transition duration-1000"
 									>
-										<Supabase width={'30'} height="30" />
+										<Vue width={'30'} height="30" />
 									</p>
-									<p
-										class="p-2 font-bold text-green-50 rounded-lg bg-green-950 text-xs font-mono transition duration-1000"
-									>
-										<Nodedotjs width={'30'} height="30" />
-									</p>
-
-									<p
-										class="p-2 font-bold text-green-50 rounded-lg bg-green-950 text-xs font-mono transition duration-1000"
-									>
-										<Svelte width={'30'} height="30" />
-									</p>
+									
 								</div>
 								<div class="mt-8 flex gap-3">
 									<a
-										href="https://wabuzz.vercel.app"
+										href="https://gruvvy.vercel.app"
 										target="_blank"
-										class="btn btn-wrapper border-2 border-black  !rounded-none !bg-green-600">Preview</a
+										class="btn btn-wrapper border-2 border-black  !rounded-none !bg-orange-600">Preview</a
 									>
 								</div>
 							</div>
