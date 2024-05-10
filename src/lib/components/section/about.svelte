@@ -49,14 +49,15 @@
 					>
 						<div class="prose p-6 bg-white dark:bg-gray-900 rounded-2xl shadow-lg">
 							<h3 class="text-2xl md:text-4xl dark:text-gray-100 font-medium font-head">
-								I Develop Kool Stuff
+								I Develop Webware
 							</h3>
-							<p class="text-xl md:text-2xl dark:text-gray-100 opacity-70 mt-2">
-								I’m a self-taught Software Engineer and Technical Writer with over a year of
-								experience working with several technologies to build some <Link
+							<p class="text-lg md:text-2xl dark:text-gray-100 opacity-70 mt-2">
+								I’m a self-taught web developer with over a year of
+								experience working with several technologies to build some 
+								<Link
 									href="https://github.com/michaelnji/repositories"
 									target="_blank"
-									classes="font-head font-medium ">pretty cool software</Link
+									classes="font-head font-medium "> cool software</Link
 								> .
 							</p>
 						</div>
@@ -69,7 +70,7 @@
 							<h3 class="text-2xl md:text-4xl dark:text-gray-100 font-medium font-head">
 								Currently working on
 							</h3>
-							<p class="text-xl md:text-2xl dark:text-gray-100 opacity-70 mt-2">
+							<p class="text-lg md:text-2xl dark:text-gray-100 opacity-70 mt-2">
 								I’m currently working on <Link
 									href="https://gruvvy.vercel.app"
 									target="_blank"
