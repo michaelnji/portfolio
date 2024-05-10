@@ -2,7 +2,7 @@ import { octokit } from "./client";
 import { getReposStats } from './repos';
 // 
 export async function getUser() {
-  const { totalForks, totalIssues, totalStars } = await getReposStats()
+  const { totalForks, totalIssues, totalStars, totalCommitCounts } = await getReposStats()
   const { data } = await octokit.rest.users.getAuthenticated();
   return {
     avatar: data.avatar_url,
@@ -15,9 +15,10 @@ export async function getUser() {
     followers: data.followers,
     following: data.following,
     created_at: data.created_at,
-    totalForks, totalIssues, totalStars
+    totalForks, totalIssues, totalStars, totalCommitCounts
   }
 
 
 
 }
+

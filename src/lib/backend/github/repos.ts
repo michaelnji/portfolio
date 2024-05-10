@@ -1,4 +1,4 @@
-import { octokit } from './client'
+import { octokit } from './client';
 // octokit.rest.repos.get({
 //   owner,
 //   repo,
@@ -9,10 +9,19 @@ import { octokit } from './client'
 //   repo,
 // });
 
-// octokit.rest.repos.listCommits({
-//   owner,
-//   repo,
-// });
+export async function getRepoCommitCount(owner: string, repo: string) {
+    try {
+        const { status, data } = await octokit.rest.repos.listCommits({
+            owner,
+            repo,
+        });
+        if (status !== 200) return 0
+        return data.length
+    } catch (err) {
+        return 0
+    }
+
+}
 
 export async function getReposStats() {
     const { data } = await octokit.rest.repos.listForAuthenticatedUser();
@@ -21,6 +30,18 @@ export async function getReposStats() {
     let totalStars = 0
     let totalForks = 0
     let totalIssues = 0
+    let totalCommitCounts = 0
+    const tempData = data
+
+    for (let index = 0; index < tempData.length - 1; index++) {
+        const element = tempData[index];
+        if (!element.archived && !element.disabled) {
+            const commits = await getRepoCommitCount('michaelnji', element.name)
+            totalCommitCounts = totalCommitCounts + commits
+        }
+
+    }
+
     data.forEach((repo) => {
         if (!repo.archived && !repo.disabled) {
             totalStars = totalStars + repo.stargazers_count
@@ -41,8 +62,9 @@ export async function getReposStats() {
             visibility: repo.visibility
         })
     })
-
+    console.log(totalCommitCounts)
     return {
-        repos, totalForks, totalIssues, totalStars
+        repos, totalForks, totalIssues, totalStars, totalCommitCounts
     }
 }
+
