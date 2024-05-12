@@ -40,7 +40,7 @@
 				}}
 			>
 				<div
-					class=" grid grid-cols-1 gap-4 md:gap-11 lg:grid-cols-2 mx-auto w-full items-center justify-center mb-[6rem] lg:mb-[9rem] border-8 border-dashed border-gray-700 dark:border-gray-400 p-4 md:p-12 max-w-7xl bg-gray-200 dark:bg-gray-800 rounded-3xl about-items"
+					class=" grid grid-cols-1 gap-4  lg:grid-cols-2 mx-auto w-full items-center justify-center mb-[6rem] lg:mb-[9rem] border-4 border-black card-wrapper p-6 rounded-2xl  md:p-12 max-w-7xl bg-blue-100 dark:bg-gray-800 transition-shadow duration-300  about-items"
 					style="opacity: 0; transform: translateY(150px)"
 				>
 					<div
@@ -48,8 +48,8 @@
 						style="opacity: 0; transform: translateY(50px)"
 					>
 						<div class="prose p-6 bg-white dark:bg-gray-900 rounded-2xl shadow-lg">
-							<h3 class="text-2xl md:text-4xl dark:text-gray-100 font-medium font-head">
-								I Develop Webware
+							<h3 class="text-2xl md:text-4xl dark:text-gray-100 font-semibold font-head">
+								I build websites/apps
 							</h3>
 							<p class="text-lg md:text-2xl dark:text-gray-100 opacity-70 mt-2">
 								I’m a self-taught web developer with over a year of
@@ -67,7 +67,7 @@
 						style="opacity: 0; transform: translateY(50px)"
 					>
 						<div class="prose p-6 bg-white dark:bg-gray-900 rounded-2xl shadow-lg">
-							<h3 class="text-2xl md:text-4xl dark:text-gray-100 font-medium font-head">
+							<h3 class="text-2xl md:text-4xl dark:text-gray-100 font-semibold font-head">
 								Currently working on
 							</h3>
 							<p class="text-lg md:text-2xl dark:text-gray-100 opacity-70 mt-2">

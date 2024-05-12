@@ -32,13 +32,13 @@
 
 <div class="flex w-full gap-x-12 items-center justify-between">
 	<div
-		class=" bg-primary overflow-hidden border-4 border-gray-900 hero-img mb-6 rounded-3xl w-[7rem] md:w-[12rem]  hidden xl:!block"
+		class=" bg-primary overflow-hidden border-4 border-gray-900 hero-img mb-6  w-[7rem] md:w-[12rem]  hidden xl:!block"
 		style="opacity:0; transform:translateY(38px);"
 	>
 		<img src={i} alt="" class="w-[7rem] md:w-[12rem] aspect-square" loading="lazy" />
 	</div>
 	<div
-		class=" block xl:!hidden bg-primary overflow-hidden border-4 border-gray-900 hero-img-sm mb-6 rounded-3xl w-[7rem] md:w-[12rem]"
+		class=" block xl:!hidden bg-primary overflow-hidden border-4 border-gray-900 hero-img-sm mb-6  w-[7rem] md:w-[12rem]"
 		style="opacity:0; transform:translateY(38px);"
 	>
 		<img src={i} alt="" class="w-[7rem] md:w-[12rem] aspect-square" loading="lazy" />

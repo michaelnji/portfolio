@@ -38,9 +38,9 @@
 </script>
 
 <div
-	class="p-6 md:p-12  transform rotate-6 bg-purple-50 dark:bg-gray-900  max-w-lg mx-auto w-full card-wrapper transition duration-300 border-4 border-black"
+	class="p-6 md:p-12  transform rotate-6 bg-purple-50 max-w-lg mx-auto w-full card-wrapper transition duration-300 border-4 border-black rounded-2xl"
 >
-	<h1 class="text-2xl mx-auto md:text-4xl font-extrabold font-head text-center">I'm active @</h1>
+	<h1 class="text-2xl mx-auto md:text-4xl font-extrabold font-head text-center text-gray-950">I'm active @</h1>
 
 	<div class="flex justify-center flex-wrap w-full gap-3 mt-8">
 		{#each socials as social}
