@@ -24,7 +24,7 @@
 		},
 		{
 			name: 'gmail',
-			link: 'mailto:michaelnji34@gmail.com',
+			link: 'mailto:email@michaelnji.dev',
 			text: '#ff6b6b',
 			color: '#ffc9c9'
 		},

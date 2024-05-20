@@ -15,9 +15,11 @@ export async function getRepoCommitCount(owner: string, repo: string) {
             owner,
             repo,
         });
+
         if (status !== 200) return 0
         return data.length
     } catch (err) {
+
         return 0
     }
 
@@ -37,7 +39,7 @@ export async function getReposStats() {
         for (let index = 0; index < tempData.length - 1; index++) {
             const element = tempData[index];
 
-            const commits = await getRepoCommitCount('michaelnji', element.name)
+            const commits = await getRepoCommitCount(element.owner.name ?? element.owner.login, element.name)
             totalCommitCounts = totalCommitCounts + commits
 
 
