@@ -1,6 +1,6 @@
 # Repository of @michaelnji's portfolio🚀️
 
-Repository for [https://mykenji-v2.vercel.app](https://mykenji.vercel.app) 
+Repository for [https://www.michaelnji.dev](https://www.michaelnji.dev) 
 ## stats
 
 - Comment count: [![](https://tokei.rs/b1/github/michaelnji/portfolio?category=comments)](https://github.com/michaelnji/portfolio)
