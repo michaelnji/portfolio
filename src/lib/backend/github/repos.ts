@@ -1,13 +1,4 @@
 import { octokit } from './client';
-// octokit.rest.repos.get({
-//   owner,
-//   repo,
-// });
-
-// octokit.rest.repos.getParticipationStats({
-//   owner,
-//   repo,
-// });
 
 export async function getRepoCommitCount(owner: string, repo: string) {
     try {
