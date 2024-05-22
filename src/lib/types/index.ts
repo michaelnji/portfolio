@@ -12,7 +12,7 @@ export interface Post {
 	};
 	tags: { title: string; description: string }[];
 	publishedAt: Date | string;
-	slug: string;
+	slug: { current: string };
 	title: string;
 	_updatedAt: Date | string;
 	imageUrl: string;
