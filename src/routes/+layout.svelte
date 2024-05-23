@@ -14,7 +14,6 @@
 	import '@fontsource/short-stack';	
 	import '@fontsource/ubuntu-mono';
 	let isLoading = false;
-	
 	beforeNavigate(({ to }) => (isLoading = !!to?.route.id));
 	afterNavigate(() => setTimeout(() => (isLoading = false), 200));
 	inject();
@@ -35,6 +34,9 @@
 		$theme = getOrSetItem('theme', 'light');
 	});
 </script>
+<svelte:head>
+	<script defer src="https://cloud.umami.is/script.js" data-website-id="7b096ad9-1f68-4172-aabc-cdbd04437982"></script>
+</svelte:head>
 <ProgressBar class="text-pink-400 p-0.5 !z-50 rounded-full" />
 	<div class={`${$theme} max-w-screen `} data-barba="wrapper">
 		<div 
