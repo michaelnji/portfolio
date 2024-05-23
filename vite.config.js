@@ -19,6 +19,7 @@ export default defineConfig({
 		sveltekit(),
 		partytownVite({
 			dest: path.join(__dirname, 'static', '~partytown'),
+			debug: true
 		}),],
 	test: {
 		include: ['tests/**/*.{test,spec}.{js,ts}'],
