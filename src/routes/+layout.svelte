@@ -46,19 +46,14 @@
 	{@html '<script>' + partytownSnippet() + '</script>'}
 
 	
-	<script
-		async type="text/partytown"
-		src="https://www.googletagmanager.com/gtag/js?id=G-B22J642CLK"
-	></script>
-	
-	<script type="text/partytown">
-		window.dataLayer = window.dataLayer || [];
-		function gtag() {
-			dataLayer.push(arguments);
-		}
-		gtag('js', new Date());
-		gtag('config', 'G-B22J642CLK');
-	</script>
+  <script type="text/partytown" src="https://www.googletagmanager.com/gtag/js?id=G-B22J642CLK"></script>
+  <script type="text/partytown">
+    window.dataLayer = window.dataLayer || [];
+    window.gtag = function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'G-B22J642CLK');
+  </script>
 </svelte:head>
 
 <!-- <UmamiAnalytics
