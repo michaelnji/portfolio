@@ -36,7 +36,7 @@
 
 <!-- <svelte:head>
 </svelte:head> -->
-<svelte:head>
+<!-- <svelte:head>
 	<script>
 		// Forward the necessary functions to the web worker layer
 		partytown = {
@@ -45,14 +45,15 @@
 	</script>
 	{@html '<script>' + partytownSnippet() + '</script>'}
 
+	
+	<script
+		type="text/partytown"
+		src="https://www.googletagmanager.com/gtag/js?id=G-B22J642CLK"
+	></script>
 	<script defer
 		type="text/partytown"
 		src="https://cloud.umami.is/script.js"
 		data-website-id="7b096ad9-1f68-4172-aabc-cdbd04437982"
-	></script>
-	<script
-		type="text/partytown"
-		src="https://www.googletagmanager.com/gtag/js?id=G-B22J642CLK"
 	></script>
 	<script async type="text/partytown">
 		window.dataLayer = window.dataLayer || [];
@@ -62,7 +63,7 @@
 		gtag('js', new Date());
 		gtag('config', 'G-B22J642CLK');
 	</script>
-</svelte:head>
+</svelte:head> -->
 
 <!-- <UmamiAnalytics
 	websiteID="7b096ad9-1f68-4172-aabc-cdbd04437982"
