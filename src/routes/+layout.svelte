@@ -37,23 +37,11 @@
 <!-- <svelte:head>
 </svelte:head> -->
 <svelte:head>
-	<script>
-		// Forward the necessary functions to the web worker layer
-		partytown = {
-			forward: ['dataLayer.push', 'gtag']
-		};
-	</script>
+	
 	{@html '<script>' + partytownSnippet() + '</script>'}
 
 	
-  <script type="text/partytown" src="https://www.googletagmanager.com/gtag/js?id=G-B22J642CLK"></script>
-  <script type="text/partytown">
-    window.dataLayer = window.dataLayer || [];
-    window.gtag = function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
 
-    gtag('config', 'G-B22J642CLK');
-  </script>
 </svelte:head>
 
 <!-- <UmamiAnalytics
