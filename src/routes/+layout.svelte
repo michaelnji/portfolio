@@ -47,7 +47,7 @@
 
 	
 	<script
-		type="text/partytown"
+		async type="text/partytown"
 		src="https://www.googletagmanager.com/gtag/js?id=G-B22J642CLK"
 	></script>
 	
