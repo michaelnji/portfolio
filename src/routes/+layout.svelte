@@ -34,15 +34,10 @@
 	});
 </script>
 
-<!-- <svelte:head>
-</svelte:head> -->
-<svelte:head>
-	
+
+<!-- <svelte:head
 	{@html '<script>' + partytownSnippet() + '</script>'}
-
-	
-
-</svelte:head>
+</svelte:head> -->
 
 <!-- <UmamiAnalytics
 	websiteID="7b096ad9-1f68-4172-aabc-cdbd04437982"
