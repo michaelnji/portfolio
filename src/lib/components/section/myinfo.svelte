@@ -24,7 +24,7 @@
 	console.log($data.data);
 </script>
 
-{#if !$data.isError}
+{#if $data && !$data.isError}
 	<OutlineLayered />
 	<div class=" md:p-12 p-3 min-h-dvh py-14 bg-primary grid grid-cols-1 place-items-center">
 		{#if $data.isSuccess}
