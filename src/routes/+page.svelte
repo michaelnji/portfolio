@@ -10,7 +10,9 @@
 	import { page } from '$app/stores';
 	import extend from 'just-extend';
 	import { MetaTags } from 'svelte-meta-tags';
+import { QueryClient, QueryClientProvider } from '@sveltestack/svelte-query'
 	export let data;
+	 const queryClient = new QueryClient()
 	$: metaTags = extend(true, {}, data.pageMetaTags, $page.data.pageMetaTags);
 </script>
 
@@ -18,13 +20,11 @@
 
 <div class="overflow-x-hidden md:pt-12">
 	<Hero />
-
 	<About />
-
 	<div class=" mt-24">
-		{#if data?.githubUser}
-			<Myinfo userInfo={data.githubUser} />
-		{/if}
+		<QueryClientProvider client={queryClient}>
+			<Myinfo />
+		</QueryClientProvider>
 	</div>
 	<div class=" mt-24 mb-12">
 		{#if data?.posts}

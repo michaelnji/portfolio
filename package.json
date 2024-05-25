@@ -63,6 +63,7 @@
     "@prgm/sveltekit-progress-bar": "^2.0.0",
     "@sanity/client": "^6.9.3",
     "@sanity/image-url": "^1.0.2",
+    "@sveltestack/svelte-query": "^1.6.0",
     "@upstash/query": "^0.0.2",
     "@upstash/redis": "^1.28.4",
     "@vercel/analytics": "^1.1.1",

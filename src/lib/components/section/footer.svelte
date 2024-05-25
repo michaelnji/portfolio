@@ -14,7 +14,7 @@
 	</div>
 	<footer class="flex gap-3 md:gap-6 flex-wrap items-center justify-center xl:justify-start">
 		<div class="flex md:gap-6 gap-3 items-center">
-			<div class="bg-gray-50 dark:bg-gray-900 p-3 md:p-6 rounded-xl md:rounded-2xl">
+			<div class="bg-gray-50  p-3 md:p-6 rounded-xl md:rounded-2xl">
 				<div class="loader w-[20px] md:w-[35px]" />
 			</div>
 			<div>

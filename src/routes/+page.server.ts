@@ -2,7 +2,6 @@ import { getQuote } from '$lib/backend/quotes';
 import type { Load } from '@sveltejs/kit';
 import type { MetaTagsProps } from 'svelte-meta-tags';
 import { getPostsSummarized } from '../lib/backend/posts';
-import { getUser } from '$lib/backend/github/user';
 /** @type {import('@sveltejs/kit').Load} */
 export const load: Load = async ({ url }) => {
 	const pageMetaTags = Object.freeze({
@@ -32,8 +31,7 @@ export const load: Load = async ({ url }) => {
 
 		}
 
-		}) satisfies MetaTagsProps;
-		const githubUser = await getUser()
+	}) satisfies MetaTagsProps;
 		
 	const res = await getPostsSummarized();
 	const quotes = await getQuote()
@@ -43,7 +41,7 @@ export const load: Load = async ({ url }) => {
 			pageMetaTags,
 			posts: res.posts,
 			quotes: quotes.data,
-			githubUser
+
 		};
 	}
 
