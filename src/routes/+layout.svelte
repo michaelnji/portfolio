@@ -34,15 +34,25 @@
 	});
 </script>
 
+<svelte:head>
+	<script>
+		// Forward the necessary functions to the web worker layer
+		partytown = {
+			forward: ['dataLayer.push', 'gtag']
+		};
+	</script>
 
-<!-- <svelte:head
 	{@html '<script>' + partytownSnippet() + '</script>'}
-</svelte:head> -->
 
-<!-- <UmamiAnalytics
-	websiteID="7b096ad9-1f68-4172-aabc-cdbd04437982"
-	srcURL="https://cloud.umami.is/script.js"
-/> -->
+	<script type="text/partytown" src="https://www.googletagmanager.com/gtag/js?id=G-B22J642CLK"></script>
+	<script type="text/partytown">
+		window.dataLayer = window.dataLayer || [];
+		window.gtag = function(){dataLayer.push(arguments);}
+		gtag('js', new Date());
+		gtag('config', 'G-B22J642CLK');
+	</script>
+</svelte:head>
+
 
 <ProgressBar class="text-pink-400 p-0.5 !z-50 rounded-full" />
 <div class={`${$theme} max-w-screen `} data-barba="wrapper">
