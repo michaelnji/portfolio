@@ -2,7 +2,7 @@
 	import { afterNavigate, beforeNavigate, onNavigate } from '$app/navigation';
 	import { getOrSetItem } from '$lib/scripts/dbManager';
 	import theme from '$lib/stores/theme';
-	import { partytownSnippet } from '@builder.io/partytown/integration';
+	// import { partytownSnippet } from '@builder.io/partytown/integration';
 	import '@fontsource/short-stack';
 	import '@fontsource/ubuntu-mono';
 	import { UmamiAnalytics } from '@lukulent/svelte-umami';
@@ -34,24 +34,6 @@
 	});
 </script>
 
-<svelte:head>
-	<!-- <script>
-		// Forward the necessary functions to the web worker layer
-		partytown = {
-			forward: ['dataLayer.push', 'gtag']
-		};
-	</script> -->
-
-	{@html '<script>' + partytownSnippet() + '</script>'}
-
-	<!-- <script type="text/partytown" src="https://www.googletagmanager.com/gtag/js?id=G-B22J642CLK"></script>
-	<script type="text/partytown">
-		window.dataLayer = window.dataLayer || [];
-		window.gtag = function(){dataLayer.push(arguments);}
-		gtag('js', new Date());
-		gtag('config', 'G-B22J642CLK');
-	</script> -->
-</svelte:head>
 
 
 <ProgressBar class="text-pink-400 p-0.5 !z-50 rounded-full" />

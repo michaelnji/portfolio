@@ -50,8 +50,8 @@
 					>
 						My Github Stats
 					</div>
-					<div class="rounded-2xl md:size-48 size-24 overflow-hidden bg-primary">
-						<img src={$data.data.avatar} alt="michaelnji github profile" />
+					<div class="rounded-2xl size-48  overflow-hidden bg-primary">
+						<img src={$data.data.avatar} alt="michaelnji github profile" height='192px' width='192px'/>
 					</div>
 					<div class=" space-y-6">
 						<div class="flex items-center gap-2">
