@@ -79,6 +79,8 @@
     "popmotion": "^11.0.5",
     "speakingurl": "^14.0.1",
     "stickybits": "^3.7.11",
-    "svelte-fast-marquee": "^0.7.0"
+    "svelte-fast-marquee": "^0.7.0",
+    "threads": "^1.7.0",
+    "tiny-worker": "^2.3.0"
   }
 }
