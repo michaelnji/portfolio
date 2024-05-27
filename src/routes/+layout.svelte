@@ -14,7 +14,9 @@
 	import Navbar from './../lib/components/navigation/navbar.svelte';
 	import './styles.postcss';
 	let isLoading = false;
+	// biome-ignore lint/suspicious/noAssignInExpressions: <explanation>
 	beforeNavigate(({ to }) => (isLoading = !!to?.route.id));
+	// biome-ignore lint/suspicious/noAssignInExpressions: <explanation>
 	afterNavigate(() => setTimeout(() => (isLoading = false), 200));
 	inject();
 	injectSpeedInsights();
@@ -28,7 +30,7 @@
 			});
 		});
 	});
-	let ready = false;
+	const ready = false;
 	onMount(() => {
 		$theme = getOrSetItem('theme', 'light');
 	});
@@ -39,7 +41,7 @@
 <ProgressBar class="text-pink-400 p-0.5 !z-50 rounded-full" />
 <div class={`${$theme} max-w-screen `} data-barba="wrapper">
 	<div
-		class="dark:!bg-gray-950 dark:!text-gray-50 bg-gray-50 text-base-200 transition-colors duration-300"
+		class="dark:!bg-gray-950 dark:!text-gray-50 bg-gray-50 text-black transition-colors duration-300"
 	>
 		<header>
 			<Navbar />

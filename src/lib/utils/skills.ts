@@ -1,7 +1,7 @@
 export const skills = [
 	{
 		name: 'svelte',
-		text: '#ff922b', 
+		text: '#e8590c',  
 		proeficiency: 'advanced',
 		link: '',
 		color: '#ffe8cc'
@@ -16,24 +16,18 @@ export const skills = [
 	{
 		name: 'javascript',
 		proeficiency: 'advanced',
-		text: '#fcc419',
+		text: '#f08c00', 
 		link: '',
 		color: '#fff3bf'
 	},
 	{
-		name: 'tailwindcss',
+		name: 'tailwind',
 		proeficiency: 'advanced',
 		text: '#20c997',
 		link: '',
 		color: '#96f2d7'
 	},
-	{
-		name: 'python',
-		proeficiency: 'beginner',
-		text: '#3498db',
-		link: '',
-		color: '#a5d8ff'
-	},
+
 	{
 		name: 'scss',
 		proeficiency: 'intermediate',
@@ -43,7 +37,7 @@ export const skills = [
 		color: '#fcc2d7'
 	},
 	{
-		name: 'nodejs',
+		name: 'node',
 		proeficiency: 'intermediate',
 		icon: 'nodedotjs',
 		text: '#37b24d',
@@ -72,13 +66,7 @@ export const skills = [
 		link: '',
 		color: '#a5d8ff'
 	},
-	{
-		name: 'golang',
-		icon: 'go',
-		text: '#3498db',
-		link: '',
-		color: '#a5d8ff'
-	},
+
 	{
 		name: 'Nuxt',
 		icon: 'nuxtdotjs',

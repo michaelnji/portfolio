@@ -1,11 +1,9 @@
 <script lang="ts">
+	import { skills } from '$lib/utils/skills';
 	import anime from 'animejs';
 	import { onMount } from 'svelte';
-	import Marquee from 'svelte-fast-marquee';
 	import IntersectionObserver from 'svelte-intersection-observer';
-	import Skills from '../misc/skills.svelte';
-	import Link from '../navigation/link.svelte';
-	let element: any;
+	let element: HTMLElement;
 	let play = false;
 	function animateEntry() {
 		const items = document.querySelectorAll('.about-items');
@@ -39,61 +37,65 @@
 					animateEntry();
 				}}
 			>
-				<div
-					class=" grid grid-cols-1 gap-4  lg:grid-cols-2 mx-auto w-full items-center justify-center mb-[6rem] lg:mb-[9rem] border-4 border-black card-wrapper p-6 rounded-2xl  md:p-12 max-w-7xl bg-blue-100 dark:bg-gray-800 transition-shadow duration-300  about-items"
-					style="opacity: 0; transform: translateY(150px)"
-				>
+				<div bind:this={element} />
+				<div class="flex flex-col-reverse xl:flex-row items-center justify-center xl:items-start gap-2 max-w-7xl mx-auto">
 					<div
-						class="w-full flex items-center about-items"
-						style="opacity: 0; transform: translateY(50px)"
+						class="  mx-auto w-full mb-[6rem] lg:mb-[9rem] border-4 border-black card-wrapper max-h-[60rem] overflow-hidden md:max-w-2xl xl:max-w-lg duration-300 about-items relative"
+						style="opacity: 0; transform: translateY(150px)"
 					>
-						<div class="prose p-6 bg-white dark:bg-gray-900 rounded-2xl shadow-lg">
-							<h3 class="text-2xl md:text-4xl dark:text-gray-100 font-semibold ">
-								I build websites/apps
-							</h3>
-							<p class="text-lg md:text-2xl dark:text-gray-100 opacity-70 mt-2">
-								I’m a self-taught web developer with over a year of
-								experience working with several technologies to build some 
-								<Link
-									href="https://github.com/michaelnji/repositories"
-									target="_blank"
-									classes="font-head font-medium "> cool software</Link
-								> .
-							</p>
+						<div class="w-full h-full relative">
+							<div class=" grid items-end bg-secondary p-6">
+								<div>
+									<img src="/dev.svg" alt="" class="" />
+									<h3 class="text-5xl md:text-7xl font-semibold font-head m-0 text-gray-950">
+										A junior web developer since 2022
+									</h3>
+								</div>
+							</div>
 						</div>
 					</div>
 					<div
-						class="w-full about-items flex items-center"
-						style="opacity: 0; transform: translateY(50px)"
+						class="  mx-auto w-full mb-[6rem] lg:mb-[9rem] border-4 border-black border-dashed  overflow-hidden md:max-w-2xl xl:max-w-lg duration-300 about-items relative transition-none"
+						style="opacity: 0; transform: translateY(150px)"
 					>
-						<div class="prose p-6 bg-white dark:bg-gray-900 rounded-2xl shadow-lg">
-							<h3 class="text-2xl md:text-4xl dark:text-gray-100 font-semibold">
-								Currently working on
-							</h3>
-							<p class="text-lg md:text-2xl dark:text-gray-100 opacity-70 mt-2">
-								I’m currently working on <Link
-									href="https://gruvvy.vercel.app"
-									target="_blank"
-									classes="font-head font-medium ">Gruvvy</Link
-								> , a mobile hybrid app to track daily spending &
-								<Link
-									href="https://decko.vercel.app"
-									target="_blank"
-									classes="font-head font-medium ">Decko</Link
-								> , a platform to buy and manage virtual credit cards.
-							</p>
+						<div class="w-full h-full relative">
+							<div class=" grid items-end bg-white p-6">
+								<div>
+									<h3 class="text-3xl md:text-5xl font-semibold font-head m-0 text-gray-950">
+										I am a student in the University of Buea.
+									</h3>
+									<p class="mt-4 text-lg md:text-2xl">
+										I am a self taught, frontend web developer based in Cameroon. I am a rebellious
+										programmer, who most times goes rogue with designs and comes up with unique
+										stuff. I am an adept learner, an average teacher and a big introvert.
+									</p>
+									<h3 class="text-2xl font-semibold font-head m-0 text-gray-950 mt-8">
+										My Skills.
+									</h3>
+									<div class="mt-6 flex flex-wrap gap-3">
+										{#each skills as skill}
+										{#if skill.name === 'github'}
+										<span
+												class=" font-head text-xl font-medium md:font-semibold capitalize px-3 py-1.5 border-2 rounded-xl text-black border-black"
+												>{skill.name}</span
+											>
+											{:else}
+											<span
+												class=" font-head text-xl font-medium md:font-semibold capitalize px-3 py-1.5 border-2 rounded-xl"
+												style={`color: ${skill.text}; border-color: ${skill.text}; `}>{skill.name}</span
+											>
+										{/if}
+											
+										{/each}
+									</div>
+								</div>
+							</div>
 						</div>
 					</div>
 				</div>
 			</IntersectionObserver>
 		</div>
 
-		<!-- skills -->
-
-		<div class="rotate-3 bg-black p-3">
-			<Marquee {play} speed={45}>
-				<Skills />
-			</Marquee>
-		</div>
+		
 	</div>
 </div>

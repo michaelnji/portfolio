@@ -7,11 +7,14 @@
 	import { page } from '$app/stores';
 	import extend from 'just-extend';
 	import { MetaTags } from 'svelte-meta-tags';
+	// biome-ignore lint/suspicious/noExplicitAny: <explanation>
 	export let data: any;
 	$: metaTags = extend(true, {}, data.pageMetaTags, $page.data.pageMetaTags);
 	let posts = data.posts;
 
+	// biome-ignore lint/style/useConst: <explanation>
 	let activeTag: string = data.activeTag ?? 'all';
+	// biome-ignore lint/suspicious/noExplicitAny: <explanation>
 	function tagExists(tags: any): boolean {
 		let exists = false;
 		for (let index = 0; index < tags.length; index++) {
@@ -36,6 +39,7 @@
 			if (activeTag === 'all') {
 				posts = data.posts;
 			} else {
+				// biome-ignore lint/suspicious/noExplicitAny: <explanation>
 				posts = data.posts.filter((x: any) => {
 					return tagExists(x.tags);
 				});
@@ -50,35 +54,37 @@
 
 {#if data}
 	<section class="py-12 md:pt-36 md:min-h-screen px-3">
-		<h1 class="text-3xl w-full max-w-6xl mx-auto md:text-5xl font-medium font-head text-center">
+		<h1 class="text-3xl w-full max-w-6xl mx-auto md:text-5xl font-bold text-center text-pretty">
 			{#if activeTag === 'all' }
-			All Posts
+			All Articles
 				{:else}
-				Tag: <small>{activeTag}</small>
+				Articles in <br/> <b class="capitalize mt-2 text-primary">{activeTag.split('-').join(' ')}</b>
 			{/if}
 		</h1>
 		
 			<div class="mt-4 md:mt-12 flex flex-wrap gap-3 max-w-4xl mx-auto justify-center items-center">
 				<button
-					class="px-3 border-2 border-primary py-1  hover:bg-primary hover:text-purple-50 text-primary bg-primary font-bold bg-opacity-10 dark:text-purple-300 text-sm md:text-base font-mono transition duration-300 uppercase"
+					class="font-head text-md font-medium md:font-semibold  px-3 py-1.5 border-2 rounded-xl text-black border-black dark:border-gray-50 dark:text-primary hover:border-primary hover:text-primary transition duration-300 !capitalize"
 					class:!bg-primary={activeTag === 'all'}
 					class:!text-white={activeTag === 'all'}
+					class:!border-primary={activeTag === 'all'}
 					on:click={() => {
 						activeTag = 'all';
 					}}
 				>
-					ALL
+					all articles
 				</button>
 				{#each data.tags as tag}
 					<button
-						class="px-3 border-2 border-primary py-1 font-bold hover:bg-primary hover:text-purple-50 text-primary bg-primary bg-opacity-10 dark:text-purple-300 text-sm md:text-base font-mono transition duration-300 uppercase"
+						class="font-head text-md font-medium md:font-semibold  px-3 py-1.5 border-2 rounded-xl text-black border-black dark:border-gray-50 dark:text-primary hover:border-primary hover:text-primary transition duration-300 !capitalize"
 						class:!bg-primary={activeTag === tag.title}
 						class:!text-white={activeTag === tag.title}
+						class:!border-primary={activeTag === tag.title}
 						on:click={() => {
 							activeTag = tag.title;
 						}}
 					>
-						{tag.title}
+						{tag.title.split('-').join(' ')}
 					</button>
 				{/each}
 			</div>
