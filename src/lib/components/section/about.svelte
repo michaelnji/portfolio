@@ -48,7 +48,7 @@
 						style="opacity: 0; transform: translateY(50px)"
 					>
 						<div class="prose p-6 bg-white dark:bg-gray-900 rounded-2xl shadow-lg">
-							<h3 class="text-2xl md:text-4xl dark:text-gray-100 font-semibold font-head">
+							<h3 class="text-2xl md:text-4xl dark:text-gray-100 font-semibold ">
 								I build websites/apps
 							</h3>
 							<p class="text-lg md:text-2xl dark:text-gray-100 opacity-70 mt-2">
@@ -67,7 +67,7 @@
 						style="opacity: 0; transform: translateY(50px)"
 					>
 						<div class="prose p-6 bg-white dark:bg-gray-900 rounded-2xl shadow-lg">
-							<h3 class="text-2xl md:text-4xl dark:text-gray-100 font-semibold font-head">
+							<h3 class="text-2xl md:text-4xl dark:text-gray-100 font-semibold">
 								Currently working on
 							</h3>
 							<p class="text-lg md:text-2xl dark:text-gray-100 opacity-70 mt-2">

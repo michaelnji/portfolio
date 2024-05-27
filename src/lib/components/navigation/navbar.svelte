@@ -67,7 +67,7 @@
 		<nav class="    flex justify-center items-center gap-x-6 ">
 			<a 
 				href="/"
-				class="  font-semibold group relative font-head overflow-hidden"
+				class="  font-semibold group relative  overflow-hidden"
 				
 				class:italic={currentSection === '/'}
 			>
@@ -80,7 +80,7 @@
 			</a>
 			<a 
 				href="/blog"
-				class="  font-semibold group relative font-head overflow-hidden"
+				class="  font-semibold group relative  overflow-hidden"
 				
 				class:italic={currentSection === '/blog'}
 			>
@@ -94,7 +94,7 @@
 			<a 
 				href="https://www.github.com/michaelnji"
 				target="_blank"
-				class="  font-semibold group relative font-head overflow-hidden"
+				class="  font-semibold group relative  overflow-hidden"
 			>
 				<p class="font-bold text-xl">Github</p>
 				<p
@@ -104,7 +104,7 @@
 			<a 
 				href="https://www.x.com/CodeD3vil"
 				target="_blank"
-				class="  font-semibold group relative font-head overflow-hidden"
+				class="  font-semibold group relative  overflow-hidden"
 			>
 				<p class="font-bold text-xl">Twitter</p>
 				<p

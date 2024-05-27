@@ -73,7 +73,7 @@
 				class=" w-full scale-105 z-50 absolute h-full border-4 rounded-3xl overflow-hidden border-black"
 			>
 			
-				<img src={urlFor('https://cdn.sanity.io/images/5xp71fus/production/462f8ea980a41f137d6521cda52094f5e26c6b5b-864x1152.jpg').format('webp').size(500, 500).url()} alt="An AI portrait of me" height='192px' width='192px' />
+				<img src={urlFor('https://cdn.sanity.io/images/5xp71fus/production/462f8ea980a41f137d6521cda52094f5e26c6b5b-864x1152.jpg').format('webp').size(500, 500).url()} alt="A portrait of me" />
 			</div>
 			<div
 				class=" w-full hero-1 bg-blue-200 z-10 h-full absolute border-4 rounded-3xl overflow-hidden border-black"
