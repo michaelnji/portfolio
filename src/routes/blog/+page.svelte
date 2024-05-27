@@ -64,7 +64,7 @@
 		
 			<div class="mt-4 md:mt-12 flex flex-wrap gap-3 max-w-4xl mx-auto justify-center items-center">
 				<button
-					class="font-head text-md font-medium md:font-semibold  px-3 py-1.5 border-2 rounded-xl text-black border-black dark:border-gray-50 dark:text-primary hover:border-primary hover:text-primary transition duration-300 !capitalize"
+					class="font-head text-md font-medium md:font-semibold  px-3 py-1.5 border-2 rounded-xl text-black border-black dark:border-gray-50 dark:text-gray-50 hover:!border-primary hover:!text-primary transition duration-300 !capitalize"
 					class:!bg-primary={activeTag === 'all'}
 					class:!text-white={activeTag === 'all'}
 					class:!border-primary={activeTag === 'all'}
@@ -76,7 +76,7 @@
 				</button>
 				{#each data.tags as tag}
 					<button
-						class="font-head text-md font-medium md:font-semibold  px-3 py-1.5 border-2 rounded-xl text-black border-black dark:border-gray-50 dark:text-primary hover:border-primary hover:text-primary transition duration-300 !capitalize"
+						class="font-head text-md font-medium md:font-semibold  px-3 py-1.5 border-2 rounded-xl text-black border-black dark:border-gray-50 dark:text-gray-50 hover:!border-primary hover:!text-primary transition duration-300 !capitalize"
 						class:!bg-primary={activeTag === tag.title}
 						class:!text-white={activeTag === tag.title}
 						class:!border-primary={activeTag === tag.title}

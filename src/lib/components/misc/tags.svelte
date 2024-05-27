@@ -1,5 +1,7 @@
 <script lang="ts">
-	export let tags: any;
+	import type { Tag } from "$lib/types";
+
+	export let tags:Tag[];
 
     
 </script>
@@ -9,9 +11,9 @@
 <div class="flex flex-wrap w-full gap-2">
 	{#each tags as tag}
 	<a href={`/blog?tag=${tag.title}`}
-					class="px-3 border-2 border-secondary py-1 font-bold hover:bg-secondary  dark:text-orange-300 dark:hover:text-gray-900 text-sm md:text-base font-mono transition duration-300 uppercase max-w-max"
+					class=" text-md font-medium md:font-semibold  px-3 py-1.5 border-2 rounded-xl text-black border-black dark:border-gray-50 dark:text-gray-50 hover:!border-primary hover:!text-primary transition duration-300 !capitalize max-w-max"
 				>
-					{tag.title}
+					{tag.title.split('-').join(' ')}
 				</a>
 	{/each}
 </div>

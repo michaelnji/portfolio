@@ -1,10 +1,19 @@
 <script lang="ts">
 	import { urlFor } from '$lib/backend/sanity';
 	import Twitter from 'svelte-simples/Twitter.svelte';
-	export let author: any;
+	import { CheckBadge } from 'svelte-heros-v2';
+	// biome-ignore lint/suspicious/noImplicitAnyLet: <explanation>
+	export let author;
 </script>
 
-<div class=" max-w-2xl border-2 border-gray-900 w-full p-6 bg-primary card-wrapper transition duration-300 text-purple-100">
+<div
+	class=" max-w-2xl border-2 border-black w-full p-6 bg-primary card-wrapper transition duration-300 rounded-xl text-purple-100 relative"
+>
+	<div
+		class="p-3 px-9 text-sm md:text-xl font-bold absolute -right-10 top-0  rotate-[25deg] font-head bg-black rounded-full text-white max-w-max stamp flex gap-2"
+	>
+		Author <CheckBadge/>
+	</div>
 	<div class=" flex flex-col gap-3">
 		<div class="flex flex-row gap-3 items-center">
 			<img
@@ -13,7 +22,7 @@
 				class="w-14 h-14 rounded-full border-2 border-gray-500"
 			/>
 			<div>
-				<p class="font-bold  flex gap-x-2 text-xl">{author.name}</p>
+				<p class="font-bold flex gap-x-2 text-xl">{author.name}</p>
 				<a href={author.twitter} target="_blank"
 					><p class="font-medium font-head text-md flex gap-2 opacity-70 group">
 						<Twitter
