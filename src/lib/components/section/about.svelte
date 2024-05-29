@@ -1,10 +1,8 @@
 <script lang="ts">
 	import { skills } from '$lib/utils/skills';
 	import anime from 'animejs';
-	import { onMount } from 'svelte';
 	import IntersectionObserver from 'svelte-intersection-observer';
 	let element: HTMLElement;
-	let play = false;
 	function animateEntry() {
 		const items = document.querySelectorAll('.about-items');
 		anime({
@@ -15,16 +13,7 @@
 			delay: anime.stagger(300, { start: 600, easing: 'linear' })
 		});
 	}
-	onMount(() => {
-		if (window) {
-			window.onscroll = () => {
-				play = true;
-			};
-			window.onscrollend = () => {
-				play = false;
-			};
-		}
-	});
+	
 </script>
 
 <!-- svelte-ignore a11y-no-static-element-interactions -->
@@ -59,9 +48,9 @@
 						style="opacity: 0; transform: translateY(150px)"
 					>
 						<div class="w-full h-full relative">
-							<div class=" grid items-end bg-white p-6">
+							<div class=" grid items-end bg-white dark:bg-gray-900 p-6">
 								<div>
-									<h3 class="text-3xl md:text-5xl font-semibold font-head m-0 text-gray-950">
+									<h3 class="text-3xl md:text-5xl font-semibold font-head m-0 ">
 										I am a student in the University of Buea.
 									</h3>
 									<p class="mt-4 text-lg md:text-2xl">
@@ -69,14 +58,14 @@
 										programmer, who most times goes rogue with designs and comes up with unique
 										stuff. I am an adept learner, an average teacher and a big introvert.
 									</p>
-									<h3 class="text-2xl font-semibold font-head m-0 text-gray-950 mt-8">
+									<h3 class="text-2xl font-semibold font-head m-0  mt-8">
 										My Skills.
 									</h3>
 									<div class="mt-6 flex flex-wrap gap-3">
 										{#each skills as skill}
 										{#if skill.name === 'github'}
 										<span
-												class=" font-head text-xl font-medium md:font-semibold capitalize px-3 py-1.5 border-2 rounded-xl text-black border-black"
+												class=" font-head text-xl font-medium md:font-semibold capitalize px-3 py-1.5 border-2 rounded-xl text-black  dark:text-gray-50 dark:border-gray-50 border-black"
 												>{skill.name}</span
 											>
 											{:else}
