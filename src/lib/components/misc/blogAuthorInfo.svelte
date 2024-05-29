@@ -10,9 +10,9 @@
 	class=" max-w-2xl border-2 border-black w-full p-6 bg-primary card-wrapper transition duration-300 rounded-xl text-purple-100 relative"
 >
 	<div
-		class="p-3 px-9 text-sm md:text-xl font-bold absolute -right-10 top-0  rotate-[25deg] font-head bg-black rounded-full text-white max-w-max stamp flex gap-2"
+		class="p-2 px-12 pl-20 text-sm md:text-xl font-bold absolute -right-12 top-3  rotate-[40deg] font-head bg-black  text-white max-w-max stamp flex justify-center gap-2"
 	>
-		Author <CheckBadge/>
+		Author<CheckBadge/>
 	</div>
 	<div class=" flex flex-col gap-3">
 		<div class="flex flex-row gap-3 items-center">

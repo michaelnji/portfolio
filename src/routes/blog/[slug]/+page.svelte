@@ -29,6 +29,7 @@
 	import { fly } from "svelte/transition";
 
 	let ready = false;
+	// biome-ignore lint/suspicious/noImplicitAnyLet: <explanation>
 	export let data;
 $: metaTags = extend(true, {}, data.pageMetaTags, $page.data.pageMetaTags);
 	onMount(() => {
@@ -122,7 +123,7 @@ $: metaTags = extend(true, {}, data.pageMetaTags, $page.data.pageMetaTags);
 					}}
 				/>
 			</section>
-			<aside class="mt-8">
+			<aside class="mt-8 overflow-hidden rounded-xl">
 				<BlogAuthorInfo author={data.post.authorInfo} />
 			</aside>
 		</section>
