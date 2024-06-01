@@ -68,6 +68,8 @@
     "@upstash/query": "^0.0.2",
     "@upstash/redis": "^1.28.4",
     "@vercel/analytics": "^1.1.1",
+    "@vercel/postgres": "^0.8.0",
+    "@vercel/postgres-kysely": "^0.8.0",
     "@vercel/speed-insights": "^1.0.1",
     "animate.css": "^4.1.1",
     "animejs": "^3.2.2",
@@ -76,6 +78,7 @@
     "i": "^0.3.7",
     "jsdom": "^24.0.0",
     "just-extend": "^6.2.0",
+    "kysely": "^0.27.3",
     "mathjs": "^12.2.0",
     "popmotion": "^11.0.5",
     "speakingurl": "^14.0.1",
@@ -85,6 +88,8 @@
     "tiny-worker": "^2.3.0"
   },
   "trustedDependencies": [
-    "@biomejs/biome"
+    "@biomejs/biome",
+    "@vercel/speed-insights",
+    "svelte-preprocess"
   ]
 }
