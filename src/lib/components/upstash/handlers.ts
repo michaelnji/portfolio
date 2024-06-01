@@ -5,7 +5,7 @@ import { PostMetaDataCLient } from "./initialize";
 export async function getDataById(id: string) {
     try {
         const info = await PostMetaDataCLient.get(id);
-       
+       console.log(info);
         return {
             status: 200,
             error: null,
@@ -13,7 +13,8 @@ export async function getDataById(id: string) {
         }
 
     } catch (error) {
-        return handleError(error)
+        console.log(error);
+								return handleError(error);
     }
 }
 export async function createPostMetadata(info: PostMetaData, id: string) {
@@ -25,6 +26,7 @@ export async function createPostMetadata(info: PostMetaData, id: string) {
             data: info
         }
     } catch (error) {
+        console.log(error);
         return handleError(error)
     }
 }
@@ -45,10 +47,10 @@ export async function getOrCreatePostMetaData(id: string, info: PostMetaData) {
     const exists = await getDataById(id)
 
     if (exists?.status !== 200) return exists
-    let newData;
+    
     if (!exists?.data) {
-        newData = await createPostMetadata(info, id)
-        return newData
-    }
+					const newData = await createPostMetadata(info, id);
+					return newData;
+				}
     return exists
 }

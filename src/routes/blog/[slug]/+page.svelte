@@ -33,6 +33,7 @@
 	export let data;
 $: metaTags = extend(true, {}, data.pageMetaTags, $page.data.pageMetaTags);
 	onMount(() => {
+		console.log(data.meta_data)
 		$metadata = data.meta_data
 			ready = true;
 			
@@ -138,7 +139,7 @@ $: metaTags = extend(true, {}, data.pageMetaTags, $page.data.pageMetaTags);
 					<RelatedPosts posts={data.relatedPosts} />
 				</div>
 				<div class="mt-10 px-6 md:px-0">
-					<MetaData  />
+					<MetaData />
 				</div>
 			</div>
 		</aside>

@@ -1,4 +1,6 @@
-export type ClipboardCopyResult = 'success' | 'error' | 'not-supported';
+import type { Generated, Selectable } from "kysely";
+
+export type ClipboardCopyResult = "success" | "error" | "not-supported";
 
 export interface Post {
 	_id: string | number;
@@ -16,6 +18,7 @@ export interface Post {
 	title: string;
 	_updatedAt: Date | string;
 	imageUrl: string;
+	// biome-ignore lint/suspicious/noExplicitAny: <explanation>
 	body: any;
 }
 export interface PostsSummarizedResponse {
@@ -26,10 +29,12 @@ export interface PostsSummarizedResponse {
 
 export type Heading = {
 	_key: string;
+	// biome-ignore lint/suspicious/noExplicitAny: <explanation>
 	markDefs: any[];
+	// biome-ignore lint/suspicious/noExplicitAny: <explanation>
 	children: any[];
-	_type: 'block';
-	style: 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6';
+	_type: "block";
+	style: "h1" | "h2" | "h3" | "h4" | "h5" | "h6";
 	text: string;
 	slug: string;
 };
@@ -41,7 +46,7 @@ export interface PostResponse {
 }
 
 export type Tag = {
-	_type: 'category';
+	_type: "category";
 	description?: string;
 	_id: string;
 	title: string;
@@ -57,11 +62,25 @@ export interface TagResponse {
 }
 
 export type PostMetaData = {
-	views: number,
-	id: string | number
+	views: number;
+	id: string | number;
 	reactions: {
-		hearts: number,
-		claps: number,
-		shit: number,
-	}
+		hearts: number;
+		claps: number;
+		shit: number;
+	};
+};
+
+export interface StatTable {
+	id: Generated<number>;
+	postId: string;
+	views: number;
+	hearts: number;
+	claps: number;
 }
+
+export interface Database {
+	stats: StatTable;
+}
+
+export type PostStat = Selectable<StatTable>;

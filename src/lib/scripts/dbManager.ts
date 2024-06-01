@@ -7,7 +7,7 @@
  * @param {string} [value='']
  * @return {*}  {*}
  */
-export function getOrSetItem(key: string, value: string = ''): any {
+export function getOrSetItem(key: string, value) {
 	const db = localStorage;
 	if (db.getItem(key) == null) {
 		db.setItem(key, JSON.stringify(value));
@@ -21,7 +21,7 @@ export function getOrSetItem(key: string, value: string = ''): any {
  * @param {*} key
  * @return {*}  {(any | null)}
  */
-export function getItemValue(key: any): any | null {
+export function getItemValue(key: string) {
 	const db = localStorage;
 	if (db.getItem(key) !== null) {
 		return JSON.parse(db.getItem(key));
@@ -34,7 +34,7 @@ export function getItemValue(key: any): any | null {
  * @param {string} [value='']
  * @return {*}  {(any | null)}
  */
-export function setItemValue(key: any, value: string = ''): any | null {
+export function setItemValue(key: any, value: string = ""): any | null {
 	if (key !== null) {
 		localStorage.setItem(key, JSON.stringify(value));
 		return value;

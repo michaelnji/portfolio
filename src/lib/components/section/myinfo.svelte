@@ -20,8 +20,9 @@
 
 		return data;
 	}
-	const data = useQuery('github-info', fetchData);
-	console.log($data.data);
+	const data = useQuery('github-info', fetchData,)
+	
+	
 </script>
 
 {#if $data && !$data.isError}
