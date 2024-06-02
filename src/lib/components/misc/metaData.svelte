@@ -125,11 +125,11 @@
 					<div use:confetti={{ particleCount: 20, force: 0.3, stageWidth: 500 }} />
 				{/if}
 			</span>
-			<div class="bg-orange-100 text-orange-600  p-1.5 rounded-full ml-2 group-hover:-rotate-12 group-hover:scale-105 transition-transform"  class:vibrate={clapsConfettiStatus == 'loading'}
+			<div class="bg-orange-500 text-orange-50  p-1.5 rounded-full ml-2 group-hover:-rotate-12 group-hover:scale-105 transition-transform"  class:vibrate={clapsConfettiStatus == 'loading'}
 			class:jello={clapsConfettiStatus && clapsConfettiStatus !== 'loading'}>
 			
 			<Fire variation='solid' size='27' class='hidden md:block'/>
-			<Fire variation='solid' size='20' class='md:hidden'/>
+			<Fire variation='solid' size='22' class='md:hidden'/>
 			</div>
 		</div>
 	</div>
