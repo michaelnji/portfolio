@@ -3,7 +3,7 @@
 	import metadata from '$lib/stores/metadata';
 	import Eye from 'svelte-heros-v2/Eye.svelte';
 	import Heart from 'svelte-heros-v2/Heart.svelte';
-	import Star from 'svelte-heros-v2/Star.svelte';
+	import Fire from 'svelte-heros-v2/Fire.svelte';
 	import {confetti} from '@neoconfetti/svelte'
 	let heartConfettiStatus: string | boolean = false;
 	let clapsConfettiStatus: string | boolean = false;
@@ -67,17 +67,20 @@
 
 {#if $metadata }
 	<h1 class="mb-5 m-0 text-xl w-full font-semibold max-w-max "> Some stats on this post</h1>
-<div class="w-full max-w-sm md:max-w-xl flex gap-3 flex-wrap overflow-hidden">
+<div class="w-max rounded-3xl max-w-sm md:max-w-xl flex gap-6 md:gap-x-12  flex-wrap items-center overflow-hidden mt-2 p-6 px-8 bg-white dark:bg-gray-900 shadow-xl">
 	<div
-		class="flex items-center justify-center rounded-xl   gap-x-3  text-lg transition duration-[400] group-hover:rotate-12 !py-1 px-4 bg-black text-gray-50 dark:bg-gray-50 dark:text-gray-950"
+		class="flex items-center justify-center rounded-xl text-lg transition duration-[400] group-hover:rotate-12"
 	>
 		<span class="text-xl md:text-2xl xl:text-3xl font-bold">{numToSummary($metadata.views)}</span>
-		<Eye variation='solid' size='40' class='hidden md:block'/>
-		<Eye variation='solid' size='30'  class='md:hidden'/>
+		<div class=' rounded-full ml-2 group-hover:rotate-12 group-hover:scale-105 transition-transform'>
+
+			<Eye variation='solid' size='27' class='hidden md:block'/>
+			<Eye variation='solid' size='20' class='md:hidden'/>
+		</div>
 	</div>
 
 	<div
-		class=" p-4    cursor-pointer relative  flex items-center justify-center   gap-x-1 font-semibold text-lg transition duration-[400] group-hover:rotate-12 group"
+		class="    cursor-pointer relative  flex items-center justify-center   gap-x-1 font-semibold text-lg transition duration-[400] group-hover:rotate-12 group"
 		role="button"
 		tabindex="0"
 		on:keydown
@@ -88,22 +91,23 @@
 		
 		<div class="flex items-center space-x-2">
 			
-			<span class="text-xl md:text-2xl xl:text-3xl font-bold">
+			<span class="text-xl md:text-2xl xl:text-3xl  font-bold ">
 				{numToSummary($metadata.hearts)}
 				{#if heartConfettiStatus && heartConfettiStatus !== 'loading'}
 <div use:confetti={{ particleCount: 20, force: 0.3, stageWidth: 500 }} />
 				{/if}
 			</span>
-			<div class:vibrate={heartConfettiStatus == 'loading'}
+			<div class='bg-pink-600 text-pink-50   p-1.5 rounded-full ml-2 group-hover:rotate-12 group-hover:scale-105 transition-transform' class:vibrate={heartConfettiStatus == 'loading'}
 			class:jello={heartConfettiStatus && heartConfettiStatus !== 'loading'}>
-			<Heart variation='solid' size='40' class='text-pink-600 transition-transform duration-[400] group-hover:rotate-12 group-hover:scale-125 hidden md:block' />
-			<Heart variation='solid' size='30' class='text-pink-600 transition-transform duration-[400] group-hover:rotate-12 group-hover:scale-125 md:hidden' />
+			<Heart variation='solid' size='27' class='hidden md:block'/>
+			<Heart variation='solid' size='20' class='md:hidden'/>
+			
 			</div>
 		</div>
 	</div>
 
 	<div
-		class="  p-4    cursor-pointer relative  flex items-center justify-center   gap-x-1 font-semibold text-lg transition duration-[400] group-hover:rotate-12 group"
+		class="      cursor-pointer relative  flex items-center justify-center   gap-x-1 font-semibold text-lg transition duration-[400] group-hover:rotate-12 group"
 		role="button"
 		
 		tabindex="0"
@@ -121,10 +125,11 @@
 					<div use:confetti={{ particleCount: 20, force: 0.3, stageWidth: 500 }} />
 				{/if}
 			</span>
-			<div  class:vibrate={clapsConfettiStatus == 'loading'}
+			<div class="bg-orange-100 text-orange-600  p-1.5 rounded-full ml-2 group-hover:-rotate-12 group-hover:scale-105 transition-transform"  class:vibrate={clapsConfettiStatus == 'loading'}
 			class:jello={clapsConfettiStatus && clapsConfettiStatus !== 'loading'}>
-			<Star variation='solid' size='40' class='text-yellow-500 transition-transform duration-[400] group-hover:-rotate-12 group-hover:scale-125 hidden md:block'/>
-			<Star variation='solid' size='30' class='text-yellow-500 transition-transform duration-[400] group-hover:-rotate-12 group-hover:scale-125 md:hidden'/>
+			
+			<Fire variation='solid' size='27' class='hidden md:block'/>
+			<Fire variation='solid' size='20' class='md:hidden'/>
 			</div>
 		</div>
 	</div>
