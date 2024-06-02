@@ -66,8 +66,8 @@
 </script>
 
 {#if $metadata }
-	<h1 class="mb-5 m-0 text-xl w-full font-semibold max-w-max ">Show some luv on this post</h1>
-<div class="w-full max-w-sm md:max-w-xl flex gap-3 flex-wrap">
+	<h1 class="mb-5 m-0 text-xl w-full font-semibold max-w-max "> Some stats on this post</h1>
+<div class="w-full max-w-sm md:max-w-xl flex gap-3 flex-wrap overflow-hidden">
 	<div
 		class="flex items-center justify-center rounded-xl   gap-x-3  text-lg transition duration-[400] group-hover:rotate-12 !py-1 px-4 bg-black text-gray-50 dark:bg-gray-50 dark:text-gray-950"
 	>
@@ -91,7 +91,7 @@
 			<span class="text-xl md:text-2xl xl:text-3xl font-bold">
 				{numToSummary($metadata.hearts)}
 				{#if heartConfettiStatus && heartConfettiStatus !== 'loading'}
-<div use:confetti={{ particleCount: 20, force: 0.8, stageWidth: 500 }} />
+<div use:confetti={{ particleCount: 20, force: 0.3, stageWidth: 500 }} />
 				{/if}
 			</span>
 			<div class:vibrate={heartConfettiStatus == 'loading'}
@@ -118,7 +118,7 @@
 				{numToSummary($metadata.claps)}
 				
 				{#if clapsConfettiStatus && clapsConfettiStatus !== 'loading'}
-					<div use:confetti={{ particleCount: 20, force: 0.8, stageWidth: 500 }} />
+					<div use:confetti={{ particleCount: 20, force: 0.3, stageWidth: 500 }} />
 				{/if}
 			</span>
 			<div  class:vibrate={clapsConfettiStatus == 'loading'}
