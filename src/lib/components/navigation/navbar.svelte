@@ -39,7 +39,6 @@
 			anime({
 				targets: '.nv',
 				translateX: '200%',
-
 				easing: 'easeInSine',
 				duration: 700
 			});
@@ -82,13 +81,13 @@
 				href="/blog"
 				class="  font-semibold group relative  overflow-hidden"
 				
-				class:italic={currentSection === '/blog'}
+				class:italic={currentSection.includes('/blog')}
 			>
 				<p class="font-bold text-xl">Blog</p>
 				<p
 					class="h-1 w-2/3 bg-gradient-to-r from-pink-600  to-purple-600   transition-transform duration-500 -translate-x-24 group-hover:translate-x-0"
-					class:translate-x-0={currentSection === '/blog'}
-					class:hover:!translate-x-14={currentSection === '/blog'}
+					class:translate-x-0={currentSection.includes('/blog')}
+					class:hover:!translate-x-14={currentSection.includes('/blog')}
 				/>
 			</a>
 			<a 
@@ -117,8 +116,7 @@
 			<div in:scale={{ duration: 400 }}>
 				<Moon
 					class="focus:!outline-none hidden md:block  "
-					width="32"
-					height="32"
+					size="32"
 					tabindex="-1"
 				/>
 				
@@ -127,8 +125,7 @@
 			<div in:scale={{ duration: 400 }}>
 				<Sun
 					class="focus:!outline-none hidden md:block   group-hover:"
-					width="32"
-					height="32"
+					size="32"
 					tabindex="-1"
 				/>
 				
@@ -152,14 +149,12 @@
 				<div in:scale={{ duration: 400 }}>
 					<Moon
 						class="focus:!outline-none hidden md:block text-gray-50 group-"
-						width="48"
-						height="48"
+						size="48"
 						tabindex="-1"
 					/>
 					<Moon
 						class="focus:!outline-none md:hidden  text-gray-50 group-"
-						width="36"
-						height="36"
+						size="36"
 						tabindex="-1"
 					/>
 				</div>
@@ -167,14 +162,12 @@
 				<div in:scale={{ duration: 400 }}>
 					<Sun
 						class="focus:!outline-none hidden md:block  text-yellow-500 group-hover:text-gray-50"
-						width="48"
-						height="48"
+						size="48"
 						tabindex="-1"
 					/>
 					<Sun
 						class="focus:!outline-none md:hidden  text-gray-50 group-"
-						width="36"
-						height="36"
+						size="36"
 						tabindex="-1"
 					/>
 				</div>
@@ -200,13 +193,13 @@
 				href="/blog"
 				class=" text-gray-50 font-semibold group relative font-head overflow-hidden"
 				
-				class:italic={currentSection === '/blog'}
+				class:italic={currentSection.includes('/blog')}
 			>
 				<p class="font-medium text-4xl">Blog</p>
 				<p
 					class="h-1 w-2/3 bg-gradient-to-r from-pink-600  to-purple-600 transition-transform  duration-500 -translate-x-24 group-hover:translate-x-0"
-					class:translate-x-0={currentSection === '/blog'}
-					class:hover:!translate-x-14={currentSection === '/blog'}
+					class:translate-x-0={currentSection.includes('/blog')}
+					class:hover:!translate-x-14={currentSection.includes('/blog')}
 				/>
 			</a>
 			<a on:click={toggleModal}
@@ -237,24 +230,23 @@
 <div class="navbar-wrapper !z-50">
 	<button
 		class="btn !z-20 md:btn-lg btn-primary overflow-hidden !rounded-none border border-gray-900 card-wrapper active:scale-90 transition"
-		on:click={() => {
-			toggleModal();
-		}}
+		on:click={
+			toggleModal
+		}
 	>
 		{#if !closeModal}
 			<div in:scale={{ duration: 400 }}>
 				<Bars3Solid
 					class="focus:!outline-none hidden md:block"
-					width="48"
-					height="48"
+				size="48"
 					tabindex="-1"
 				/>
-				<Bars3Solid class="focus:!outline-none md:hidden" width="36" height="36" tabindex="-1" />
+				<Bars3Solid class="focus:!outline-none md:hidden" size="36" tabindex="-1" />
 			</div>
 		{:else}
 			<div in:scale={{ duration: 400 }}>
-				<XMark class="focus:!outline-none hidden md:block" width="48" height="48" tabindex="-1" />
-				<XMark class="focus:!outline-none md:hidden" width="36" height="36" tabindex="-1" />
+				<XMark class="focus:!outline-none hidden md:block" size="48" tabindex="-1" />
+				<XMark class="focus:!outline-none md:hidden" size="36" tabindex="-1" />
 			</div>
 		{/if}
 	</button>
