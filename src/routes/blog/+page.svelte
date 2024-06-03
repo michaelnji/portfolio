@@ -102,6 +102,7 @@
 							slug={post.slug.current}
 							published={post.publishedAt}
 							excerpt={post.excerpt}
+							views={post.views}
 						/>
 					</div>
 				{/each}

@@ -3,24 +3,25 @@ import type { Generated, Selectable } from "kysely";
 export type ClipboardCopyResult = "success" | "error" | "not-supported";
 
 export interface Post {
-	_id: string | number;
-	excerpt: string;
-	authorInfo: {
-		slug: string;
-		name: string;
-		bio: string;
+		_id: string | number;
+		excerpt: string;
+		authorInfo: {
+			slug: string;
+			name: string;
+			bio: string;
+			imageUrl: string;
+			twitter: string;
+		};
+		tags: { title: string; description: string }[];
+		publishedAt: Date | string;
+		slug: { current: string };
+		title: string;
+		_updatedAt: Date | string;
 		imageUrl: string;
-		twitter: string;
-	};
-	tags: { title: string; description: string }[];
-	publishedAt: Date | string;
-	slug: { current: string };
-	title: string;
-	_updatedAt: Date | string;
-	imageUrl: string;
-	// biome-ignore lint/suspicious/noExplicitAny: <explanation>
-	body: any;
-}
+		// biome-ignore lint/suspicious/noExplicitAny: <explanation>
+		body: any;
+		views?: number | null;
+	}
 export interface PostsSummarizedResponse {
 	posts: Post[];
 	status: number;

@@ -70,9 +70,9 @@
 				
 				class:italic={currentSection === '/'}
 			>
-				<p class="font-bold text-xl">Home</p>
+				<p class="font-medium text-xl">Home</p>
 				<p
-					class="h-1 w-2/3 bg-gradient-to-r from-pink-600  to-purple-600   transition-transform duration-500 -translate-x-24 group-hover:translate-x-0"
+					class="h-0.5 w-2/3 bg-gradient-to-r from-pink-600  to-purple-600   transition-transform duration-500 -translate-x-24 group-hover:translate-x-0"
 					class:translate-x-0={currentSection === '/'}
 					class:hover:!translate-x-14={currentSection === '/'}
 				/>
@@ -83,9 +83,9 @@
 				
 				class:italic={currentSection.includes('/blog')}
 			>
-				<p class="font-bold text-xl">Blog</p>
+				<p class="font-medium text-xl">Blog</p>
 				<p
-					class="h-1 w-2/3 bg-gradient-to-r from-pink-600  to-purple-600   transition-transform duration-500 -translate-x-24 group-hover:translate-x-0"
+					class="h-0.5 w-2/3 bg-gradient-to-r from-pink-600  to-purple-600   transition-transform duration-500 -translate-x-24 group-hover:translate-x-0"
 					class:translate-x-0={currentSection.includes('/blog')}
 					class:hover:!translate-x-14={currentSection.includes('/blog')}
 				/>
@@ -95,9 +95,9 @@
 				target="_blank"
 				class="  font-semibold group relative  overflow-hidden"
 			>
-				<p class="font-bold text-xl">Github</p>
+				<p class="font-medium text-xl">Github</p>
 				<p
-					class="h-1 w-2/3 bg-gradient-to-r from-pink-600  to-purple-600   transition-transform duration-500 -translate-x-24 group-hover:translate-x-0"
+					class="h-0.5 w-2/3 bg-gradient-to-r from-pink-600  to-purple-600   transition-transform duration-500 -translate-x-24 group-hover:translate-x-0"
 				/>
 			</a>
 			<a 
@@ -105,9 +105,9 @@
 				target="_blank"
 				class="  font-semibold group relative  overflow-hidden"
 			>
-				<p class="font-bold text-xl">Twitter</p>
+				<p class="font-medium text-xl">Twitter</p>
 				<p
-					class="h-1 w-2/3 bg-gradient-to-r from-pink-600  to-purple-600   transition-transform duration-500 -translate-x-24 group-hover:translate-x-0"
+					class="h-0.5 w-2/3 bg-gradient-to-r from-pink-600  to-purple-600   transition-transform duration-500 -translate-x-24 group-hover:translate-x-0"
 				/>
 			</a>
 		</nav>
@@ -184,7 +184,7 @@
 			>
 				<p class="font-medium text-4xl">Home</p>
 				<p
-					class="h-1 w-2/3 bg-gradient-to-r from-pink-600  to-purple-600 transition-transform  duration-500 -translate-x-24 group-hover:translate-x-0"
+					class="h-0.5 w-2/3 bg-gradient-to-r from-pink-600  to-purple-600 transition-transform  duration-500 -translate-x-24 group-hover:translate-x-0"
 					class:translate-x-0={currentSection === '/'}
 					class:hover:!translate-x-14={currentSection === '/'}
 				/>
@@ -197,7 +197,7 @@
 			>
 				<p class="font-medium text-4xl">Blog</p>
 				<p
-					class="h-1 w-2/3 bg-gradient-to-r from-pink-600  to-purple-600 transition-transform  duration-500 -translate-x-24 group-hover:translate-x-0"
+					class="h-0.5 w-2/3 bg-gradient-to-r from-pink-600  to-purple-600 transition-transform  duration-500 -translate-x-24 group-hover:translate-x-0"
 					class:translate-x-0={currentSection.includes('/blog')}
 					class:hover:!translate-x-14={currentSection.includes('/blog')}
 				/>
@@ -209,7 +209,7 @@
 			>
 				<p class="font-medium text-4xl">Github</p>
 				<p
-					class="h-1 w-2/3 bg-gradient-to-r from-pink-600  to-purple-600 transition-transform  duration-500 -translate-x-24 group-hover:translate-x-0"
+					class="h-0.5 w-2/3 bg-gradient-to-r from-pink-600  to-purple-600 transition-transform  duration-500 -translate-x-24 group-hover:translate-x-0"
 				/>
 			</a>
 			<a on:click={toggleModal}
@@ -219,7 +219,7 @@
 			>
 				<p class="font-medium text-4xl">Twitter</p>
 				<p
-					class="h-1 w-2/3 bg-gradient-to-r from-pink-600  to-purple-600 transition-transform  duration-500 -translate-x-24 group-hover:translate-x-0"
+					class="h-0.5 w-2/3 bg-gradient-to-r from-pink-600  to-purple-600 transition-transform  duration-500 -translate-x-24 group-hover:translate-x-0"
 				/>
 			</a>
 		</nav>

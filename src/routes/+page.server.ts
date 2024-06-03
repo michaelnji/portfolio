@@ -2,6 +2,8 @@ import { getQuote } from '$lib/backend/quotes';
 import type { Load } from '@sveltejs/kit';
 import type { MetaTagsProps } from 'svelte-meta-tags';
 import { getPostsSummarized } from '../lib/backend/posts';
+import { getPostStats } from "$lib/server/database/queryHandlers";
+import { isArray } from "mathjs";
 /** @type {import('@sveltejs/kit').Load} */
 export const load: Load = async ({ url }) => {
 	const pageMetaTags = Object.freeze({
@@ -36,18 +38,28 @@ export const load: Load = async ({ url }) => {
 	const res = await getPostsSummarized();
 	const quotes = await getQuote()
 	if (res.status === 200 ) {
-		
+		const posts = res.posts;
+		for (let index = 0; index < posts.length; index++) {
+			const post = posts[index];
+			const views = await getPostStats(post._id.toString());
+			console.log(views);
+			if (views.status === 200 && !isArray(views.data)) {
+				posts[index].views = views.data?.views;
+			} else {
+				posts[index].views = null;
+			}
+		}
+
 		return {
 			pageMetaTags,
-			posts: res.posts,
+			posts: posts,
 			quotes: quotes.data,
-
 		};
 	}
 
 	return {
 		pageMetaTags,
 		status: 500,
-		error: `Could not load url`
+		error: "Could not load url",
 	};
 };

@@ -2,7 +2,8 @@
 	import anime from 'animejs';
 	import IntersectionObserver from 'svelte-intersection-observer';
 	import BlogCard from './../display/blogCard.svelte';
-	export let posts: any[];
+	import type { Post } from '$lib/types';
+	export let posts: Post[];
 	let el: HTMLElement;
 </script>
 
@@ -28,13 +29,14 @@
 			style="opacity: 0; transform:translateY(100px)"
 		>
 			{#each posts as post, i}
-				{#if i <= 6}
+				{#if i < 6}
 					
 						<BlogCard
 						title={post.title}
 						slug={post.slug.current}
-						published={post.publishedAt}
+						published={new Date(post.publishedAt)}
 						excerpt={post.excerpt}
+						views={post.views}
 						
 					/>
 					
