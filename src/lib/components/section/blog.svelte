@@ -46,7 +46,7 @@
 	</IntersectionObserver>
 	<a
 		href="/blog"
-		class="btn btn-wrapper !rounded-none md:btn-lg btn-primary overflow-hidden ! border-2 border-black card-wrapper w-[90%] max-w-sm mx-auto flex justify-center font-medium mt-12 !text-2xl !capitalize"
+		class="btn btn-wrapper !rounded-2xl md:btn-lg btn-primary overflow-hidden ! border-2 border-black card-wrapper w-[90%] max-w-sm mx-auto flex justify-center font-medium mt-12 !text-2xl !capitalize"
 		>View All</a
 	>
 </section>

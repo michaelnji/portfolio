@@ -43,7 +43,7 @@
 			>
 				<div bind:this={el} />
 				<div
-					class="bg-gray-50 p-6 border-4 border-black card-wrapper max-w-2xl grid gap-6 relative myinfo"
+					class="bg-gray-50 rounded-2xl p-6 border-4 border-black card-wrapper max-w-2xl grid gap-6 relative myinfo"
 					style="opacity: 0; transform:translateY(100px)"
 				>
 					<div

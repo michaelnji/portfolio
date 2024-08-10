@@ -1,6 +1,6 @@
 <script lang="ts">
 	import InfoBanner from '$lib/components/display/infoBanner.svelte';
-	import QuoteComp from '$lib/components/display/quoteComp.svelte';
+	// import QuoteComp from '$lib/components/display/quoteComp.svelte';
 	import About from '$lib/components/section/about.svelte';
 	import Myinfo from '$lib/components/section/myinfo.svelte';
 	import Blog from '$lib/components/section/blog.svelte';
@@ -11,6 +11,7 @@
 	import extend from 'just-extend';
 	import { MetaTags } from 'svelte-meta-tags';
 import { QueryClient, QueryClientProvider } from '@sveltestack/svelte-query'
+	// biome-ignore lint/suspicious/noImplicitAnyLet: <explanation>
 	export let data;
 	 const queryClient = new QueryClient()
 	$: metaTags = extend(true, {}, data.pageMetaTags, $page.data.pageMetaTags);
@@ -35,11 +36,11 @@ import { QueryClient, QueryClientProvider } from '@sveltestack/svelte-query'
 		<Projects />
 	</div>
 	<div class="mb-24">
-		{#if data.quotes}
+		<!-- {#if data.quotes}
 			<div class="mb-24">
 				<QuoteComp info={data.quotes} />
 			</div>
-		{/if}
+		{/if} -->
 		<InfoBanner />
 	</div>
 	<Footer />

@@ -10,7 +10,8 @@
 			translateY: 0,
 			opacity: 1,
 			duration: 1200,
-			delay: anime.stagger(300, { start: 600, easing: 'linear' })
+			delay: 600,
+			// easing: 'easeInQuad'
 		});
 	}
 	
@@ -18,8 +19,9 @@
 
 <!-- svelte-ignore a11y-no-static-element-interactions -->
 <div bind:this={element} class="  w-screen flex items-start justify-center" id="about">
+	
 	<div class="w-full">
-		<div class="px-3 md:px-6">
+		<div class=" md:px-6">
 			<IntersectionObserver
 				{element}
 				on:intersect={() => {
@@ -27,28 +29,31 @@
 				}}
 			>
 				<div bind:this={element} />
-				<div class="flex flex-col-reverse xl:flex-row items-center justify-center xl:items-start gap-2 max-w-7xl mx-auto">
-					<div
-						class="  mx-auto w-full mb-[6rem] lg:mb-[9rem] border-4 border-black card-wrapper max-h-[60rem] overflow-hidden md:max-w-2xl xl:max-w-lg duration-300 about-items relative"
+				<div class="flex flex-col-reverse xl:flex-row items-center justify-center xl:items-start gap-2 max-w-7xl  mx-auto">
+					<div class="px-3 md:px-0">
+						<div
+						class="  mx-auto w-full mb-[6rem] lg:mb-[9rem] border-4 border-black rounded-2xl card-wrapper max-h-[60rem] overflow-hidden md:max-w-2xl xl:max-w-md duration-300 about-items relative  "
 						style="opacity: 0; transform: translateY(150px)"
 					>
 						<div class="w-full h-full relative">
-							<div class=" grid items-end bg-secondary p-6">
+							<div class=" grid items-end bg-gradient-to-br from-indigo-300 via-purple-300 to-pink-300 p-6">
 								<div>
 									<img src="/dev.svg" alt="" class="" />
-									<h3 class="text-5xl md:text-7xl font-semibold font-head m-0 text-gray-950">
-										A junior web developer since 2022
+									<h3 class="text-5xl md:text-6xl font-semibold font-head m-0 text-gray-950">
+										A  web developer since 2022
 									</h3>
 								</div>
 							</div>
 						</div>
 					</div>
+					</div>
 					<div
-						class="  mx-auto w-full mb-[6rem] lg:mb-[9rem] border-4 border-black border-dashed  overflow-hidden md:max-w-2xl xl:max-w-lg duration-300 about-items relative transition-none"
+						class="  mx-auto w-full mb-[6rem] xl:mb-0 rounded-2xl   overflow-hidden md:max-w-2xl xl:max-w-xl duration-300 about-items relative transition-none bg-white md:shadow-2xl dark:bg-gray-900 "
 						style="opacity: 0; transform: translateY(150px)"
 					>
 						<div class="w-full h-full relative">
-							<div class=" grid items-end bg-white dark:bg-gray-900 p-6">
+							<div class=" grid items-end p-8">
+								
 								<div>
 									<h3 class="text-3xl md:text-5xl font-semibold font-head m-0 ">
 										I am a student in the University of Buea.
