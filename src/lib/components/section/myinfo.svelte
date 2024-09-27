@@ -11,6 +11,7 @@
 	import anime from 'animejs';
 	import IntersectionObserver from 'svelte-intersection-observer';
 	import { useQuery } from '@sveltestack/svelte-query';
+	import { onMount } from 'svelte';
 
 	// const queryClient = useQueryClient()
 
@@ -20,8 +21,12 @@
 
 		return data;
 	}
-	const data = useQuery('github-info', fetchData,)
-	
+	const data = useQuery('github-info', fetchData,{
+		enabled:false
+	})
+	onMount(()=>{
+		data.setEnabled(true) 
+	})
 	
 </script>
 
