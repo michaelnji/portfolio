@@ -27,13 +27,13 @@ import { QueryClient, QueryClientProvider } from '@sveltestack/svelte-query'
 			<Myinfo />
 		</QueryClientProvider>
 	</div>
+	<div class="mb-24">
+		<Projects />
+	</div>
 	<div class=" mt-24 mb-12">
 		{#if data?.posts}
 			<Blog posts={data.posts} />
 		{/if}
-	</div>
-	<div class="mb-24">
-		<Projects />
 	</div>
 	<div class="mb-24">
 		<!-- {#if data.quotes}
