@@ -370,7 +370,7 @@
 							class="  translate-x-1 -translate-y-2 lg:!shadow-0 lg:translate-x-3 lg:-translate-y-3 lg:group-hover:translate-x-4 lg:group-hover:-translate-y-4 transition duration-150 bg-purple-500 border-4 border-gray-950 p-6 !rounded-2xl z-50"
 						>
 							
-							<h2 class="font-head text-4xl font-bold">waza</h2>
+							<h2 class="font-head text-2xl md:text-4xl font-bold">waza</h2>
 						</div>
 					</div>
 					
@@ -389,7 +389,7 @@
 							class="  translate-x-1 -translate-y-2 lg:!shadow-0 lg:translate-x-3 lg:-translate-y-3 lg:group-hover:translate-x-4 lg:group-hover:-translate-y-4 transition duration-150 bg-blue-500 border-4 border-gray-950 p-6 !rounded-2xl z-50"
 						>
 							
-							<h2 class="font-head text-4xl font-bold">anonym.lol</h2>
+							<h2 class="font-head text-2xl md:text-4xl font-bold">anonym.lol</h2>
 						</div>
 					</div>
 					
@@ -408,7 +408,7 @@
 							class="  translate-x-1 -translate-y-2 lg:!shadow-0 lg:translate-x-3 lg:-translate-y-3 lg:group-hover:translate-x-4 lg:group-hover:-translate-y-4 transition duration-150 bg-pink-500 border-4 border-gray-950 p-6 !rounded-2xl z-50"
 						>
 							
-							<h2 class="font-head text-4xl font-bold">kawaiii</h2>
+							<h2 class="font-head text-2xl md:text-4xl font-bold">kawaiii</h2>
 						</div>
 					</div>
 					
@@ -427,7 +427,7 @@
 							class="  translate-x-1 -translate-y-2 lg:!shadow-0 lg:translate-x-3 lg:-translate-y-3 lg:group-hover:translate-x-4 lg:group-hover:-translate-y-4 transition duration-150 bg-yellow-500 border-4 border-gray-950 p-6 !rounded-2xl z-50"
 						>
 							
-							<h2 class="font-head text-4xl font-bold">request-rat</h2>
+							<h2 class="font-head text-2xl md:text-4xl font-bold">request-rat</h2>
 						</div>
 					</div>
 					
@@ -446,7 +446,7 @@
 							class="  translate-x-1 -translate-y-2 lg:!shadow-0 lg:translate-x-3 lg:-translate-y-3 lg:group-hover:translate-x-4 lg:group-hover:-translate-y-4 transition duration-150 bg-white border-4 border-gray-950 p-6 !rounded-2xl z-50"
 						>
 							
-							<h2 class="font-head text-4xl font-bold">viewtree</h2>
+							<h2 class="font-head text-2xl md:text-4xl font-bold">viewtree</h2>
 						</div>
 					</div>
 					
