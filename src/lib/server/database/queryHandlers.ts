@@ -1,4 +1,4 @@
-import type { Database, PostStat } from "$lib/types";
+import type { PostStat } from "$lib/types";
 import { handleError } from "$lib/utils/errorHandler";
 
 import { db } from "./client";
@@ -51,7 +51,7 @@ export async function updatePostStats(id: string, updatedStats: PostStat) {
 			.where("postId", "=", id)
 			.returningAll()
 			.executeTakeFirstOrThrow();
-		console.log(data);
+
 		return {
 			status: 200,
 			error: null,
@@ -73,12 +73,10 @@ export async function getOrCreatePostStats(
 ) {
 	const exists = await getPostStats(id);
 
-	if (exists?.status !== 200 && exists.error !== " no result") return exists;
+	if (exists?.status !== 200 && exists.error !== " no result") { return exists; }
 
 	if (!exists?.data) {
-		const newData = await createPostStat(info);
-
-		return newData;
+		return await createPostStat(info);
 	}
 	return exists;
 }
