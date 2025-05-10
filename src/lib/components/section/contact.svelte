@@ -1,9 +1,9 @@
 <script>
 	import { animate } from 'popmotion';
-	import  Discord  from 'svelte-simples/Discord.svelte';
-	import  Twitter  from 'svelte-simples/Twitter.svelte';
-	import  Gmail  from 'svelte-simples/Gmail.svelte';
-	import  Github  from 'svelte-simples/Github.svelte';
+	import Discord from 'svelte-simples/Discord.svelte';
+	import Github from 'svelte-simples/Github.svelte';
+	import Gmail from 'svelte-simples/Gmail.svelte';
+	import Twitter from 'svelte-simples/Twitter.svelte';
 
 	animate({
 		from: 0,
@@ -18,7 +18,7 @@
 		},
 		{
 			name: 'twitter',
-			link: 'https://twitter.com/CodeD3vil',
+			link: 'https://twitter.com/heisgtr',
 			text: '#339af0',
 			color: '#a5d8ff'
 		},

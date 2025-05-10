@@ -1,9 +1,9 @@
 import { getQuote } from '$lib/backend/quotes';
+import { getPostStats } from "$lib/server/database/queryHandlers";
 import type { Load } from '@sveltejs/kit';
+import { isArray } from "mathjs";
 import type { MetaTagsProps } from 'svelte-meta-tags';
 import { getPostsSummarized } from '../lib/backend/posts';
-import { getPostStats } from "$lib/server/database/queryHandlers";
-import { isArray } from "mathjs";
 /** @type {import('@sveltejs/kit').Load} */
 export const load: Load = async ({ url }) => {
 	const pageMetaTags = Object.freeze({
@@ -23,7 +23,7 @@ export const load: Load = async ({ url }) => {
 			]
 		},
 		twitter: {
-			handle: '@CodeD3vil',
+			handle: '@heisgtr',
 			site: '@site',
 			// cardType: 'summary_large_image',
 			title: 'Michael Nji',

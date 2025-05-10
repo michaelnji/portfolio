@@ -4,10 +4,10 @@
 	import { setItemValue } from '$lib/scripts/dbManager';
 	import theme from '$lib/stores/theme';
 	import anime from 'animejs';
-	import  XMark  from 'svelte-heros-v2/XMark.svelte';
-	import  Bars3Solid  from 'svelte-heros-v2/Bars3.svelte';
+	import Bars3Solid from 'svelte-heros-v2/Bars3.svelte';
 	import Moon from 'svelte-heros-v2/Moon.svelte';
 	import Sun from 'svelte-heros-v2/Sun.svelte';
+	import XMark from 'svelte-heros-v2/XMark.svelte';
 	import { scale } from 'svelte/transition';
 	let closeModal = false;
 	function toggleTheme(): void {
@@ -101,7 +101,7 @@
 				/>
 			</a>
 			<a 
-				href="https://www.x.com/CodeD3vil"
+				href="https://www.x.com/heisgtr"
 				target="_blank"
 				class="  font-semibold group relative  overflow-hidden"
 			>
@@ -213,7 +213,7 @@
 				/>
 			</a>
 			<a on:click={toggleModal}
-				href="https://www.x.com/CodeD3vil"
+				href="https://www.x.com/heisgtr"
 				target="_blank"
 				class=" text-gray-50 font-semibold group relative font-head overflow-hidden"
 			>

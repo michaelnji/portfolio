@@ -1,7 +1,7 @@
 <script lang="ts">
 	import { urlFor } from '$lib/backend/sanity';
-	import Twitter from 'svelte-simples/Twitter.svelte';
 	import { CheckBadge } from 'svelte-heros-v2';
+	import Twitter from 'svelte-simples/Twitter.svelte';
 	// biome-ignore lint/suspicious/noImplicitAnyLet: <explanation>
 	export let author;
 </script>
@@ -29,7 +29,7 @@
 							width="20"
 							height="20"
 							class="group-hover:text-gray-900 transition-colors"
-						/>@CodeD3vil
+						/>@heisgtr
 					</p></a
 				>
 			</div>

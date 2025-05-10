@@ -8,6 +8,7 @@
 	import Typescript from 'svelte-simples/Typescript.svelte';
 	import Javascript from 'svelte-simples/Javascript.svelte';
 	import Vue from 'svelte-simples/Vuedotjs.svelte';
+	import Nuxt from 'svelte-simples/Nuxtdotjs.svelte';
 	let el: HTMLElement;
 </script>
 
@@ -275,68 +276,74 @@
 						</div>
 					</div>
 				</div>
+
 				<div
 					class=" group project max-w-xl w-full !rounded-2xl"
 					style="opacity: 0; transform:translateY(100px)"
 				>
 					<div class="w-full h-full relative">
 						<div
-							class=" w-full h-full -z-10 absolute bg-black border-4 border-gray-950 rounded-2xl"
+							class=" w-full h-full -z-10 absolute bg-black border-4 border-green-950 rounded-2xl"
 						/>
 						<div
-							class="  translate-x-1 -translate-y-2 lg:translate-x-3 lg:-translate-y-3 lg:group-hover:translate-x-4 lg:group-hover:-translate-y-4 transition duration-150 bg-gray-500 border-4 border-gray-950 p-6 !rounded-2xl z-50"
+							class="  translate-x-1 -translate-y-2 lg:translate-x-3 lg:-translate-y-3 lg:group-hover:translate-x-4 lg:group-hover:-translate-y-4 transition duration-150 bg-green-500 border-4 border-green-950 p-6 !rounded-2xl z-50"
 						>
 							<div class="w-full flex-col !justify-between gap-12 items-start">
 								<div class="flex flex-wrap z-20 gap-3">
 									<p
-										class="px-3 py-1 font-bold bg-gray-950 rounded-lg text-gray-300 text-sm transition duration-1000"
+										class="px-3 py-1 font-bold bg-green-950 rounded-lg text-green-300 text-sm transition duration-1000"
 									>
-										Completed
+									In progres
 									</p>
 									<p
-										class="px-3 py-1 font-bold bg-gray-950 rounded-lg text-gray-300 text-sm transition duration-1000"
+										class="px-3 py-1 font-bold bg-green-950 rounded-lg text-green-300 text-sm transition duration-1000"
 									>
 										Side Project
 									</p>
 									<p
-										class="px-3 py-1 font-bold bg-gray-950 rounded-lg text-gray-300 text-sm transition duration-1000"
+										class="px-3 py-1 font-bold bg-green-950 rounded-lg text-green-300 text-sm transition duration-1000"
 									>
-										NPM Package
+										Blog
 									</p>
 								</div>
 							</div>
 							<div class="mt-4">
-								<h1 class="md:text-8xl text-5xl capitalize text-gray-50 font-medium font-retro">
-									UnoID
+								<h1 class="md:text-8xl text-5xl capitalize text-green-50 font-medium font-retro">
+									Gemma Fx
 								</h1>
-								<p class="mt-3 font-medium text-gray-50 text-xl md:text-2xl opacity-90">
-									A typescript library that generates unique reference IDs and product IDs. Used in
-									Seabridge.
+								<p class="mt-3 font-medium text-green-50 text-xl md:text-2xl opacity-90">
+									A blog about forex trading, prop firm reviews and funded account coupon codes.
+									Built this to document my passion for forex trading
 								</p>
 								<div class="mt-4 p-6 rounded-2xl bg-gray-800 bg-opacity-20">
 									<p class="font-medium text-gray-50 text-2xl opacity-90">Built using</p>
 									<div class="flex flex-wrap gap-3 mt-3">
 										<p
-											class="p-2 font-bold text-gray-50 rounded-lg bg-gray-950 text-xs font-mono transition duration-1000"
+											class="p-2 font-bold text-gray-50 rounded-lg bg-green-950 text-xs font-mono transition duration-1000"
 										>
 											<Typescript width={'30'} height="30" />
 										</p>
 
 										<p
-											class="p-2 font-bold text-gray-50 rounded-lg bg-gray-950 text-xs font-mono transition duration-1000"
+											class="p-2 font-bold text-green-50 rounded-lg bg-green-950 text-xs font-mono transition duration-1000"
 										>
-											<Nodedotjs width={'30'} height="30" />
+											<Nuxt width={'30'} height="30" />
+										</p>
+										<p
+											class="p-2 font-bold text-green-50 rounded-lg bg-green-950 text-xs font-mono transition duration-1000"
+										>
+											<Tailwindcss width={'30'} height="30" />
 										</p>
 									</div>
 									<div class="mt-8 flex gap-3">
 										<a
-											href="/projects/unoid"
+											href="https://gemmafx.vercel.app"
 											target="_blank"
-											class="btn btn-wrapper border-2 border-black !rounded-none !bg-gray-600 text-xs"
-											>Docs</a
+											class="btn btn-wrapper border-2 border-black !rounded-none !bg-green-600 text-xs"
+											>visit blog</a
 										>
 										<a
-											href="https://github.com/michaelnji/unoid"
+											href="https://github.com/michaelnji/gemma_fx"
 											target="_blank"
 											class="btn btn-wrapper border-2 border-black !rounded-none !bg-black text-xs"
 											>Github

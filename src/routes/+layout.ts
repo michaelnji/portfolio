@@ -25,7 +25,7 @@ export const load = ({ url }) => {
 				}
 			]
 		}, twitter: {
-			handle: '@CodeD3vil',
+			handle: '@heisgtr',
 			site: '@site',
 			// cardType: 'summary_large_image',
 			title: 'Michael Nji',

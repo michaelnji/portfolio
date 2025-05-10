@@ -36,7 +36,9 @@ export async function getRelatedPosts(slug: string | undefined): Promise<PostsSu
 		if (data && post) {
 			let filteredPosts: any[] = []
 			data.forEach((element: { tags: any; }, i: number) => {
-				if (compareTags(post.post?.tags, element.tags) && i < 4) filteredPosts.push(data[i])
+				if (compareTags(post.post?.tags, element.tags) && i < 4) {
+      filteredPosts.push(data[i])
+    }
 			});
 			return {
 				status: 200,

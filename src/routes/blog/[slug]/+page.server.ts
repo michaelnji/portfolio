@@ -5,9 +5,9 @@ import {
 	updatePostStats,
 } from "$lib/server/database/queryHandlers";
 import type { Load } from "@sveltejs/kit";
+import { isArray } from "mathjs";
 import type { MetaTagsProps } from "svelte-meta-tags";
 import { getPost, getRelatedPosts } from "../../../lib/backend/posts";
-import { isArray } from "mathjs";
 
 /** @type {import('@sveltejs/kit').Load} */
 export const load: Load = async ({ params, url }) => {
@@ -43,7 +43,7 @@ export const load: Load = async ({ params, url }) => {
 			],
 		},
 		twitter: {
-			handle: "@CodeD3vil",
+			handle: "@heisgtr",
 			site: "@site",
 			// cardType: 'summary_large_image',
 			title: response.post?.title,

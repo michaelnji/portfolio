@@ -22,12 +22,12 @@ import { QueryClient, QueryClientProvider } from '@sveltestack/svelte-query'
 <div class="overflow-x-hidden md:pt-12">
 	<Hero />
 	<About />
-	<div class=" mt-24">
+	<!-- <div class=" mt-24">
 		<QueryClientProvider client={queryClient}>
 			<Myinfo />
 		</QueryClientProvider>
-	</div>
-	<div class="mb-24">
+	</div> -->
+	<div class="my-24">
 		<Projects />
 	</div>
 	<div class=" mt-24 mb-12">
